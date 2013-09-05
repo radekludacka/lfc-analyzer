@@ -1,0 +1,13 @@
+07/18 14:54:28.939 20713,0 Cns_srv_starttrans: NS092 - starttrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:28.939 20713,0 Cns_srv_starttrans: NS098 - starttrans (1.11.16-3)
+07/18 14:54:28.939 20713,0 Cns_srv_starttrans: returns 0
+07/18 14:54:28.939 20713,0 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:28.939 20713,0 Cns_srv_statg: NS098 - statg  2045789b-6209-446f-83bc-ae32603b4ac7
+07/18 14:54:28.940 20713,0 Cns_srv_statg: returns 0
+07/18 14:54:28.976 20713,0 Cns_srv_getpath: NS092 - getpath request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:28.978 20713,0 Cns_srv_getpath: returns 0
+07/18 14:54:29.016 20713,0 Cns_srv_symlink: NS092 - symlink request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:29.016 20713,0 Cns_srv_symlink: NS098 - symlink /grid/voce/ludacka/text_file.txt /grid/voce/ludacka/text_file10.txt
+07/18 14:54:29.048 20713,0 Cns_srv_symlink: returns 0
+07/18 14:54:29.049 20713,0 Cns_srv_endtrans: NS092 - endtrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:29.134 20713,0 Cns_srv_endtrans: returns 0

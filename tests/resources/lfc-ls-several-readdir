@@ -1,0 +1,12 @@
+07/09 04:05:50.077 20713,1 Cns_srv_lstat: NS092 - lstat request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from 131.154.200.195
+07/09 04:05:50.077 20713,1 Cns_srv_lstat: NS098 - lstat 0 /grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357
+07/09 04:05:50.079 20713,1 Cns_srv_lstat: returns 0
+07/09 04:05:50.356 20713,0 Cns_srv_opendir: NS092 - opendir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from 131.154.200.195
+07/09 04:05:50.356 20713,0 Cns_srv_opendir: NS098 - opendir /grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357 
+07/09 04:05:50.358 20713,0 Cns_srv_opendir: returns 0
+07/09 04:05:50.400 20713,0 Cns_srv_readdir: NS092 - readdir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from 131.154.200.195
+07/09 04:05:50.401 20713,0 Cns_srv_readdir: returns 0
+07/09 04:05:50.442 20713,0 Cns_srv_readdir: NS092 - readdir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from 131.154.200.195
+07/09 04:05:50.444 20713,0 Cns_srv_readdir: returns 0
+07/09 04:05:50.535 20713,0 Cns_srv_readdir: NS092 - closedir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from 131.154.200.195
+07/09 04:05:50.536 20713,0 Cns_srv_readdir: returns 0

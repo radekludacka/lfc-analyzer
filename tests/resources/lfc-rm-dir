@@ -1,0 +1,22 @@
+07/10 19:28:38.919 20713,5 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:38.919 20713,5 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/ludacka2
+07/10 19:28:38.920 20713,5 Cns_srv_lstat: returns 0
+07/10 19:28:38.989 20713,1 Cns_srv_access: NS092 - access request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:38.989 20713,1 Cns_srv_access: NS098 - access 2 /grid/voce/ludacka2
+07/10 19:28:38.990 20713,1 Cns_srv_access: returns 0
+07/10 19:28:39.054 20713,1 Cns_srv_opendir: NS092 - opendir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:39.054 20713,1 Cns_srv_opendir: NS098 - opendir /grid/voce/ludacka2 
+07/10 19:28:39.056 20713,1 Cns_srv_opendir: returns 0
+07/10 19:28:40.160 20713,4 Cns_srv_chdir: NS092 - chdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:40.160 20713,4 Cns_srv_chdir: NS098 - chdir /grid/voce/ludacka2
+07/10 19:28:40.163 20713,4 Cns_srv_chdir: returns 0
+07/10 19:28:40.163 20713,1 Cns_srv_readdir: NS092 - readdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:40.165 20713,1 Cns_srv_readdir: returns 0
+07/10 19:28:40.232 20713,1 Cns_srv_readdir: NS092 - closedir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:40.233 20713,1 Cns_srv_readdir: returns 0
+07/10 19:28:41.351 20713,1 Cns_srv_chdir: NS092 - chdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:41.351 20713,1 Cns_srv_chdir: NS098 - chdir ..
+07/10 19:28:41.352 20713,1 Cns_srv_chdir: returns 0
+07/10 19:28:41.420 20713,1 Cns_srv_rmdir: NS092 - rmdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:41.420 20713,1 Cns_srv_rmdir: NS098 - rmdir /grid/voce/ludacka2
+07/10 19:28:41.426 20713,1 Cns_srv_rmdir: returns 0

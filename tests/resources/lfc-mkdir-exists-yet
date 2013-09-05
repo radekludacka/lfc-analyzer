@@ -1,0 +1,3 @@
+07/17 13:43:58.752 20713,8 Cns_srv_mkdir: NS092 - mkdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 13:43:58.752 20713,8 Cns_srv_mkdir: NS098 - mkdir /grid/voce/ludacka  777 22
+07/17 13:43:58.755 20713,8 Cns_srv_mkdir: returns 17

@@ -1,0 +1,7 @@
+07/26 16:35:46.739 20713,0 Cns_srv_opendir: NS092 - opendir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (613,101) from wario.univ-lille1.fr
+07/26 16:35:46.739 20713,0 Cns_srv_opendir: NS098 - opendir /grid/voce/ludacka/dir3 
+07/26 16:35:46.742 20713,0 Cns_srv_opendir: returns 0
+07/26 16:35:46.781 20713,0 Cns_srv_readdir: NS092 - readdir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (613,101) from wario.univ-lille1.fr
+07/26 16:35:46.784 20713,0 Cns_srv_readdir: returns 0
+07/26 16:35:46.829 20713,0 Cns_srv_readdir: NS092 - closedir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (613,101) from wario.univ-lille1.fr
+07/26 16:35:46.830 20713,0 Cns_srv_readdir: returns 0

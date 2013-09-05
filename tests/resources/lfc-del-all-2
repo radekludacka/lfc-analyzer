@@ -1,0 +1,42 @@
+11/30 13:29:22.362 16392,2 Cns_srv_startsess: NS092 - startsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:22.362 16392,2 Cns_srv_startsess: NS098 - startsess (1.13.19-0.el5)
+11/30 13:29:22.362 16392,2 Cns_srv_startsess: returns 0
+11/30 13:29:22.417 16392,2 Cns_srv_statg: NS092 - statg request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:22.417 16392,2 Cns_srv_statg: NS098 - statg /grid/auger/prod/GenDisProtonQGSjetII_gr218/en20.500/th0.65/033630/DAT336303.small.tar 
+11/30 13:29:22.424 16392,2 Cns_srv_statg: returns 0
+11/30 13:29:22.530 16392,2 Cns_srv_getreplica: NS092 - getreplica request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:22.530 16392,2 Cns_srv_getreplica: NS098 - getreplica /grid/auger/prod/GenDisProtonQGSjetII_gr218/en20.500/th0.65/033630/DAT336303.small.tar 804e2ab6-eb98-4eaa-a1aa-ce18599ad82a
+11/30 13:29:22.536 16392,2 Cns_srv_getreplica: returns 0
+11/30 13:29:22.651 16392,2 Cns_srv_endsess: NS092 - endsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:22.651 16392,2 Cns_srv_endsess: returns 0
+11/30 13:29:23.226 16392,2 Cns_srv_startsess: NS092 - startsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:23.226 16392,2 Cns_srv_startsess: NS098 - startsess (1.13.19-0.el5)
+11/30 13:29:23.226 16392,2 Cns_srv_startsess: returns 0
+11/30 13:29:23.286 16392,2 Cns_srv_statg: NS092 - statg request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:23.286 16392,2 Cns_srv_statg: NS098 - statg /grid/auger/prod/GenDisProtonQGSjetII_gr218/en20.500/th0.65/033630/DAT336303.small.tar 
+11/30 13:29:23.298 16392,2 Cns_srv_statg: returns 0
+11/30 13:29:23.405 16392,2 Cns_srv_getreplica: NS092 - getreplica request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:23.405 16392,2 Cns_srv_getreplica: NS098 - getreplica /grid/auger/prod/GenDisProtonQGSjetII_gr218/en20.500/th0.65/033630/DAT336303.small.tar 804e2ab6-eb98-4eaa-a1aa-ce18599ad82a
+11/30 13:29:23.409 16392,2 Cns_srv_getreplica: returns 0
+11/30 13:29:23.518 16392,2 Cns_srv_endsess: NS092 - endsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:23.518 16392,2 Cns_srv_endsess: returns 0
+11/30 13:29:24.099 16392,2 Cns_srv_access: NS092 - access request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:24.099 16392,2 Cns_srv_access: NS098 - access 6 /grid/auger/prod/GenDisProtonQGSjetII_gr218/en20.500/th0.65/033630/DAT336303.small.tar
+11/30 13:29:24.103 16392,2 Cns_srv_access: returns 0
+11/30 13:29:29.703 16392,3 Cns_srv_startsess: NS092 - startsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:29.703 16392,3 Cns_srv_startsess: NS098 - startsess ()
+11/30 13:29:29.703 16392,3 Cns_srv_startsess: returns 0
+11/30 13:29:29.754 16392,3 Cns_srv_delreplica: NS092 - delreplica request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:29.754 16392,3 Cns_srv_delreplica: NS098 - delreplica 804e2ab6-eb98-4eaa-a1aa-ce18599ad82a srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/auger//grid/auger/prod/GenDisProtonQGSjetII_gr218/en20.500/th0.65/033630/DAT336303.small.tar
+11/30 13:29:29.765 16392,3 Cns_srv_delreplica: returns 0
+11/30 13:29:29.900 16392,3 Cns_srv_getreplica: NS092 - getreplica request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:29.900 16392,3 Cns_srv_getreplica: NS098 - getreplica  804e2ab6-eb98-4eaa-a1aa-ce18599ad82a
+11/30 13:29:29.901 16392,3 Cns_srv_getreplica: returns 0
+11/30 13:29:30.006 16392,3 Cns_srv_getlinks: NS092 - getlinks request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:30.006 16392,3 Cns_srv_getlinks: NS098 - getlinks  804e2ab6-eb98-4eaa-a1aa-ce18599ad82a
+11/30 13:29:30.020 16392,3 Cns_srv_getlinks: returns 0
+11/30 13:29:30.129 16392,3 Cns_srv_unlink: NS092 - unlink request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:30.129 16392,3 Cns_srv_unlink: NS098 - unlink /grid/auger/prod/GenDisProtonQGSjetII_gr218/en20.500/th0.65/033630/DAT336303.small.tar
+11/30 13:29:30.151 16392,3 Cns_srv_unlink: returns 0
+11/30 13:29:30.238 16392,3 Cns_srv_endsess: NS092 - endsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from cream-cafpegrid.ugr.es
+11/30 13:29:30.238 16392,3 Cns_srv_endsess: returns 0

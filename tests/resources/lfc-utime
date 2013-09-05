@@ -1,0 +1,3 @@
+11/30 07:45:39.237 16392,0 Cns_srv_utime: NS092 - utime request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of the Academy of Sciences of the CR/CN=Jan Svec (557,120,138,143) from nagios.egee.cesnet.cz
+11/30 07:45:39.237 16392,0 Cns_srv_utime: NS098 - utime /grid/ops/file-lfc-probe-lfc1.egee.cesnet.cz 0
+11/30 07:45:39.240 16392,0 Cns_srv_utime: returns 0

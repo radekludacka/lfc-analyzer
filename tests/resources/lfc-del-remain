@@ -1,0 +1,34 @@
+07/18 15:46:24.732 20713,1 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.732 20713,1 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/18 15:46:24.732 20713,1 Cns_srv_startsess: returns 0
+07/18 15:46:24.733 20713,1 Cns_srv_statr: NS092 - statr request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.733 20713,1 Cns_srv_statr: NS098 - statr srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-18/fileda937a3c-4112-4d56-a34e-9866967cfe44
+07/18 15:46:24.734 20713,1 Cns_srv_statr: returns 0
+07/18 15:46:24.773 20713,1 Cns_srv_getlinks: NS092 - getlinks request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.773 20713,1 Cns_srv_getlinks: NS098 - getlinks  08043bf1-37e7-4f53-b642-cb474db58f90
+07/18 15:46:24.779 20713,1 Cns_srv_getlinks: returns 0
+07/18 15:46:24.815 20713,1 Cns_srv_access: NS092 - access request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.815 20713,1 Cns_srv_access: NS098 - access 6 /grid/voce/ludacka/text_file.txt
+07/18 15:46:24.817 20713,1 Cns_srv_access: returns 0
+07/18 15:46:24.818 20713,1 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.818 20713,1 Cns_srv_endsess: returns 0
+07/18 15:46:27.326 20713,2 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.326 20713,2 Cns_srv_startsess: NS098 - startsess ()
+07/18 15:46:27.326 20713,2 Cns_srv_startsess: returns 0
+07/18 15:46:27.326 20713,2 Cns_srv_delreplica: NS092 - delreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.326 20713,2 Cns_srv_delreplica: NS098 - delreplica 08043bf1-37e7-4f53-b642-cb474db58f90 srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-18/fileda937a3c-4112-4d56-a34e-9866967cfe44
+07/18 15:46:27.329 20713,2 Cns_srv_delreplica: returns 0
+07/18 15:46:27.366 20713,2 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.366 20713,2 Cns_srv_getreplica: NS098 - getreplica  08043bf1-37e7-4f53-b642-cb474db58f90
+07/18 15:46:27.367 20713,2 Cns_srv_getreplica: returns 0
+07/18 15:46:27.405 20713,2 Cns_srv_getlinks: NS092 - getlinks request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.406 20713,2 Cns_srv_getlinks: NS098 - getlinks  08043bf1-37e7-4f53-b642-cb474db58f90
+07/18 15:46:27.409 20713,2 Cns_srv_getlinks: returns 0
+07/18 15:46:27.446 20713,2 Cns_srv_unlink: NS092 - unlink request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.446 20713,2 Cns_srv_unlink: NS098 - unlink /grid/voce/ludacka/text_file.txt
+07/18 15:46:27.455 20713,2 Cns_srv_unlink: returns 0
+07/18 15:46:27.528 20713,2 Cns_srv_unlink: NS092 - unlink request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.528 20713,2 Cns_srv_unlink: NS098 - unlink /grid/voce/ludacka/text_file8.txt
+07/18 15:46:27.537 20713,2 Cns_srv_unlink: returns 0
+07/18 15:46:27.577 20713,2 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.577 20713,2 Cns_srv_endsess: returns 0

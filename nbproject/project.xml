@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.cnd.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>LFC_analyzer</name>
+            <c-extensions/>
+            <cpp-extensions>cpp</cpp-extensions>
+            <header-extensions>h</header-extensions>
+            <sourceEncoding>UTF-8</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/filter</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/LFCLSstates</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfcls</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfs_ls_states</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfc_cr_states</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/parser2</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>Debug</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>Release</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>Profiling</name>
+                    <type>1</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>

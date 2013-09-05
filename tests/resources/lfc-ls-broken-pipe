@@ -1,0 +1,17 @@
+07/18 12:55:28.768 20713,4 Cns_srv_lstat: NS092 - lstat request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from wario.univ-lille1.fr
+07/18 12:55:28.768 20713,4 Cns_srv_lstat: NS098 - lstat 0 /grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en18.000/th0.65/057686
+07/18 12:55:28.771 20713,4 Cns_srv_lstat: returns 0
+07/18 12:55:29.470 20713,3 Cns_srv_opendir: NS092 - opendir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from wario.univ-lille1.fr
+07/18 12:55:29.470 20713,3 Cns_srv_opendir: NS098 - opendir /grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en18.000/th0.65/057686 
+07/18 12:55:29.475 20713,3 Cns_srv_opendir: returns 0
+07/18 12:55:29.534 20713,3 Cns_srv_readdir: NS092 - readdir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from wario.univ-lille1.fr
+07/18 12:55:29.534 20713,3 Cns_srv_readdir: returns 0
+07/18 12:55:29.603 20713,3 Cns_srv_readdir: NS092 - readdir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from wario.univ-lille1.fr
+07/18 12:55:29.603 20713,3 Cns_srv_readdir: returns 0
+07/18 12:55:30.005 20713,3 Cns_srv_readdir: NS092 - readdir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from wario.univ-lille1.fr
+07/18 12:55:30.006 20713,3 Cns_srv_readdir: returns 0
+07/18 12:57:32.210 20713,3 Cns_serv: NS002 - netread error : Connection reset by peer
+07/18 12:57:32.210 20713,3 Cns_srv_readdir: NS092 - closedir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from wario.univ-lille1.fr
+07/18 12:57:32.212 20713,3 sendrep: NS002 - send error : Broken pipe
+07/18 12:57:32.212 20713,3 Cns_srv_readdir: returns 0
+07/18 12:57:32.297 20713,3 sendrep: NS002 - send error : Broken pipe

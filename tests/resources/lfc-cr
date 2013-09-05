@@ -1,0 +1,24 @@
+07/10 14:25:22.109 20713,1 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:22.109 20713,1 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/ludacka/text_file2.txt
+07/10 14:25:22.111 20713,1 Cns_srv_lstat: returns 2
+07/10 14:25:29.121 20713,3 Cns_srv_starttrans: NS092 - starttrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.121 20713,3 Cns_srv_starttrans: NS098 - starttrans (1.11.16-3)
+07/10 14:25:29.121 20713,3 Cns_srv_starttrans: returns 0
+07/10 14:25:29.121 20713,3 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.121 20713,3 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file2.txt 8da67819-67e1-494a-814f-ee9d8504f2f0
+07/10 14:25:29.123 20713,3 Cns_srv_statg: returns 2
+07/10 14:25:29.124 20713,3 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.124 20713,3 Cns_srv_statg: NS098 - statg /grid/voce/ludacka 
+07/10 14:25:29.125 20713,3 Cns_srv_statg: returns 0
+07/10 14:25:29.162 20713,3 Cns_srv_creat: NS092 - creat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.162 20713,3 Cns_srv_creat: NS098 - creat /grid/voce/ludacka/text_file2.txt 8da67819-67e1-494a-814f-ee9d8504f2f0 664 22
+07/10 14:25:29.173 20713,3 Cns_srv_creat: file 37393414 created
+07/10 14:25:29.173 20713,3 Cns_srv_creat: returns 0
+07/10 14:25:29.210 20713,3 Cns_srv_setfsizeg: NS092 - setfsizeg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.210 20713,3 Cns_srv_setfsizeg: NS098 - setfsizeg 8da67819-67e1-494a-814f-ee9d8504f2f0 19
+07/10 14:25:29.213 20713,3 Cns_srv_setfsizeg: returns 0
+07/10 14:25:29.213 20713,3 Cns_srv_addreplica: NS092 - addreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.213 20713,3 Cns_srv_addreplica: NS098 - addreplica 8da67819-67e1-494a-814f-ee9d8504f2f0 dpm1.egee.cesnet.cz srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-10/file2a59eb51-b0ca-4dd4-9b0a-bfe97f442b85
+07/10 14:25:29.216 20713,3 Cns_srv_addreplica: returns 0
+07/10 14:25:29.217 20713,3 Cns_srv_endtrans: NS092 - endtrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.284 20713,3 Cns_srv_endtrans: returns 0

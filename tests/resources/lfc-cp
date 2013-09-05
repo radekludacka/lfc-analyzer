@@ -1,0 +1,11 @@
+07/09 16:12:11.803 20713,3 Cns_srv_startsess: NS092 - startsess request by /DC=es/DC=irisgrid/O=ugr/CN=mdserrano (574,117,104) from wn37.m3pec.u-bordeaux1.fr
+07/09 16:12:11.803 20713,3 Cns_srv_startsess: NS098 - startsess (1.13.19-0.el5)
+07/09 16:12:11.803 20713,3 Cns_srv_startsess: returns 0
+07/09 16:12:11.830 20713,3 Cns_srv_statg: NS092 - statg request by /DC=es/DC=irisgrid/O=ugr/CN=mdserrano (574,117,104) from wn37.m3pec.u-bordeaux1.fr
+07/09 16:12:11.830 20713,3 Cns_srv_statg: NS098 - statg /grid/auger/prod/GenDisIronEpos_gr248/en20.000/th0.65/057105/DAT571058.tar.gz 
+07/09 16:12:11.832 20713,3 Cns_srv_statg: returns 0
+07/09 16:12:11.885 20713,3 Cns_srv_getreplica: NS092 - getreplica request by /DC=es/DC=irisgrid/O=ugr/CN=mdserrano (574,117,104) from wn37.m3pec.u-bordeaux1.fr
+07/09 16:12:11.885 20713,3 Cns_srv_getreplica: NS098 - getreplica /grid/auger/prod/GenDisIronEpos_gr248/en20.000/th0.65/057105/DAT571058.tar.gz 5741f1de-41d7-41c2-af1d-8ce5e2468b8b
+07/09 16:12:11.888 20713,3 Cns_srv_getreplica: returns 0
+07/09 16:12:11.941 20713,3 Cns_srv_endsess: NS092 - endsess request by /DC=es/DC=irisgrid/O=ugr/CN=mdserrano (574,117,104) from wn37.m3pec.u-bordeaux1.fr
+07/09 16:12:11.941 20713,3 Cns_srv_endsess: returns 0

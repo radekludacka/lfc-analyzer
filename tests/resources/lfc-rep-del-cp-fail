@@ -1,0 +1,11 @@
+07/09 13:00:40.692 20713,2 Cns_srv_startsess: NS092 - startsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (574,117,104) from wario.univ-lille1.fr
+07/09 13:00:40.692 20713,2 Cns_srv_startsess: NS098 - startsess (1.13.19-0.el5)
+07/09 13:00:40.692 20713,2 Cns_srv_startsess: returns 0
+07/09 13:00:40.718 20713,2 Cns_srv_statg: NS092 - statg request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (574,117,104) from wario.univ-lille1.fr
+07/09 13:00:40.718 20713,2 Cns_srv_statg: NS098 - statg /grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357 
+07/09 13:00:40.724 20713,2 Cns_srv_statg: returns 2
+07/09 13:00:40.733 20713,4 Cns_srv_lstat: NS092 - lstat request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (574,117,104) from wn138.bordeaux.inra.fr
+07/09 13:00:40.733 20713,4 Cns_srv_lstat: NS098 - lstat 0 /grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357
+07/09 13:00:40.735 20713,4 Cns_srv_lstat: returns 2
+07/09 13:00:40.750 20713,2 Cns_srv_endsess: NS092 - endsess request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (574,117,104) from wario.univ-lille1.fr
+07/09 13:00:40.750 20713,2 Cns_srv_endsess: returns 0
