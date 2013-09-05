@@ -33,9 +33,10 @@ using namespace std;
 
 LFCCommandName CommandConverter(string commandName);
 bool FailedConverter(string failedValue);
+void PrintHelp();
 
 int main(int argc, char** argv) {
-    
+
     printf("Welcome in LFC analyzer.\n");
 
     int file = -1;
@@ -62,8 +63,8 @@ int main(int argc, char** argv) {
         cout << "Enter log file path please" << endl;
         return -1;
     }
-    
-    const char* const short_options = "fsucrd:g:i:p:o:l:";
+
+    const char* const short_options = "hfsucrd:g:i:p:o:l:";
     static struct option long_options[] = {
         {"site", 1, 0, 'd'},
         {"user", 1, 0, 'g'},
@@ -95,6 +96,9 @@ int main(int argc, char** argv) {
             case 'r':
                 resultType = ++index;
                 break;
+            case 'h':
+                PrintHelp();
+                return 0;
 
             case 'd':
                 filteredSite = optarg;
@@ -115,7 +119,7 @@ int main(int argc, char** argv) {
                 filteredSuccess = optarg;
                 break;
             case '?':
-                fprintf(stderr, "Unknown option character `\\x%x'.\n", optopt);
+                fprintf(stderr, "Unknown option character `\\s%s'.\n", optopt);
                 return 1;
             case -1:
                 break;
@@ -123,14 +127,14 @@ int main(int argc, char** argv) {
                 abort();
         }
     } while (next_option != -1);
-    
+
     cout << "Analyzed log file is: " << filePath << endl;
     cout << "Analyzing could take several minutes, wait please." << endl;
 
-//    printf("f = %d, u = %d, s = %d, c = %d, r = %d\n", file, user, site, command, resultType);
-//    printf("logfile = %s\n", filePath.c_str());
-//    printf("site = %s, user = %s, file = %s, command = %s, success = %s\n",
-//            filteredSite, filteredUser, filteredFile, filteredCommand, filteredSuccess);
+    //    printf("f = %d, u = %d, s = %d, c = %d, r = %d\n", file, user, site, command, resultType);
+    //    printf("logfile = %s\n", filePath.c_str());
+    //    printf("site = %s, user = %s, file = %s, command = %s, success = %s\n",
+    //            filteredSite, filteredUser, filteredFile, filteredCommand, filteredSuccess);
 
     Parser * parser = new Parser();
     LogTable * logTable = parser->parse(filePath);
@@ -240,3 +244,16 @@ LFCCommandName CommandConverter(string commandName) {
     }
 }
 
+void PrintHelp() {
+    cout << " -f: Destination file that have been accessed by LFC command." << endl;
+    cout << " -s: User interface where LFC command have been invoked." << endl;
+    cout << " -u: User name that invoked LFC command." << endl;
+    cout << " -c: LFC command that have been invoked." << endl;
+    cout << " -r: Result (Success) of invoked LFC command." << endl;
+
+    cout << " -d UI : filter by user interface" << endl;
+    cout << " -g USER : filter by user" << endl;
+    cout << " -l FILE : filter by file name" << endl;
+    cout << " -p COMMAND : filter by command name (lfc-ls, lcg-cr, lcg-rep, etc.)" << endl;
+    cout << " -o ( true | false ) : filter by command result" << endl;
+}
