@@ -17,6 +17,7 @@
                 <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfs_ls_states</sourceRootElem>
                 <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfc_cr_states</sourceRootElem>
                 <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/parser2</sourceRootElem>
+                <sourceRootElem>../../LFC_analyzer/documentation</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="documentation"
+                   displayName="documentation"
+                   projectFiles="true">
+      <itemPath>../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf</itemPath>
+    </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
@@ -222,6 +227,7 @@
     <Elem>/home/radek/NetBeansProjects/LFC_analyzer/lfs_ls_states</Elem>
     <Elem>/home/radek/NetBeansProjects/LFC_analyzer/lfc_cr_states</Elem>
     <Elem>/home/radek/NetBeansProjects/LFC_analyzer/parser2</Elem>
+    <Elem>../../LFC_analyzer/documentation</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -247,6 +253,11 @@
           <output>${TESTDIR}/TestFiles/f5</output>
         </linkerTool>
       </compileType>
+      <item path="../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.cpp"
             ex="false"
             tool="1"
@@ -898,6 +909,11 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.cpp"
             ex="false"
             tool="1"
@@ -1543,6 +1559,11 @@
           <commandLine>-pg</commandLine>
         </linkerTool>
       </compileType>
+      <item path="../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.cpp"
             ex="false"
             tool="1"
