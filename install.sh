@@ -1,6 +1,6 @@
 #! /bin/bash
 
-make all
+make CONG=Release
 mkdir bin
 cd bin
 cp ../dist/Release/GNU-Linux-x86/lfc-analyzer ./
