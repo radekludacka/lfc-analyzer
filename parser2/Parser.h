@@ -111,6 +111,8 @@ public:
             if (!row->GetParsed()) {
                 if (objectMap.find(row->GetFunction()) != objectMap.end()) {
                     commandParser = objectMap.at(row->GetFunction());
+                    
+                    // important is to keep the same additional variable otherwise reallocation take much time
                     std::vector<Row *> subRows(rows->begin() + index, rows->begin() + addition);
                     try {
                         Item * item = commandParser->parse(subRows);
