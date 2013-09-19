@@ -4,7 +4,7 @@
     <logicalFolder name="documentation"
                    displayName="documentation"
                    projectFiles="true">
-      <itemPath>documentation/lfc_log_analyzer-documentation.pdf</itemPath>
+      <itemPath>../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -28,34 +28,34 @@
         </logicalFolder>
         <logicalFolder name="states" displayName="states" projectFiles="true">
           <logicalFolder name="f3" displayName="lfc_aa_states" projectFiles="true">
-            <itemPath>analyzer2/states/lfc_aa_states/StartTransStateAA.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_aa_states/StartTransStateAA.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.h</itemPath>
           </logicalFolder>
           <logicalFolder name="lfc_cr_states"
                          displayName="lfc_cr_states"
                          projectFiles="true">
-            <itemPath>analyzer2/states/lfc_cr_states/StartTransState.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_cr_states/StartTransState.h</itemPath>
-            <itemPath>analyzer2/states/lfc_cr_states/StartTransState2.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_cr_states/StartTransState2.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="lfc_del_states" projectFiles="true">
-            <itemPath>analyzer2/states/lfc_del_states/DelAll.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_del_states/DelAll.h</itemPath>
-            <itemPath>analyzer2/states/lfc_del_states/DelRemain.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_del_states/DelRemain.h</itemPath>
-            <itemPath>analyzer2/states/lfc_del_states/DelReplica.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_del_states/DelReplica.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="lfc_rep_states" projectFiles="true">
-            <itemPath>analyzer2/states/lfc_rep_states/BadReplicaState.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_rep_states/BadReplicaState.h</itemPath>
-            <itemPath>analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f4" displayName="lfc_rm_dir" projectFiles="true">
-            <itemPath>analyzer2/states/lfc_rm_dir/RmDirState.cpp</itemPath>
-            <itemPath>analyzer2/states/lfc_rm_dir/RmDirState.h</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.cpp</itemPath>
+            <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.h</itemPath>
           </logicalFolder>
           <logicalFolder name="lfs_ls_states"
                          displayName="lfs_ls_states"
@@ -63,57 +63,57 @@
             <itemPath>analyzer2/states/lfs_ls_states/OpenDirState.cpp</itemPath>
             <itemPath>analyzer2/states/lfs_ls_states/OpenDirState.h</itemPath>
           </logicalFolder>
-          <itemPath>analyzer2/states/LstatState.cpp</itemPath>
-          <itemPath>analyzer2/states/LstatState.h</itemPath>
-          <itemPath>analyzer2/states/MkDirState.cpp</itemPath>
-          <itemPath>analyzer2/states/MkDirState.h</itemPath>
-          <itemPath>analyzer2/states/PingDBState.cpp</itemPath>
-          <itemPath>analyzer2/states/PingDBState.h</itemPath>
-          <itemPath>analyzer2/states/ReplicaCpDelRepState.cpp</itemPath>
-          <itemPath>analyzer2/states/ReplicaCpDelRepState.h</itemPath>
-          <itemPath>analyzer2/states/ReplicaState.cpp</itemPath>
-          <itemPath>analyzer2/states/ReplicaState.h</itemPath>
-          <itemPath>analyzer2/states/ServState.cpp</itemPath>
-          <itemPath>analyzer2/states/ServState.h</itemPath>
-          <itemPath>analyzer2/states/StartSessState.cpp</itemPath>
-          <itemPath>analyzer2/states/StartSessState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.h</itemPath>
           <itemPath>analyzer2/states/State.cpp</itemPath>
           <itemPath>analyzer2/states/State.h</itemPath>
-          <itemPath>analyzer2/states/UtimeState.cpp</itemPath>
-          <itemPath>analyzer2/states/UtimeState.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.h</itemPath>
         </logicalFolder>
         <itemPath>analyzer2/Analyzer.cpp</itemPath>
         <itemPath>analyzer2/Analyzer.h</itemPath>
-        <itemPath>analyzer2/Information.cpp</itemPath>
-        <itemPath>analyzer2/Information.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.h</itemPath>
         <itemPath>analyzer2/LfcCommandTable.h</itemPath>
-        <itemPath>analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp</itemPath>
-        <itemPath>analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h</itemPath>
       </logicalFolder>
       <logicalFolder name="filter" displayName="filter" projectFiles="true">
         <logicalFolder name="f2" displayName="sorters" projectFiles="true">
-          <itemPath>filter/sorters/CommandSorter.cpp</itemPath>
-          <itemPath>filter/sorters/CommandSorter.h</itemPath>
-          <itemPath>filter/sorters/FileSorter.cpp</itemPath>
-          <itemPath>filter/sorters/FileSorter.h</itemPath>
-          <itemPath>filter/sorters/SiteSorter.cpp</itemPath>
-          <itemPath>filter/sorters/SiteSorter.h</itemPath>
-          <itemPath>filter/sorters/Sorter.cpp</itemPath>
-          <itemPath>filter/sorters/Sorter.h</itemPath>
-          <itemPath>filter/sorters/SuccessSorter.cpp</itemPath>
-          <itemPath>filter/sorters/SuccessSorter.h</itemPath>
-          <itemPath>filter/sorters/UserSorter.cpp</itemPath>
-          <itemPath>filter/sorters/UserSorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.h</itemPath>
         </logicalFolder>
         <itemPath>filter/Counter.cpp</itemPath>
         <itemPath>filter/Counter.h</itemPath>
-        <itemPath>filter/Filter.cpp</itemPath>
-        <itemPath>filter/Filter.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.h</itemPath>
       </logicalFolder>
       <logicalFolder name="parser2" displayName="parser2" projectFiles="true">
         <itemPath>parser2/AccessParser.h</itemPath>
         <itemPath>parser2/AddReplicaParser.h</itemPath>
-        <itemPath>parser2/ChDirParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/ChDirParser.h</itemPath>
         <itemPath>parser2/Command.h</itemPath>
         <itemPath>parser2/CommandParser.h</itemPath>
         <itemPath>parser2/CreatParser.h</itemPath>
@@ -121,36 +121,36 @@
         <itemPath>parser2/EndSessionParser.h</itemPath>
         <itemPath>parser2/EndTransParser.h</itemPath>
         <itemPath>Functions.h</itemPath>
-        <itemPath>parser2/GetPathParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/GetPathParser.h</itemPath>
         <itemPath>parser2/GetReplicaParser.h</itemPath>
         <itemPath>parser2/GetlinkParser.h</itemPath>
         <itemPath>parser2/LogTable.h</itemPath>
         <itemPath>parser2/LstatParser.h</itemPath>
-        <itemPath>parser2/MkdirParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/MkdirParser.h</itemPath>
         <itemPath>parser2/NullParser.h</itemPath>
         <itemPath>parser2/OpenDirParser.h</itemPath>
         <itemPath>parser2/Parser.h</itemPath>
-        <itemPath>parser2/PingDBParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/PingDBParser.h</itemPath>
         <itemPath>parser2/ReadDirParser.h</itemPath>
-        <itemPath>parser2/RmDirParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/RmDirParser.h</itemPath>
         <itemPath>parser2/Row.h</itemPath>
-        <itemPath>parser2/ServParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/ServParser.h</itemPath>
         <itemPath>parser2/SetfSizegParser.h</itemPath>
         <itemPath>parser2/StartSessionParser.h</itemPath>
         <itemPath>parser2/StartTransactionParser.h</itemPath>
         <itemPath>parser2/StatgParser.h</itemPath>
-        <itemPath>parser2/StatrParser.h</itemPath>
-        <itemPath>parser2/SymlinkParser.h</itemPath>
-        <itemPath>parser2/UTimeParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/StatrParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/SymlinkParser.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/parser2/UTimeParser.h</itemPath>
         <itemPath>parser2/UnlinkParser.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="presenter" projectFiles="true">
-        <itemPath>presenter/Presenter.cpp</itemPath>
-        <itemPath>presenter/Presenter.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.h</itemPath>
       </logicalFolder>
       <itemPath>Item.h</itemPath>
       <itemPath>LogTime.h</itemPath>
-      <itemPath>MockCommands.h</itemPath>
+      <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.h</itemPath>
       <itemPath>MockItems.h</itemPath>
       <itemPath>MockRows.h</itemPath>
       <itemPath>Site.h</itemPath>
@@ -165,21 +165,21 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="analyzer" projectFiles="true">
         <itemPath>analyzer2/LFCCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcAACommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcAACommand.cpp</itemPath>
         <itemPath>analyzer2/LfcCommandTable.cpp</itemPath>
-        <itemPath>analyzer2/LfcCpCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcCpCommand.cpp</itemPath>
         <itemPath>analyzer2/LfcCrCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcDelReplicaCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcLrCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcDelReplicaCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcLrCommand.cpp</itemPath>
         <itemPath>analyzer2/LfcLsCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcMkdirCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcPingDBCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcRepCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcRmDirCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcServCommand.cpp</itemPath>
-        <itemPath>analyzer2/LfcUtimeCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcMkdirCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcPingDBCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRepCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRmDirCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcServCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcUtimeCommand.cpp</itemPath>
       </logicalFolder>
-      <itemPath>MockCommands.cpp</itemPath>
+      <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.cpp</itemPath>
       <itemPath>MockItems.cpp</itemPath>
       <itemPath>MockRows.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -194,9 +194,9 @@
         <itemPath>tests/AnalyzerTest.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Filter" projectFiles="true" kind="TEST">
-        <itemPath>filter/tests/FilterRunner.cpp</itemPath>
-        <itemPath>filter/tests/FilterTest.cpp</itemPath>
-        <itemPath>filter/tests/FilterTest.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterRunner.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Parser" projectFiles="true" kind="TEST">
         <itemPath>tests/ParserRunner.cpp</itemPath>
@@ -207,9 +207,9 @@
                      displayName="Presenter"
                      projectFiles="true"
                      kind="TEST">
-        <itemPath>tests/PresenterRunner.cpp</itemPath>
-        <itemPath>tests/PresenterTests.cpp</itemPath>
-        <itemPath>tests/PresenterTests.h</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterRunner.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -220,14 +220,14 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>filter</Elem>
-    <Elem>LFCLSstates</Elem>
-    <Elem>lfcls</Elem>
-    <Elem>analyzer2</Elem>
-    <Elem>lfs_ls_states</Elem>
-    <Elem>lfc_cr_states</Elem>
-    <Elem>parser2</Elem>
-    <Elem>documentation</Elem>
+    <Elem>/home/radek/NetBeansProjects/LFC_analyzer/filter</Elem>
+    <Elem>/home/radek/NetBeansProjects/LFC_analyzer/LFCLSstates</Elem>
+    <Elem>/home/radek/NetBeansProjects/LFC_analyzer/lfcls</Elem>
+    <Elem>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2</Elem>
+    <Elem>/home/radek/NetBeansProjects/LFC_analyzer/lfs_ls_states</Elem>
+    <Elem>/home/radek/NetBeansProjects/LFC_analyzer/lfc_cr_states</Elem>
+    <Elem>/home/radek/NetBeansProjects/LFC_analyzer/parser2</Elem>
+    <Elem>../../LFC_analyzer/documentation</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -253,462 +253,462 @@
           <output>${TESTDIR}/TestFiles/f5</output>
         </linkerTool>
       </compileType>
-      <item path="documentation/lfc_log_analyzer-documentation.pdf"
+      <item path="../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="MockCommands.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="MockCommands.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/Information.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/Information.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcAACommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcAACommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcCpCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcCpCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcDelReplicaCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcDelReplicaCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcLrCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcLrCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcMkdirCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcMkdirCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcPingDBCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcPingDBCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRepCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRepCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRmDirCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRmDirCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcServCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcServCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcUtimeCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcUtimeCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState2.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState2.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelAll.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelAll.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelRemain.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelRemain.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelReplica.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelReplica.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/BadReplicaState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/BadReplicaState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rm_dir/RmDirState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rm_dir/RmDirState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/Filter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/Filter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/CommandSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/CommandSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/FileSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/FileSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SiteSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SiteSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/Sorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/Sorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SuccessSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SuccessSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/UserSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/UserSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterRunner.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterTest.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterTest.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/ChDirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/ChDirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/GetPathParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/GetPathParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/MkdirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/MkdirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/PingDBParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/PingDBParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/RmDirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/RmDirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/ServParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/ServParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/StatrParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/StatrParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/SymlinkParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/SymlinkParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/UTimeParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/UTimeParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="presenter/Presenter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="presenter/Presenter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="tests/PresenterRunner.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/PresenterTests.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/PresenterTests.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -909,462 +909,462 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="documentation/lfc_log_analyzer-documentation.pdf"
+      <item path="../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="MockCommands.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="MockCommands.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/Information.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/Information.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcAACommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcAACommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcCpCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcCpCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcDelReplicaCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcDelReplicaCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcLrCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcLrCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcMkdirCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcMkdirCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcPingDBCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcPingDBCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRepCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRepCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRmDirCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRmDirCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcServCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcServCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcUtimeCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcUtimeCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState2.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState2.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelAll.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelAll.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelRemain.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelRemain.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelReplica.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelReplica.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/BadReplicaState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/BadReplicaState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rm_dir/RmDirState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rm_dir/RmDirState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/Filter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/Filter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/CommandSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/CommandSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/FileSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/FileSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SiteSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SiteSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/Sorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/Sorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SuccessSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SuccessSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/UserSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/UserSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterRunner.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterTest.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterTest.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/ChDirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/ChDirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/GetPathParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/GetPathParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/MkdirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/MkdirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/PingDBParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/PingDBParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/RmDirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/RmDirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/ServParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/ServParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/StatrParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/StatrParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/SymlinkParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/SymlinkParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/UTimeParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/UTimeParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="presenter/Presenter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="presenter/Presenter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="tests/PresenterRunner.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/PresenterTests.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/PresenterTests.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1559,462 +1559,462 @@
           <commandLine>-pg</commandLine>
         </linkerTool>
       </compileType>
-      <item path="documentation/lfc_log_analyzer-documentation.pdf"
+      <item path="../../LFC_analyzer/documentation/lfc_log_analyzer-documentation.pdf"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="MockCommands.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="MockCommands.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/MockCommands.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/Information.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/Information.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/Information.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcAACommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcAACommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcCpCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcCpCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcDelReplicaCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcDelReplicaCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcLrCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcLrCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcMkdirCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcMkdirCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcPingDBCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcPingDBCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRepCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRepCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRmDirCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcRmDirCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcServCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcServCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcUtimeCommand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/LfcUtimeCommand.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/MkDirState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/PingDBState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaCpDelRepState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ReplicaState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/ServState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/StartSessState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/UtimeState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_aa_states/StartTransStateAA.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState2.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_cr_states/StartTransState2.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_cr_states/StartTransState2.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelAll.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelAll.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelAll.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelRemain.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelRemain.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelRemain.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelReplica.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_del_states/DelReplica.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_del_states/DelReplica.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/BadReplicaState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/BadReplicaState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/BadReplicaState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rep_states/ReplicateStateTransaction.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rm_dir/RmDirState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfc_rm_dir/RmDirState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfc_rm_dir/RmDirState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/lfs_ls_states/OpenDirRecursiveState.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/Filter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/Filter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/Filter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/CommandSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/CommandSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/CommandSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/FileSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/FileSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/FileSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SiteSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SiteSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SiteSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/Sorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/Sorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SuccessSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/SuccessSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/sorters/UserSorter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/sorters/UserSorter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/UserSorter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterRunner.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterTest.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="filter/tests/FilterTest.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/filter/tests/FilterTest.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/ChDirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/ChDirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/GetPathParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/GetPathParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/MkdirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/MkdirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/PingDBParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/PingDBParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/RmDirParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/RmDirParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/ServParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/ServParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/StatrParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/StatrParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/SymlinkParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/SymlinkParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="parser2/UTimeParser.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/parser2/UTimeParser.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="presenter/Presenter.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="presenter/Presenter.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="tests/PresenterRunner.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterRunner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/PresenterTests.cpp"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/PresenterTests.h"
+      <item path="/home/radek/NetBeansProjects/LFC_analyzer/tests/PresenterTests.h"
             ex="false"
             tool="3"
             flavor2="0">
