@@ -147,7 +147,8 @@ int main(int argc, char** argv) {
     LfcCommandTable * commandTable = analyzer->Analyze(logTable);
 
     if (filteredCommand != NULL) {
-        filter->SetSearchedCommand(CommandConverter(filteredCommand));
+        LFCCommandName commandName = CommandConverter(filteredCommand);
+        filter->SetSearchedCommand(commandName);
     }
     if (filteredFile != NULL) {
         filter->SetSearchedFileString(filteredFile);
@@ -162,17 +163,7 @@ int main(int argc, char** argv) {
         filter->SetSearchedUserString(filteredUser);
     }
 
-    //    vector<LfcCommand *> commands = commandTable->GetCommandList();
-    //    std::vector<LfcCommand *>::const_iterator iterator;
-    //    for (iterator = commands->begin(); iterator != commands->end(); ++iterator) {
-    //        LfcCommand * command = *iterator;
-    //        cout << command->
-    //    }
-
     vector<LfcCommand *> * commandList = filter->Filtrate(commandTable->GetCommandList());
-
-    cout << "number of commands: " << commandList->size() << endl;
-    counter->FilterCommands(commandList);
 
     Sorter * previousSorter = NULL;
     Sorter * sorter = NULL;
@@ -194,8 +185,13 @@ int main(int argc, char** argv) {
 
     if (sorter != NULL) {
         commandList = sorter->Sort(commandList);
+        cout << "number of filtered commands: " << commandList->size() << endl;
+        counter->FilterCommands(commandList);
         Presenter * presenter = new Presenter();
         presenter->Print(commandList, file, user, site, command, resultType);
+    } else {
+        cout << "number of commands: " << commandList->size() << endl;
+        counter->FilterCommands(commandList);
     }
 
     delete parser;
@@ -214,29 +210,29 @@ bool FailedConverter(string failedValue) {
 }
 
 LFCCommandName CommandConverter(string commandName) {
-    if (commandName.compare("lfc-ls")) {
+    if (commandName.compare("lfc-ls") == 0) {
         return LFC_LS;
-    } else if (commandName.compare("lcg-cr")) {
+    } else if (commandName.compare("lcg-cr") == 0) {
         return LCG_CR;
-    } else if (commandName.compare("lcg-rep")) {
+    } else if (commandName.compare("lcg-rep") == 0) {
         return LCG_REP;
-    } else if (commandName.compare("lfc-mkdir")) {
+    } else if (commandName.compare("lfc-mkdir") == 0) {
         return LFC_MKDIR;
-    } else if (commandName.compare("lcg-cp")) {
+    } else if (commandName.compare("lcg-cp") == 0) {
         return LCG_CP;
-    } else if (commandName.compare("lcg-del")) {
+    } else if (commandName.compare("lcg-del") == 0) {
         return LCG_DEL;
-    } else if (commandName.compare("srv-err")) {
+    } else if (commandName.compare("srv-err") == 0) {
         return LCG_NONE;
-    } else if (commandName.compare("lcg-utime")) {
+    } else if (commandName.compare("lcg-utime") == 0) {
         return LCG_UTIME;
-    } else if (commandName.compare("lcg-pingdb")) {
+    } else if (commandName.compare("lcg-pingdb") == 0) {
         return LCG_PINGDB;
-    } else if (commandName.compare("lcg-lr")) {
+    } else if (commandName.compare("lcg-lr") == 0) {
         return LCG_LR;
-    } else if (commandName.compare("lcg-aa")) {
+    } else if (commandName.compare("lcg-aa") == 0) {
         return LCG_AA;
-    } else if (commandName.compare("lcg-rm")) {
+    } else if (commandName.compare("lcg-rm") == 0) {
         return LCG_RM;
     } else {
         string exception = "command " + commandName + " is not allowed";

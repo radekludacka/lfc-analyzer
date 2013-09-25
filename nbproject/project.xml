@@ -10,14 +10,14 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/filter</sourceRootElem>
-                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/LFCLSstates</sourceRootElem>
-                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfcls</sourceRootElem>
-                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/analyzer2</sourceRootElem>
-                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfs_ls_states</sourceRootElem>
-                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/lfc_cr_states</sourceRootElem>
-                <sourceRootElem>/home/radek/NetBeansProjects/LFC_analyzer/parser2</sourceRootElem>
-                <sourceRootElem>../../LFC_analyzer/documentation</sourceRootElem>
+                <sourceRootElem>filter</sourceRootElem>
+                <sourceRootElem>LFCLSstates</sourceRootElem>
+                <sourceRootElem>lfcls</sourceRootElem>
+                <sourceRootElem>analyzer2</sourceRootElem>
+                <sourceRootElem>lfs_ls_states</sourceRootElem>
+                <sourceRootElem>lfc_cr_states</sourceRootElem>
+                <sourceRootElem>parser2</sourceRootElem>
+                <sourceRootElem>documentation</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

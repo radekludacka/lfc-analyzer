@@ -67,7 +67,7 @@ public:
             Row * row = this->parseRow(sLine);
             rows->push_back(row);
             //            3667763
-//            if (mod++ == 100000) {
+//            if (mod++ == 10000) {
 //                break;
 //            }
         }

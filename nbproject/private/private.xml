@@ -2,26 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
         <activeConfTypeElem>1</activeConfTypeElem>
-        <activeConfIndexElem>0</activeConfIndexElem>
+        <activeConfIndexElem>1</activeConfIndexElem>
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2/Parser.h</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/main.cpp</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2/LogTable.h</file>
-            <file>file:/home/radek/NetBeansProjects/LFC_analyzer/parser2/MkdirParser.h</file>
-            <file>file:/home/radek/NetBeansProjects/LFC_analyzer/presenter/Presenter.cpp</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2/CommandParser.h</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/Analyzer.cpp</file>
-            <file>file:/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/Sorter.h</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/State.h</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2/Row.h</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/Analyzer.h</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/Item.h</file>
-            <file>file:/home/radek/NetBeansProjects/LFC_analyzer/filter/sorters/SuccessSorter.cpp</file>
-            <file>file:/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.cpp</file>
-            <file>file:/home/radek/NetBeansProjects/LFC_analyzer/analyzer2/states/LstatState.h</file>
         </group>
     </open-files>
 </project-private>

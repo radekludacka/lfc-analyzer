@@ -30,25 +30,25 @@ vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands) {
             if (std::string::npos == command->GetFile().find(filteredValueFile)) {
                 continue;
             }
-        } 
+        }
         if (filterSite) {
             string siteName = command->GetSite()->GetName();
             if (std::string::npos == siteName.find(filteredValueSite)) {
                 continue;
             }
-        } 
+        }
         if (filterCommand) {
             LFCCommandName commandName = command->GetName();
             if (commandName != filteredValueCommand) {
                 continue;
-            }
-        } 
+            } 
+        }
         if (filterSuccessValue) {
             bool successValue = command->IsFailed();
             if (successValue != filteredValueSuccess) {
                 continue;
             }
-        } 
+        }
         if (filterUser) {
             string userName = command->GetUser()->GetName();
             if (std::string::npos == userName.find(filteredValueUser)) {
@@ -65,24 +65,29 @@ vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands) {
 void Filter::SetSearchedCommand(LFCCommandName commandName) {
     filterCommand = true;
     filteredValueCommand = commandName;
+//    cout << "filter c " << filteredValueCommand << endl;
 }
 
 void Filter::SetSearchedFileString(string pattern) {
     filterFile = true;
     filteredValueFile = pattern;
+//    cout << "filter f " << filteredValueFile << endl;
 }
 
 void Filter::SetSearchedSiteString(string pattern) {
     filterSite = true;
     filteredValueSite = pattern;
+//    cout << "filter s " << filteredValueSite << endl;
 }
 
 void Filter::SetSearchedSuccessValue(bool value) {
     filterSuccessValue = true;
     filteredValueSuccess = value;
+//    cout << "filter o " << filteredValueSuccess << endl;
 }
 
 void Filter::SetSearchedUserString(string pattern) {
     filterUser = true;
     filteredValueUser = pattern;
+//    cout << "filter u " << filteredValueUser << endl;
 }

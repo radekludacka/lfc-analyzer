@@ -253,160 +253,105 @@
           <output>${TESTDIR}/TestFiles/f5</output>
         </linkerTool>
       </compileType>
-      <item path="documentation/lfc_log_analyzer-documentation.pdf"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="Functions.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MockCommands.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="Item.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MockCommands.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="LogTime.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/Information.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockCommands.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/Information.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockCommands.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockItems.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockItems.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockRows.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockRows.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="Site.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="User.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/Analyzer.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/Analyzer.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/CommandName.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/Information.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LFCCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcAACommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcAACommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCommandTable.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCommandTable.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCpCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCpCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCrCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCrCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcDelReplicaCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcDelReplicaCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcLrCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcLrCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcLsCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcLsCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcMkdirCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcMkdirCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcPingDBCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcPingDBCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRepCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRepCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRmDirCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRmDirCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcServCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcServCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcUtimeCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcUtimeCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/LstatState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/LstatState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/MkDirState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/MkDirState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/PingDBState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/PingDBState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
             ex="false"
@@ -418,45 +363,28 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/ReplicaState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/ReplicaState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/ServState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/ServState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/StartSessState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/StartSessState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/State.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/State.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/UtimeState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/UtimeState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
             ex="false"
@@ -558,211 +486,17 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/Filter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/Filter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/CommandSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/CommandSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/FileSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/FileSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SiteSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SiteSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/Sorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/Sorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SuccessSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SuccessSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/UserSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/UserSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterTest.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterTest.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/ChDirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/GetPathParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/MkdirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/PingDBParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/RmDirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/ServParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/StatrParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/SymlinkParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/UTimeParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="presenter/Presenter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="presenter/Presenter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterTests.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterTests.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="Functions.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Item.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LogTime.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MockItems.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MockItems.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MockRows.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MockRows.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Site.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="User.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/Analyzer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/Analyzer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/CommandName.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LFCCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommandTable.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommandTable.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCrCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCrCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcLsCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcLsCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/states/State.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/states/State.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="analyzer2/states/lfs_ls_states/OpenDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
       <item path="analyzer2/states/lfs_ls_states/OpenDirState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="documentation/lfc_log_analyzer-documentation.pdf"
             ex="false"
             tool="3"
             flavor2="0">
@@ -830,11 +564,47 @@
       </item>
       <item path="filter/Counter.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/CommandSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/CommandSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/FileSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/FileSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/SiteSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/SiteSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/Sorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/Sorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/SuccessSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/SuccessSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/UserSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/UserSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterTest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="parser2/AccessParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/AddReplicaParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/ChDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/Command.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -848,6 +618,8 @@
       </item>
       <item path="parser2/EndTransParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/GetPathParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/GetReplicaParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/GetlinkParser.h" ex="false" tool="3" flavor2="0">
@@ -856,15 +628,23 @@
       </item>
       <item path="parser2/LstatParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/MkdirParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/NullParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/OpenDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/Parser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/PingDBParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/ReadDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/RmDirParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/Row.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/ServParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/SetfSizegParser.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -874,7 +654,17 @@
       </item>
       <item path="parser2/StatgParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/StatrParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/SymlinkParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/UTimeParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/UnlinkParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="presenter/Presenter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presenter/Presenter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/AnalyzerRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -887,6 +677,12 @@
       <item path="tests/ParserTests.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ParserTests.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PresenterRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PresenterTests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PresenterTests.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -909,160 +705,105 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="documentation/lfc_log_analyzer-documentation.pdf"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="Functions.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MockCommands.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="Item.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MockCommands.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="LogTime.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/Information.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockCommands.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/Information.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockCommands.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockItems.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockItems.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockRows.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockRows.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="Site.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="User.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/Analyzer.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/Analyzer.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/CommandName.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/Information.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LFCCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcAACommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcAACommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCommandTable.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCommandTable.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCpCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCpCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCrCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCrCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcDelReplicaCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcDelReplicaCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcLrCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcLrCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcLsCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcLsCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcMkdirCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcMkdirCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcPingDBCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcPingDBCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRepCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRepCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRmDirCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRmDirCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcServCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcServCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcUtimeCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcUtimeCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/LstatState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/LstatState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/MkDirState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/MkDirState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/PingDBState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/PingDBState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
             ex="false"
@@ -1074,45 +815,28 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/ReplicaState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/ReplicaState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/ServState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/ServState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/StartSessState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/StartSessState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/State.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/State.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/UtimeState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/UtimeState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
             ex="false"
@@ -1214,211 +938,17 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/Filter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/Filter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/CommandSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/CommandSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/FileSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/FileSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SiteSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SiteSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/Sorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/Sorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SuccessSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SuccessSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/UserSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/UserSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterTest.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterTest.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/ChDirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/GetPathParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/MkdirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/PingDBParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/RmDirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/ServParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/StatrParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/SymlinkParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/UTimeParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="presenter/Presenter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="presenter/Presenter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterTests.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterTests.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="Functions.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Item.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LogTime.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MockItems.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MockItems.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MockRows.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MockRows.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Site.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="User.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/Analyzer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/Analyzer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/CommandName.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LFCCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommandTable.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommandTable.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCrCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCrCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcLsCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcLsCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/states/State.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/states/State.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="analyzer2/states/lfs_ls_states/OpenDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
       <item path="analyzer2/states/lfs_ls_states/OpenDirState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="documentation/lfc_log_analyzer-documentation.pdf"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1486,11 +1016,47 @@
       </item>
       <item path="filter/Counter.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/CommandSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/CommandSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/FileSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/FileSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/SiteSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/SiteSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/Sorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/Sorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/SuccessSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/SuccessSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/UserSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/UserSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterTest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="parser2/AccessParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/AddReplicaParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/ChDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/Command.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1504,6 +1070,8 @@
       </item>
       <item path="parser2/EndTransParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/GetPathParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/GetReplicaParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/GetlinkParser.h" ex="false" tool="3" flavor2="0">
@@ -1512,15 +1080,23 @@
       </item>
       <item path="parser2/LstatParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/MkdirParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/NullParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/OpenDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/Parser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/PingDBParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/ReadDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/RmDirParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/Row.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/ServParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/SetfSizegParser.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1530,7 +1106,17 @@
       </item>
       <item path="parser2/StatgParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/StatrParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/SymlinkParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/UTimeParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/UnlinkParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="presenter/Presenter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presenter/Presenter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/AnalyzerRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1543,6 +1129,12 @@
       <item path="tests/ParserTests.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ParserTests.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PresenterRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PresenterTests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PresenterTests.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Profiling" type="1">
@@ -1559,160 +1151,105 @@
           <commandLine>-pg</commandLine>
         </linkerTool>
       </compileType>
-      <item path="documentation/lfc_log_analyzer-documentation.pdf"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="Functions.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MockCommands.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="Item.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="MockCommands.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="LogTime.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/Information.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockCommands.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/Information.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockCommands.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockItems.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcAACommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockItems.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="MockRows.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcCpCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="MockRows.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="Site.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcDelReplicaCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="User.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/Analyzer.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcLrCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/Analyzer.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/CommandName.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcMkdirCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/Information.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcPingDBCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LFCCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcAACommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRepCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcAACommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcRmDirCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCommandTable.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCommandTable.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcServCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCpCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCpCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/LfcUtimeCommand.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcCrCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcCrCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/LstatState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcDelReplicaCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcDelReplicaCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/MkDirState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcLrCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/LfcLrCommand.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/PingDBState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/LfcLsCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcLsCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcMkdirCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcMkdirCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcPingDBCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcPingDBCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRepCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRepCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRmDirCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcRmDirCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcServCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcServCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcUtimeCommand.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/LfcUtimeCommand.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/LstatState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/LstatState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/MkDirState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/MkDirState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/PingDBState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/PingDBState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
             ex="false"
@@ -1724,45 +1261,28 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/ReplicaState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/ReplicaState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/ServState.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/ServState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/ServState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/StartSessState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/StartSessState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/StartSessState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="analyzer2/states/State.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="analyzer2/states/UtimeState.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="analyzer2/states/State.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="analyzer2/states/UtimeState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="analyzer2/states/UtimeState.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="analyzer2/states/lfc_aa_states/StartTransStateAA.cpp"
             ex="false"
@@ -1864,211 +1384,17 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="filter/Filter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/Filter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/CommandSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/CommandSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/FileSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/FileSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SiteSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SiteSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/Sorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/Sorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SuccessSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/SuccessSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/UserSorter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/sorters/UserSorter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterTest.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="filter/tests/FilterTest.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/ChDirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/GetPathParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/MkdirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/PingDBParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/RmDirParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/ServParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/StatrParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/SymlinkParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="parser2/UTimeParser.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="presenter/Presenter.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="presenter/Presenter.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterRunner.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterTests.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="tests/PresenterTests.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="Functions.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Item.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LogTime.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MockItems.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MockItems.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MockRows.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MockRows.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Site.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="User.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/Analyzer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/Analyzer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/CommandName.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LFCCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommandTable.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCommandTable.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCrCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcCrCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcLsCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/LfcLsCommand.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="analyzer2/states/State.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="analyzer2/states/State.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="analyzer2/states/lfs_ls_states/OpenDirState.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
       <item path="analyzer2/states/lfs_ls_states/OpenDirState.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="documentation/lfc_log_analyzer-documentation.pdf"
             ex="false"
             tool="3"
             flavor2="0">
@@ -2136,11 +1462,47 @@
       </item>
       <item path="filter/Counter.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/CommandSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/CommandSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/FileSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/FileSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/SiteSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/SiteSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/Sorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/Sorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/SuccessSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/SuccessSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/UserSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/UserSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/tests/FilterTest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="parser2/AccessParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/AddReplicaParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/ChDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/Command.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -2154,6 +1516,8 @@
       </item>
       <item path="parser2/EndTransParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/GetPathParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/GetReplicaParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/GetlinkParser.h" ex="false" tool="3" flavor2="0">
@@ -2162,15 +1526,23 @@
       </item>
       <item path="parser2/LstatParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/MkdirParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/NullParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/OpenDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/Parser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/PingDBParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/ReadDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/RmDirParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/Row.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/ServParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/SetfSizegParser.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -2180,7 +1552,17 @@
       </item>
       <item path="parser2/StatgParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/StatrParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/SymlinkParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/UTimeParser.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="parser2/UnlinkParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="presenter/Presenter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="presenter/Presenter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/AnalyzerRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -2193,6 +1575,12 @@
       <item path="tests/ParserTests.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/ParserTests.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/PresenterRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PresenterTests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/PresenterTests.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
