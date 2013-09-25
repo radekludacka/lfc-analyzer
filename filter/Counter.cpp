@@ -97,7 +97,7 @@ void Counter::FilterCommands(vector<LfcCommand *> * commands) {
     PrintRow("lfc-ls", numberOfBadLfcLs, nubmerOfGoodLfcLs);
     PrintRow("lcg-cr", nubmerOfBadLfcCr, nubmerOfGoodLfcCr);
     PrintRow("lcg-rep", numberOfBadReplicate, numberOfGoodReplicate);
-    PrintRow("lfc-mkdirs", numberOfBadMkDir, numberOfGoodMkDir);
+    PrintRow("lfc-mkdir", numberOfBadMkDir, numberOfGoodMkDir);
     PrintRow("lcg-cp", -1, numberOfCP);
     PrintRow("ping db", 0, numberPingDB);
     PrintRow("lcg-del", -1, numberOfGoodDelReplica);
