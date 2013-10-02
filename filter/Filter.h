@@ -12,6 +12,8 @@
 #include <vector>
 #include "../analyzer2/LfcCommand.h"
 #include "../analyzer2/CommandName.h"
+#include "../Arguments.h"
+#include "../analyzer2/CommandName.h"
 
 using namespace std;
 
@@ -19,24 +21,9 @@ class Filter {
 public:
     Filter();
     virtual ~Filter();
-    vector<LfcCommand*> * Filtrate(vector<LfcCommand*> * commands);
-    void SetSearchedFileString(string pattern);
-    void SetSearchedSiteString(string pattern);
-    void SetSearchedUserString(string pattern);
-    void SetSearchedCommand(LFCCommandName commandName);
-    void SetSearchedSuccessValue(bool value);
+    vector<LfcCommand*> * Filtrate(vector<LfcCommand*> * commands, Arguments * arguments);
 private:
-    bool filterFile;
-    bool filterSite;
-    bool filterUser;
-    bool filterCommand;
-    bool filterSuccessValue;
-    
-    string filteredValueFile;
-    string filteredValueSite;
-    string filteredValueUser;
-    LFCCommandName filteredValueCommand;
-    bool filteredValueSuccess;
+    bool isIn(const char* a, std::string b) ;
 };
 
 #endif	/* FILTER_H */

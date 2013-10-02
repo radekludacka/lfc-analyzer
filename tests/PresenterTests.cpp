@@ -26,7 +26,13 @@ void PresenterTests::tearDown() {
 void PresenterTests::testMethod() {
     
     vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
-
-    this->presenter->Print(commands, 3, 1, 2, 0, -1);
+    Arguments * arguments = new Arguments();
+    arguments->SetFileOrder(3);
+    arguments->SetUserOrder(1);
+    arguments->SetSiteOrder(2);
+    arguments->SetCommandOrder(0);
+    arguments->SetResultTypeOrder(-1);
+    
+    this->presenter->Print(commands, arguments);
 }
 

@@ -14,9 +14,9 @@ public:
     SuccessSorter();
     SuccessSorter(Sorter * subSorter);
     virtual ~SuccessSorter();
-    virtual vector<LfcCommand*> * Sort(vector<LfcCommand *> * commands);
 protected:
-    virtual set<bool> ExtractByString(vector<LfcCommand *> * commands);
+    virtual string GetItemToSort(LfcCommand * command);
+    virtual set<string> ExtractByString(vector<LfcCommand *> * commands);
 };
 
 #endif	/* SUCCESSSORTER_H */

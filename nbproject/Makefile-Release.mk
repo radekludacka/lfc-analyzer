@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Arguments.o \
 	${OBJECTDIR}/MockCommands.o \
 	${OBJECTDIR}/MockItems.o \
 	${OBJECTDIR}/MockRows.o \
@@ -78,6 +79,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/filter/Filter.o \
 	${OBJECTDIR}/filter/sorters/CommandSorter.o \
 	${OBJECTDIR}/filter/sorters/FileSorter.o \
+	${OBJECTDIR}/filter/sorters/NullSorter.o \
 	${OBJECTDIR}/filter/sorters/SiteSorter.o \
 	${OBJECTDIR}/filter/sorters/Sorter.o \
 	${OBJECTDIR}/filter/sorters/SuccessSorter.o \
@@ -118,6 +120,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Arguments.o: Arguments.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Arguments.o Arguments.cpp
 
 ${OBJECTDIR}/MockCommands.o: MockCommands.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -334,6 +341,11 @@ ${OBJECTDIR}/filter/sorters/FileSorter.o: filter/sorters/FileSorter.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/filter/sorters/FileSorter.o filter/sorters/FileSorter.cpp
 
+${OBJECTDIR}/filter/sorters/NullSorter.o: filter/sorters/NullSorter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/filter/sorters
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/filter/sorters/NullSorter.o filter/sorters/NullSorter.cpp
+
 ${OBJECTDIR}/filter/sorters/SiteSorter.o: filter/sorters/SiteSorter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/filter/sorters
 	${RM} $@.d
@@ -433,6 +445,19 @@ ${TESTDIR}/tests/PresenterTests.o: tests/PresenterTests.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/PresenterTests.o tests/PresenterTests.cpp
 
+
+${OBJECTDIR}/Arguments_nomain.o: ${OBJECTDIR}/Arguments.o Arguments.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Arguments.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Arguments_nomain.o Arguments.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Arguments.o ${OBJECTDIR}/Arguments_nomain.o;\
+	fi
 
 ${OBJECTDIR}/MockCommands_nomain.o: ${OBJECTDIR}/MockCommands.o MockCommands.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -991,6 +1016,19 @@ ${OBJECTDIR}/filter/sorters/FileSorter_nomain.o: ${OBJECTDIR}/filter/sorters/Fil
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/filter/sorters/FileSorter_nomain.o filter/sorters/FileSorter.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/filter/sorters/FileSorter.o ${OBJECTDIR}/filter/sorters/FileSorter_nomain.o;\
+	fi
+
+${OBJECTDIR}/filter/sorters/NullSorter_nomain.o: ${OBJECTDIR}/filter/sorters/NullSorter.o filter/sorters/NullSorter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/filter/sorters
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/filter/sorters/NullSorter.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/filter/sorters/NullSorter_nomain.o filter/sorters/NullSorter.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/filter/sorters/NullSorter.o ${OBJECTDIR}/filter/sorters/NullSorter_nomain.o;\
 	fi
 
 ${OBJECTDIR}/filter/sorters/SiteSorter_nomain.o: ${OBJECTDIR}/filter/sorters/SiteSorter.o filter/sorters/SiteSorter.cpp 

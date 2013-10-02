@@ -8,17 +8,12 @@
 #include "Filter.h"
 
 Filter::Filter() {
-    filterFile = false;
-    filterSite = false;
-    filterUser = false;
-    filterCommand = false;
-    filterSuccessValue = false;
 }
 
 Filter::~Filter() {
 }
 
-vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands) {
+vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands, Arguments * arguments) {
 
     vector<LfcCommand *> * filteredCommands = new vector<LfcCommand *>;
 
@@ -26,68 +21,35 @@ vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands) {
     for (it1 = commands->begin(); it1 != commands->end(); ++it1) {
         LfcCommand * command = *it1;
 
-        if (filterFile) {
-            if (std::string::npos == command->GetFile().find(filteredValueFile)) {
+        LFCCommandName commandName = arguments->GetCommmandValueToFilter();
+        if (commandName != LCG_UNKNOWN and command->GetName() != commandName) {
+            continue;
+        }
+        if (!isIn(arguments->GetSiteValueToFilter(), command->GetSite()->GetName())) {
+            continue;
+        }
+        if (!isIn(arguments->GetUserValueToFilter(), command->GetUser()->GetName())) {
+            continue;
+        }
+        if (!isIn(arguments->GetFileValueToFilter(), command->GetFile())) {
+            continue;
+        }
+        if (arguments->IsSetSuccess()) {
+            if (command->IsFailed() != arguments->GetSuccessValueToFilter()) {
                 continue;
             }
         }
-        if (filterSite) {
-            string siteName = command->GetSite()->GetName();
-            if (std::string::npos == siteName.find(filteredValueSite)) {
-                continue;
-            }
-        }
-        if (filterCommand) {
-            LFCCommandName commandName = command->GetName();
-            if (commandName != filteredValueCommand) {
-                continue;
-            } 
-        }
-        if (filterSuccessValue) {
-            bool successValue = command->IsFailed();
-            if (successValue != filteredValueSuccess) {
-                continue;
-            }
-        }
-        if (filterUser) {
-            string userName = command->GetUser()->GetName();
-            if (std::string::npos == userName.find(filteredValueUser)) {
-                continue;
-            }
-        }
-
         filteredCommands->push_back(command);
     }
 
     return filteredCommands;
 }
 
-void Filter::SetSearchedCommand(LFCCommandName commandName) {
-    filterCommand = true;
-    filteredValueCommand = commandName;
-//    cout << "filter c " << filteredValueCommand << endl;
-}
-
-void Filter::SetSearchedFileString(string pattern) {
-    filterFile = true;
-    filteredValueFile = pattern;
-//    cout << "filter f " << filteredValueFile << endl;
-}
-
-void Filter::SetSearchedSiteString(string pattern) {
-    filterSite = true;
-    filteredValueSite = pattern;
-//    cout << "filter s " << filteredValueSite << endl;
-}
-
-void Filter::SetSearchedSuccessValue(bool value) {
-    filterSuccessValue = true;
-    filteredValueSuccess = value;
-//    cout << "filter o " << filteredValueSuccess << endl;
-}
-
-void Filter::SetSearchedUserString(string pattern) {
-    filterUser = true;
-    filteredValueUser = pattern;
-//    cout << "filter u " << filteredValueUser << endl;
+bool Filter::isIn(const char* a, std::string b) {
+    if (a != NULL) {
+        if (std::string::npos == b.find(a)) {
+            return false;
+        }
+    }
+    return true;
 }

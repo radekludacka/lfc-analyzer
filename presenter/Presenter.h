@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <sstream>
 #include "../analyzer2/LfcCommand.h"
+#include "../Arguments.h"
 
 using namespace std;
 
@@ -21,9 +22,9 @@ class Presenter {
 public:
     Presenter();
     virtual ~Presenter();
-    virtual void Print(vector<LfcCommand *> * commands, int file, int user, int site, int commandType, int resultType);
+    virtual void Print(vector<LfcCommand *> * commands, Arguments * arguments);
 private:
-    string * ExtractValuesFromCommand(LfcCommand * command, int file, int user, int site, int commandType, int resultType);
+    string * ExtractValuesFromCommand(LfcCommand * command, Arguments * arguments);
     void PrintValues(vector<string *> * rows);
     int * FindOutMaxStringWidths(vector<string *> * rows);
     string IntToString(const int& port);

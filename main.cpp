@@ -26,42 +26,92 @@
 #include "filter/sorters/SiteSorter.h"
 #include "filter/sorters/UserSorter.h"
 #include "filter/sorters/FileSorter.h"
-
-//#define COUT
+#include "filter/sorters/NullSorter.h"
+#include "Arguments.h"
 
 using namespace std;
 
-LFCCommandName CommandConverter(string commandName);
+Arguments * ExtractArguments(int argc, char** argv);
 bool FailedConverter(string failedValue);
 void PrintHelp();
+Sorter * CreateSorterChain(Arguments * arguments);
 
 int main(int argc, char** argv) {
-
     printf("Welcome in LFC analyzer.\n");
 
-    int file = -1;
-    int site = -1;
-    int user = -1;
-    int command = -1;
-    int resultType = -1;
-
-    const char* filteredSite = NULL;
-    const char* filteredUser = NULL;
-    const char* filteredFile = NULL;
-    const char* filteredCommand = NULL;
-    const char* filteredSuccess = NULL;
+    Parser * parser = new Parser();
+    Analyzer * analyzer = new Analyzer();
     Filter * filter = new Filter();
     Counter * counter = new Counter();
-    string filePath;
 
+    Arguments * arguments = ExtractArguments(argc, argv);
+    if (arguments == NULL) {
+        return -1;
+    }
+
+    cout << "Analyzed log file is: " << arguments->GetFilePath() << endl;
+    cout << "Analyzing could take several minutes, wait please." << endl;
+
+    LogTable * logTable = parser->parse(arguments->GetFilePath());
+    vector<Item*> * items = logTable->getMyList();
+
+    cout << "number of items: ";
+    cout << items->size() << endl;
+
+    LfcCommandTable * commandTable = analyzer->Analyze(logTable);
+    vector<LfcCommand *> * commandList = filter->Filtrate(
+            commandTable->GetCommandList(), arguments);
+
+    Sorter * sorter = CreateSorterChain(arguments);
+
+    string message = "number of commands: ";
+    if (sorter != NULL) {
+        commandList = sorter->Sort(commandList);
+        message = "number of filtered commands: ";
+        cout << message << commandList->size() << endl;
+        counter->FilterCommands(commandList);
+        Presenter * presenter = new Presenter();
+        presenter->Print(commandList, arguments);
+    } else {
+        cout << message << commandList->size() << endl;
+        counter->FilterCommands(commandList);
+    }
+
+    delete parser;
+    return 0;
+}
+
+Sorter * CreateSorterChain(Arguments * arguments) {
+    Sorter * previousSorter = NULL;
+    Sorter * sorter = new NullSorter();
+    
+    for (int i = 4; i > -1; i--) {
+        previousSorter = sorter;
+        if (arguments->GetFileOrder() == i) {
+            sorter = new FileSorter(previousSorter);
+        } else if (arguments->GetUserOrder() == i) {
+            sorter = new UserSorter(previousSorter);
+        } else if (arguments->GetSiteOrder() == i) {
+            sorter = new SiteSorter(previousSorter);
+        } else if (arguments->GetCommandOrder() == i) {
+            sorter = new CommandSorter(previousSorter);
+        } else if (arguments->GetResultTypeOrder() == i) {
+            sorter = new SuccessSorter(previousSorter);
+        }
+    }
+    return sorter;
+}
+
+Arguments * ExtractArguments(int argc, char** argv) {
+    string filePath;
     int index = -1;
     int next_option;
-
     opterr = 0;
+    Arguments * arguments = new Arguments();
 
     if (argc == 1) {
         cout << "Enter log file path please" << endl;
-        return -1;
+        return NULL;
     }
 
     const char* const short_options = "hfsucrd:g:i:p:o:l:";
@@ -76,51 +126,49 @@ int main(int argc, char** argv) {
     };
 
     do {
-
         next_option = getopt_long(argc, argv, short_options, long_options, NULL);
 
-        //        cout << (char) next_option << endl;
         switch (next_option) {
             case 'f':
-                file = ++index;
+                arguments->SetFileOrder(++index);
                 break;
             case 's':
-                site = ++index;
+                arguments->SetSiteOrder(++index);
                 break;
             case 'u':
-                user = ++index;
+                arguments->SetUserOrder(++index);
                 break;
             case 'c':
-                command = ++index;
+                arguments->SetCommandOrder(++index);
                 break;
             case 'r':
-                resultType = ++index;
+                arguments->SetResultTypeOrder(++index);
                 break;
             case 'h':
                 PrintHelp();
                 return 0;
 
             case 'd':
-                filteredSite = optarg;
+                arguments->SetSiteValueToFilter(optarg);
                 break;
             case 'i':
-                filePath = optarg;
+                arguments->SetFilePath(optarg);
                 break;
             case 'g':
-                filteredUser = optarg;
+                arguments->SetUserValueToFilter(optarg);
                 break;
             case 'l':
-                filteredFile = optarg;
+                arguments->SetFileValueToFilter(optarg);
                 break;
             case 'p':
-                filteredCommand = optarg;
+                arguments->SetCommmandValueToFilter(optarg);
                 break;
             case 'o':
-                filteredSuccess = optarg;
+                arguments->SetSuccessValueToFilter(optarg);
                 break;
             case '?':
                 fprintf(stderr, "Unknown option character `\\s%s'.\n", optopt);
-                return 1;
+                return NULL;
             case -1:
                 break;
             default:
@@ -128,116 +176,7 @@ int main(int argc, char** argv) {
         }
     } while (next_option != -1);
 
-    cout << "Analyzed log file is: " << filePath << endl;
-    cout << "Analyzing could take several minutes, wait please." << endl;
-
-    //    printf("f = %d, u = %d, s = %d, c = %d, r = %d\n", file, user, site, command, resultType);
-    //    printf("logfile = %s\n", filePath.c_str());
-    //    printf("site = %s, user = %s, file = %s, command = %s, success = %s\n",
-    //            filteredSite, filteredUser, filteredFile, filteredCommand, filteredSuccess);
-
-    Parser * parser = new Parser();
-    LogTable * logTable = parser->parse(filePath);
-    vector<Item*> * items = logTable->getMyList();
-
-    cout << "number of items: ";
-    cout << items->size() << endl;
-
-    Analyzer * analyzer = new Analyzer();
-    LfcCommandTable * commandTable = analyzer->Analyze(logTable);
-
-    if (filteredCommand != NULL) {
-        LFCCommandName commandName = CommandConverter(filteredCommand);
-        filter->SetSearchedCommand(commandName);
-    }
-    if (filteredFile != NULL) {
-        filter->SetSearchedFileString(filteredFile);
-    }
-    if (filteredSite != NULL) {
-        filter->SetSearchedSiteString(filteredSite);
-    }
-    if (filteredSuccess != NULL) {
-        filter->SetSearchedSuccessValue(FailedConverter(filteredSuccess));
-    }
-    if (filteredUser != NULL) {
-        filter->SetSearchedUserString(filteredUser);
-    }
-
-    vector<LfcCommand *> * commandList = filter->Filtrate(commandTable->GetCommandList());
-
-    Sorter * previousSorter = NULL;
-    Sorter * sorter = NULL;
-
-    for (int i = 4; i > -1; i--) {
-        previousSorter = sorter;
-        if (file == i) {
-            sorter = new FileSorter(previousSorter);
-        } else if (user == i) {
-            sorter = new UserSorter(previousSorter);
-        } else if (site == i) {
-            sorter = new SiteSorter(previousSorter);
-        } else if (command == i) {
-            sorter = new CommandSorter(previousSorter);
-        } else if (resultType == i) {
-            sorter = new SuccessSorter(previousSorter);
-        }
-    }
-
-    if (sorter != NULL) {
-        commandList = sorter->Sort(commandList);
-        cout << "number of filtered commands: " << commandList->size() << endl;
-        counter->FilterCommands(commandList);
-        Presenter * presenter = new Presenter();
-        presenter->Print(commandList, file, user, site, command, resultType);
-    } else {
-        cout << "number of commands: " << commandList->size() << endl;
-        counter->FilterCommands(commandList);
-    }
-
-    delete parser;
-    return 0;
-}
-
-bool FailedConverter(string failedValue) {
-    if (failedValue.compare("true")) {
-        return true;
-    } else if (failedValue.compare("false")) {
-        return false;
-    } else {
-        cout << "failed value " << failedValue << " is not allowed" << endl;
-        return NULL;
-    }
-}
-
-LFCCommandName CommandConverter(string commandName) {
-    if (commandName.compare("lfc-ls") == 0) {
-        return LFC_LS;
-    } else if (commandName.compare("lcg-cr") == 0) {
-        return LCG_CR;
-    } else if (commandName.compare("lcg-rep") == 0) {
-        return LCG_REP;
-    } else if (commandName.compare("lfc-mkdir") == 0) {
-        return LFC_MKDIR;
-    } else if (commandName.compare("lcg-cp") == 0) {
-        return LCG_CP;
-    } else if (commandName.compare("lcg-del") == 0) {
-        return LCG_DEL;
-    } else if (commandName.compare("srv-err") == 0) {
-        return LCG_NONE;
-    } else if (commandName.compare("lcg-utime") == 0) {
-        return LCG_UTIME;
-    } else if (commandName.compare("lcg-pingdb") == 0) {
-        return LCG_PINGDB;
-    } else if (commandName.compare("lcg-lr") == 0) {
-        return LCG_LR;
-    } else if (commandName.compare("lcg-aa") == 0) {
-        return LCG_AA;
-    } else if (commandName.compare("lcg-rm") == 0) {
-        return LCG_RM;
-    } else {
-        string exception = "command " + commandName + " is not allowed";
-        throw exception;
-    }
+    return arguments;
 }
 
 void PrintHelp() {

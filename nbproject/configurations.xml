@@ -96,6 +96,8 @@
           <itemPath>filter/sorters/CommandSorter.h</itemPath>
           <itemPath>filter/sorters/FileSorter.cpp</itemPath>
           <itemPath>filter/sorters/FileSorter.h</itemPath>
+          <itemPath>filter/sorters/NullSorter.cpp</itemPath>
+          <itemPath>filter/sorters/NullSorter.h</itemPath>
           <itemPath>filter/sorters/SiteSorter.cpp</itemPath>
           <itemPath>filter/sorters/SiteSorter.h</itemPath>
           <itemPath>filter/sorters/Sorter.cpp</itemPath>
@@ -148,6 +150,7 @@
         <itemPath>presenter/Presenter.cpp</itemPath>
         <itemPath>presenter/Presenter.h</itemPath>
       </logicalFolder>
+      <itemPath>Arguments.h</itemPath>
       <itemPath>Item.h</itemPath>
       <itemPath>LogTime.h</itemPath>
       <itemPath>MockCommands.h</itemPath>
@@ -179,6 +182,7 @@
         <itemPath>analyzer2/LfcServCommand.cpp</itemPath>
         <itemPath>analyzer2/LfcUtimeCommand.cpp</itemPath>
       </logicalFolder>
+      <itemPath>Arguments.cpp</itemPath>
       <itemPath>MockCommands.cpp</itemPath>
       <itemPath>MockItems.cpp</itemPath>
       <itemPath>MockRows.cpp</itemPath>
@@ -253,6 +257,10 @@
           <output>${TESTDIR}/TestFiles/f5</output>
         </linkerTool>
       </compileType>
+      <item path="Arguments.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Arguments.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Functions.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Item.h" ex="false" tool="3" flavor2="0">
@@ -575,6 +583,10 @@
       <item path="filter/sorters/FileSorter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="filter/sorters/FileSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/NullSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/NullSorter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filter/sorters/SiteSorter.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -705,6 +717,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Arguments.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Arguments.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Functions.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Item.h" ex="false" tool="3" flavor2="0">
@@ -1027,6 +1043,10 @@
       <item path="filter/sorters/FileSorter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="filter/sorters/FileSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/NullSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/NullSorter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filter/sorters/SiteSorter.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1151,6 +1171,10 @@
           <commandLine>-pg</commandLine>
         </linkerTool>
       </compileType>
+      <item path="Arguments.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Arguments.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Functions.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Item.h" ex="false" tool="3" flavor2="0">
@@ -1473,6 +1497,10 @@
       <item path="filter/sorters/FileSorter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="filter/sorters/FileSorter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filter/sorters/NullSorter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="filter/sorters/NullSorter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filter/sorters/SiteSorter.cpp" ex="false" tool="1" flavor2="0">
       </item>

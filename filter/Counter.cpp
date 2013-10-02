@@ -38,6 +38,8 @@ void Counter::FilterCommands(vector<LfcCommand *> * commands) {
 
     int numberOfSymlinks = 0;
     int numberOfRmDir = 0;
+    
+    int numberOfLr = 0;
 
     std::vector<LfcCommand *>::const_iterator iterator;
     for (iterator = commands->begin(); iterator != commands->end(); ++iterator) {
@@ -89,6 +91,8 @@ void Counter::FilterCommands(vector<LfcCommand *> * commands) {
                 numberOfSymlinks++;
             } else if (function == LCG_RM) {
                 numberOfRmDir++;
+            } else if (function == LCG_LR) {
+                numberOfLr++;
             }
         }
     }
@@ -105,6 +109,7 @@ void Counter::FilterCommands(vector<LfcCommand *> * commands) {
     PrintRow("utimes", 0, numberOfUTimes);
     PrintRow("lcg-aa", -1, numberOfSymlinks);
     PrintRow("lcg-rm", -1, numberOfRmDir);
+    PrintRow("lcg-lr", -1, numberOfLr);
     cout << "lcg-rep failed v sobe zahrnuje lcg-cp failed a lcg-del failed" << endl;
 
     // bad cp jsou schovany v bad replica - stejny vysledek v logu pro

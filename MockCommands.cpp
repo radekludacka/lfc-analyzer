@@ -21,23 +21,23 @@ vector<LfcCommand *> * MockCommands::CreateMockLfcCommands() {
     Parser * parser = new Parser();
     vector<LfcCommand *> * commands = new vector<LfcCommand *>;
 
-    LogTable * logTable = parser->parse("lfc-ls-several-readdir");
+    LogTable * logTable = parser->parse("./tests/resources/lfc-ls-several-readdir");
     LfcCommandTable * commandTable = analyzer->Analyze(logTable);
     vector<LfcCommand *> * commandsLs1 = commandTable->GetCommandList();
 
-    logTable = parser->parse("lfc-ls-2");
+    logTable = parser->parse("./tests/resources/lfc-ls-2");
     commandTable = analyzer->Analyze(logTable);
     vector<LfcCommand *> * commandsLs2 = commandTable->GetCommandList();
 
-    logTable = parser->parse("lfc-ls-broken-pipe");
+    logTable = parser->parse("./tests/resources/lfc-ls-broken-pipe");
     commandTable = analyzer->Analyze(logTable);
     vector<LfcCommand *> * commandsLs3 = commandTable->GetCommandList();
 
-    logTable = parser->parse("lfc-ls-recursive");
+    logTable = parser->parse("./tests/resources/lfc-ls-recursive");
     commandTable = analyzer->Analyze(logTable);
     vector<LfcCommand *> * commandsLs4 = commandTable->GetCommandList();
 
-    logTable = parser->parse("lfc-rep-del-cp-fail");
+    logTable = parser->parse("./tests/resources/lfc-rep-del-cp-fail");
     commandTable = analyzer->Analyze(logTable);
     vector<LfcCommand *> * commandsLs5 = commandTable->GetCommandList();
 

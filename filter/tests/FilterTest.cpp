@@ -32,9 +32,10 @@ void FilterTest::testFilterUser() {
     users1.push_back("/DC=es/DC=irisgrid/O=ugr/CN=gines.rubio");
     users1.push_back("/DC=es/DC=irisgrid/O=ugr/CN=gines.rubio");
     vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
-    filter->SetSearchedUserString("/DC=es/DC=irisgrid/O=ugr/CN=gines.rubio");
+    Arguments * arguments = new Arguments();
+    arguments->SetUserValueToFilter("/DC=es/DC=irisgrid/O=ugr/CN=gines.rubio");
 
-    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands);
+    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands, arguments);
 
     vector<string> users2 = ExtractUserNames(returnedCommands);
 
@@ -46,9 +47,10 @@ void FilterTest::testFilterFile() {
     files1.push_back("/grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357");
     files1.push_back("/grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357");
     vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
-    filter->SetSearchedFileString("/grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357");
+    Arguments * arguments = new Arguments();
+    arguments->SetFileValueToFilter("/grid/auger/prod/GenDisProtonQGSjetII_gr249_simADSTv2r9p3/en19.500/th0.65/058357");
 
-    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands);
+    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands, arguments);
 
     vector<string> files2 = ExtractFileNames(returnedCommands);
 
@@ -62,9 +64,10 @@ void FilterTest::testFilterCommand() {
     commands1.push_back("LFC_LS");
     commands1.push_back("LFC_LS");
     vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
-    filter->SetSearchedCommand(LFC_LS);
+    Arguments * arguments = new Arguments();
+    arguments->SetCommmandValueToFilter("lfc-ls");
 
-    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands);
+    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands, arguments);
 
     vector<string> commands2 = ExtractCommandNames(returnedCommands);
 
@@ -77,9 +80,10 @@ void FilterTest::testFilterSite() {
     sites1.push_back("wario.univ-lille1.fr");
     sites1.push_back("wario.univ-lille1.fr");
     vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
-    filter->SetSearchedSiteString("wario.univ-lille1.fr");
+    Arguments * arguments = new Arguments();
+    arguments->SetSiteValueToFilter("wario.univ-lille1.fr");
 
-    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands);
+    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands, arguments);
 
     vector<string> sites2 = ExtractSiteNames(returnedCommands);
 
@@ -92,9 +96,10 @@ void FilterTest::testFilterSuccessValue() {
     successValue1.push_back(true);
     successValue1.push_back(true);
     vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
-    filter->SetSearchedSuccessValue(true);
+    Arguments * arguments = new Arguments();
+    arguments->SetSuccessValueToFilter("true");
 
-    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands);
+    vector<LfcCommand *> * returnedCommands = filter->Filtrate(commands, arguments);
 
     vector<bool> successValue2 = ExtractResultTypes(returnedCommands);
 

@@ -17,9 +17,8 @@ public:
     UserSorter();
     UserSorter(Sorter * subSorter);
     virtual ~UserSorter();
-    virtual vector<LfcCommand*> * Sort(vector<LfcCommand *> * commands);
 protected:
-    virtual set<string> ExtractByString(vector<LfcCommand *> * commands);
+    virtual string GetItemToSort(LfcCommand * command);
 };
 
 #endif	/* USERSORTER_H */

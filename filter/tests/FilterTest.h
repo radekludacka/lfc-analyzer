@@ -20,6 +20,7 @@
 #include "../../MockCommands.h"
 #include <vector>
 #include <cppunit/extensions/HelperMacros.h>
+#include "../../Arguments.h"
 
 using namespace std;
 

@@ -14,9 +14,8 @@ public:
     CommandSorter();
     CommandSorter(Sorter * subSorter);
     virtual ~CommandSorter();
-    virtual vector<LfcCommand*> * Sort(vector<LfcCommand *> * commands);
 protected:
-    virtual set<string> ExtractByString(vector<LfcCommand *> * commands);
+    virtual string GetItemToSort(LfcCommand * command);
 };
 
 #endif	/* COMMANDSORTER_H */

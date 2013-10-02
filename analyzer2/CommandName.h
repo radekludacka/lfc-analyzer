@@ -21,6 +21,7 @@ enum LFCCommandName {
     LCG_LR,
     LCG_AA,
     LCG_RM,
+    LCG_UNKNOWN,
 };
 
 

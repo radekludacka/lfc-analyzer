@@ -15,9 +15,8 @@ public:
     SiteSorter();
     SiteSorter(Sorter * subSorter);
     virtual ~SiteSorter();
-    virtual vector<LfcCommand*> * Sort(vector<LfcCommand *> * commands);
 protected:
-    virtual set<string> ExtractByString(vector<LfcCommand *> * commands);
+    virtual string GetItemToSort(LfcCommand * command);
 };
 
 #endif	/* SITESORTER_H */

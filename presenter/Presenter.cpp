@@ -14,41 +14,38 @@ Presenter::Presenter() {
 Presenter::~Presenter() {
 }
 
-void Presenter::Print(vector<LfcCommand*> * commands, int file, int user, int site, int commandType, int resultType) {
+void Presenter::Print(vector<LfcCommand*> * commands, Arguments * arguments) {
 
     vector<LfcCommand *>::const_iterator it1;
     vector<string *> * rows = new vector<string *>;
 
     int realNumberOfValues = 0;
     for (int i = 0; i < numberOfValues; i++) {
-        if (file == i) {
+        if (arguments->GetFileOrder() == i) {
             realNumberOfValues++;
-        } else if (user == i) {
+        } else if (arguments->GetUserOrder() == i) {
             realNumberOfValues++;
-        } else if (site == i) {
+        } else if (arguments->GetSiteOrder() == i) {
             realNumberOfValues++;
-        } else if (commandType == i) {
+        } else if (arguments->GetCommandOrder() == i) {
             realNumberOfValues++;
-        } else if (resultType == i) {
+        } else if (arguments->GetResultTypeOrder() == i) {
             realNumberOfValues++;
         }
     }
 
-
-    cout << realNumberOfValues << endl;
     numberOfValues = realNumberOfValues;
 
     for (it1 = commands->begin(); it1 != commands->end(); ++it1) {
         LfcCommand * command = *it1;
-
-        string * row = this->ExtractValuesFromCommand(command, file, user, site, commandType, resultType);
+        string * row = this->ExtractValuesFromCommand(command, arguments);
         rows->push_back(row);
     }
 
     this->PrintValues(rows);
 }
 
-string * Presenter::ExtractValuesFromCommand(LfcCommand* command, int file, int user, int site, int commandType, int resultType) {
+string * Presenter::ExtractValuesFromCommand(LfcCommand* command, Arguments * arguments) {
 
     string * row = new string[numberOfValues];
 
@@ -58,15 +55,15 @@ string * Presenter::ExtractValuesFromCommand(LfcCommand* command, int file, int 
 
     for (int i = 0; i < numberOfValues; i++) {
         string next = "";
-        if (file == i) {
+        if (arguments->GetFileOrder() == i) {
             next = command->GetFile();
-        } else if (user == i) {
+        } else if (arguments->GetUserOrder() == i) {
             next = command->GetUser()->GetName();
-        } else if (site == i) {
+        } else if (arguments->GetSiteOrder() == i) {
             next = command->GetSite()->GetName();
-        } else if (commandType == i) {
+        } else if (arguments->GetCommandOrder() == i) {
             next = command->GetStringName();
-        } else if (resultType == i) {
+        } else if (arguments->GetResultTypeOrder() == i) {
             if (command->IsFailed()) {
                 next = "failed";
             } else {
