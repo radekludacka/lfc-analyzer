@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <ctype.h>
 #include <getopt.h>
+#include <map>
 
 #include "analyzer2/CommandName.h"
 

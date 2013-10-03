@@ -29,34 +29,57 @@ Arguments::~Arguments() {
 }
 
 LFCCommandName Arguments::CommandConverter(std::string commandName) {
-    if (commandName.compare("lfc-ls") == 0) {
-        return LFC_LS;
-    } else if (commandName.compare("lcg-cr") == 0) {
-        return LCG_CR;
-    } else if (commandName.compare("lcg-rep") == 0) {
-        return LCG_REP;
-    } else if (commandName.compare("lfc-mkdir") == 0) {
-        return LFC_MKDIR;
-    } else if (commandName.compare("lcg-cp") == 0) {
-        return LCG_CP;
-    } else if (commandName.compare("lcg-del") == 0) {
-        return LCG_DEL;
-    } else if (commandName.compare("srv-err") == 0) {
-        return LCG_NONE;
-    } else if (commandName.compare("lcg-utime") == 0) {
-        return LCG_UTIME;
-    } else if (commandName.compare("lcg-pingdb") == 0) {
-        return LCG_PINGDB;
-    } else if (commandName.compare("lcg-lr") == 0) {
-        return LCG_LR;
-    } else if (commandName.compare("lcg-aa") == 0) {
-        return LCG_AA;
-    } else if (commandName.compare("lcg-rm") == 0) {
-        return LCG_RM;
-    } else {
+    std::map<string, LFCCommandName> commandMap;
+    
+    if(commandMap.find(commandName) == commandMap.end())
+    {
         std::string exception = "command " + commandName + " is not allowed";
         throw exception;
     }
+    
+    commandMap["lfc-ls"] = LFC_LS;
+    commandMap["lcg-cr"] = LCG_CR;
+    commandMap["lcg-rep"] = LCG_REP;
+    commandMap["lfc-mkdir"] = LFC_MKDIR;
+    commandMap["lcg-cp"] = LCG_CP;
+    commandMap["lcg-del"] = LCG_DEL;
+    commandMap["srv-err"] = LCG_NONE;
+    commandMap["lcg-utime"] = LCG_UTIME;
+    commandMap["lcg-pingdb"] = LCG_PINGDB;
+    commandMap["lcg-lr"] = LCG_LR;
+    commandMap["lcg-aa"] = LCG_AA;
+    commandMap["lcg-rm"] = LCG_RM;
+    
+    return commandMap.at(commandName);
+    
+//    if (commandName.compare("lfc-ls") == 0) {
+//        return LFC_LS;
+//    } else if (commandName.compare("lcg-cr") == 0) {
+//        return LCG_CR;
+//    } else if (commandName.compare("lcg-rep") == 0) {
+//        return LCG_REP;
+//    } else if (commandName.compare("lfc-mkdir") == 0) {
+//        return LFC_MKDIR;
+//    } else if (commandName.compare("lcg-cp") == 0) {
+//        return LCG_CP;
+//    } else if (commandName.compare("lcg-del") == 0) {
+//        return LCG_DEL;
+//    } else if (commandName.compare("srv-err") == 0) {
+//        return LCG_NONE;
+//    } else if (commandName.compare("lcg-utime") == 0) {
+//        return LCG_UTIME;
+//    } else if (commandName.compare("lcg-pingdb") == 0) {
+//        return LCG_PINGDB;
+//    } else if (commandName.compare("lcg-lr") == 0) {
+//        return LCG_LR;
+//    } else if (commandName.compare("lcg-aa") == 0) {
+//        return LCG_AA;
+//    } else if (commandName.compare("lcg-rm") == 0) {
+//        return LCG_RM;
+//    } else {
+//        std::string exception = "command " + commandName + " is not allowed";
+//        throw exception;
+//    }
 }
 
 bool Arguments::FailedConverter(std::string failedValue) {
