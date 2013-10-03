@@ -1,0 +1,1041 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Sectioned Essay
+% LaTeX Template
+% Version 1.0 (3/8/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original Author:
+% Nicolas Diaz (nsdiaz@uc.cl) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 11pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+
+% latex packages for source code examples
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{upquote}
+\usepackage{xcolor}
+\usepackage{float}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+\lstset{
+    keywordstyle=\bfseries\ttfamily\color[rgb]{0,0,1},
+    identifierstyle=\ttfamily,
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\ttfamily\color[rgb]{0.627,0.126,0.941},
+    showstringspaces=false,
+    basicstyle=\small,
+    numberstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=2,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    breakatwhitespace=false,
+    aboveskip={1.5\baselineskip},
+    columns=fixed,
+    upquote=true,
+    extendedchars=true,
+    % frame=bottomline,
+    inputencoding=utf8,
+    showspaces=false
+}
+
+\lstdefinestyle{cli}{
+    linewidth=\textwidth,
+    xleftmargin=0.01\textwidth,
+    xrightmargin=0.01\textwidth,
+    numbers=none
+}
+
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\begin{flushright} % Right align
+{\LARGE\@title} % Increase the font size of the title
+
+\vspace{50pt} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+\\\@date % Date
+
+\vspace{40pt} % Some vertical space between the author block and abstract
+\end{flushright}
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{LFC log analyzer}\\ % Title
+LCG.CESNET.cz site} % Subtitle
+
+\author{\textsc{Radek Ludacka} % Author
+\\{\textit{Academy of Sciences of the Czech Republic - Institute of Physics}}} % Institution
+
+\date{\today} % Date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title section
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
+
+\begin{abstract}
+LFC (LCG file catalogue) is standard grid catalogue intended to interconnect a logical file name (LFN) that is the same for the whole grid with a physical file location (where is file really stored). The reason why the LFC log analyzer was developed is: LFC log files have to be analyzed to determine LFC server utilization and find possible bottlenecks of LFC usage. The LFC log analyzer should provide usage statistics that enables to present selected items or items with particularly value. This statistics can be used to analyze LFC usage and improve its efficiency.
+\end{abstract}
+
+\hspace*{3,6mm}\textit{Keywords:} LFC, grid, statistics, analyzer, log file, logging % Keywords
+
+\vspace{30pt} % Some vertical space between the abstract and first section
+
+%----------------------------------------------------------------------------------------
+%	ESSAY BODY
+%----------------------------------------------------------------------------------------
+
+\section*{Lfc log file description}
+
+Standard LFC log file path is /var/log/lfc/. This directory contains log file names log. File log contains current log items. The directory with log files contains also other (compressed) log files with name log-YYYYMMDD.gz where YYYY is year, MM mouth and DD day of particular log date. These files contains log items written down in previous days.
+
+\newpage
+
+\section{Lfc log row and item}
+
+Each row in the log file contains log time, process id, thread id and a function name that defines what happen. Figure \ref{log:row} shows example of LFC log file row.
+
+\begin{lstlisting}[label={log:row},caption={Cns\_srv\_startsess row example}, breaklines]
+11/03 04:28:41.596  9721,5 Cns_srv_readdir: NS092 - readdir request by /DC=es/DC=irisgrid/O=ugr/CN=Julio.Lozano.Bahilo (432,117,104) from polgrid115.in2p3.fr
+\end{lstlisting}
+
+At the begin of each row are date and time describes when function was logged. Date is in MM/DD format. Time is in hour:minutes:seconds.miliseconds format. Process id and thread id splitted by comma are written down after date and time. These numbers define process and thread that wrote row to log file. Function name is placed after thread id. This was general part of each log row.
+
+Each log row is part of a log item. The log item is composed from several rows (mostly 3 or 4). Each row of item has the same process id, thread id and function name. Figure~\ref{log:item} shows example of Cns\_srv\_startsess item. Because threads shares one log file therefore items and rows of items are interleaved each other.
+
+
+\begin{lstlisting}[label={log:item},caption={Cns\_srv\_startsess}]
+11/03 04:28:42.014  9721,1 Cns_srv_startsess: NS092 - startsess request by /DC=es/DC=irisgrid/O=ugr/CN=Julio.Lozano.Bahilo (432,117,104) from polgrid90.in2p3.fr
+11/03 04:28:42.015  9721,1 Cns_srv_startsess: NS098 - startsess ()
+11/03 04:28:42.015  9721,1 Cns_srv_startsess: returns 0
+\end{lstlisting}
+
+\newpage
+
+\section{How are lfc commands written down to log file}
+
+Most of LFC commands are not mapped to only one item. Many of LFC commands are written down as several items to one log file. This document will present several LFC commands and how they are written down in log file. Most of LFC command examples are described in two variants: success and failed.
+
+\subsection{lfc-ls}
+
+lfc-ls command provides very similar functionality as standard UNIX ls command. lfc-ls command enables to list an arbitrary LFC file or directory. lfc-ls command is written down to log file according to lfc-ls destination type. If destination is a file then the only one lstat item is written down to the log file. If destination is a directory then lstat, opendir, readdir and closedir sequence is written down to the log file. Number of readdir items may vary depending on number of files and directories in the target directory. Command lfc-ls allows recursive mode. This mode is set by -R option. If recursive mode is used then only one lstat and sequence of opendir, readdir and closedir are written down to the log file.
+
+\begin{lstlisting}[label={log:lfcls1},caption={lfc-ls /grid/voce/ludacka/text\_file2.txt}]
+07/23 14:38:39.123 20713,0 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/23 14:38:39.123 20713,0 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/ludacka/text_file2.txt
+07/23 14:38:39.125 20713,0 Cns_srv_lstat: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:lfcls2},caption={lfc-ls /grid/voce/ludacka/text\_file2.txt}]
+07/09 09:58:28.883 20713,0 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 09:58:28.883 20713,0 Cns_srv_lstat: NS098 - lstat 0 /
+07/09 09:58:28.884 20713,0 Cns_srv_lstat: returns 0
+07/09 09:58:28.953 20713,0 Cns_srv_opendir: NS092 - opendir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 09:58:28.953 20713,0 Cns_srv_opendir: NS098 - opendir / 
+07/09 09:58:28.954 20713,0 Cns_srv_opendir: returns 0
+07/09 09:58:28.985 20713,0 Cns_srv_readdir: NS092 - readdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 09:58:28.994 20713,0 Cns_srv_readdir: returns 0
+07/09 09:58:29.033 20713,0 Cns_srv_readdir: NS092 - closedir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 09:58:29.034 20713,0 Cns_srv_readdir: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:lfcls3},caption={lfc-ls /grid/voce/neexist - query to file that does not exists}]
+07/12 11:22:40.421 20713,4 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/12 11:22:40.421 20713,4 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/neexist
+07/12 11:22:40.423 20713,4 Cns_srv_lstat: returns 2
+\end{lstlisting}
+
+\subsection{lfc-cr}
+
+lfc-cr commands uploads a file to a SE. This command also register the file to LFC. 
+
+\begin{lstlisting}[label={log:lcgcr1},caption={lcg-cr --vo voce -d dpm1.egee.cesnet.cz -l lfn:/grid/voce/ludacka/text\_file2.txt "file://\$PWD/text\_file2.txt"}]
+07/10 14:25:22.109 20713,1 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:22.109 20713,1 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/ludacka/text_file2.txt
+07/10 14:25:22.111 20713,1 Cns_srv_lstat: returns 2
+07/10 14:25:29.121 20713,3 Cns_srv_starttrans: NS092 - starttrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.121 20713,3 Cns_srv_starttrans: NS098 - starttrans (1.11.16-3)
+07/10 14:25:29.121 20713,3 Cns_srv_starttrans: returns 0
+07/10 14:25:29.121 20713,3 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.121 20713,3 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file2.txt 8da67819-67e1-494a-814f-ee9d8504f2f0
+07/10 14:25:29.123 20713,3 Cns_srv_statg: returns 2
+07/10 14:25:29.124 20713,3 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.124 20713,3 Cns_srv_statg: NS098 - statg /grid/voce/ludacka 
+07/10 14:25:29.125 20713,3 Cns_srv_statg: returns 0
+07/10 14:25:29.162 20713,3 Cns_srv_creat: NS092 - creat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.162 20713,3 Cns_srv_creat: NS098 - creat /grid/voce/ludacka/text_file2.txt 8da67819-67e1-494a-814f-ee9d8504f2f0 664 22
+07/10 14:25:29.173 20713,3 Cns_srv_creat: file 37393414 created
+07/10 14:25:29.173 20713,3 Cns_srv_creat: returns 0
+07/10 14:25:29.210 20713,3 Cns_srv_setfsizeg: NS092 - setfsizeg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.210 20713,3 Cns_srv_setfsizeg: NS098 - setfsizeg 8da67819-67e1-494a-814f-ee9d8504f2f0 19
+07/10 14:25:29.213 20713,3 Cns_srv_setfsizeg: returns 0
+07/10 14:25:29.213 20713,3 Cns_srv_addreplica: NS092 - addreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.213 20713,3 Cns_srv_addreplica: NS098 - addreplica 8da67819-67e1-494a-814f-ee9d8504f2f0 dpm1.egee.cesnet.cz srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-10/file2a59eb51-b0ca-4dd4-9b0a-bfe97f442b85
+07/10 14:25:29.216 20713,3 Cns_srv_addreplica: returns 0
+07/10 14:25:29.217 20713,3 Cns_srv_endtrans: NS092 - endtrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 14:25:29.284 20713,3 Cns_srv_endtrans: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:lcgcr2},caption={lcg-cr --vo voce -d srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/voce/ludacka/text\_file.txt -l lfn:/grid/voce/ludacka/text\_file.txt "file://\$PWD/text\_file.txt" - query to file that does not exists}]
+07/09 10:24:29.797 20713,0 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 10:24:29.797 20713,0 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/ludacka/text_file.txt
+07/09 10:24:29.799 20713,0 Cns_srv_lstat: returns 2
+\end{lstlisting}
+
+\subsection{lfc-mkdir}
+
+lfc-mkdir creates a directory in LFC.
+
+\begin{lstlisting}[label={log:lfcmkdir1},caption={lfc-mkdir /grid/voce/ludacka}]
+07/09 10:22:13.423 20713,3 Cns_srv_mkdir: NS092 - mkdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 10:22:13.423 20713,3 Cns_srv_mkdir: NS098 - mkdir /grid/voce/ludacka  777 22
+07/09 10:22:13.427 20713,3 Cns_srv_mkdir: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:lfcmkdir2},caption={lfc-mkdir /grid/voce/ludacka directory already exists}]
+07/17 13:43:58.752 20713,8 Cns_srv_mkdir: NS092 - mkdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 13:43:58.752 20713,8 Cns_srv_mkdir: NS098 - mkdir /grid/voce/ludacka  777 22
+07/17 13:43:58.755 20713,8 Cns_srv_mkdir: returns 17
+\end{lstlisting}
+
+\subsection{lfc-lr}
+
+lfc-lr list number of replicas and their destinations.
+
+\begin{lstlisting}[label={log:lr1},caption={lcg-lr lfn://grid/voce/ludacka/text\_file.txt}]
+07/09 11:12:27.262 20713,3 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:12:27.262 20713,3 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/text_file.txt 
+07/09 11:12:27.264 20713,3 Cns_srv_getreplica: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:lr2},caption={lcg-lr lfn://grid/voce/ludacka/neexistfile.txt - query on file that does not exist}]
+08/15 16:24:00.126 20713,1 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+08/15 16:24:00.126 20713,1 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/neexistfile.txt
+08/15 16:24:00.127 20713,1 Cns_srv_getreplica: returns 2
+\end{lstlisting}
+
+\newpage
+
+\subsection{lcg-lg}
+
+lcg-lg gets the GUID for a given LFN or SURL.
+
+\begin{lstlisting}[label={log:lg1},caption={lcg-lg --vo voce lfn:/grid/voce/ludacka}]
+07/17 09:48:01.291 20713,1 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 09:48:01.291 20713,1 Cns_srv_statg: NS098 - statg /grid/voce/ludacka 
+07/17 09:48:01.293 20713,1 Cns_srv_statg: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:lg2},caption={lcg-lg --vo voce lfn:/grid/voce/ludacka/text\_file.txt}]
+07/17 09:49:34.952 20713,3 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 09:49:34.952 20713,3 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 
+07/17 09:49:34.954 20713,3 Cns_srv_statg: returns 0
+\end{lstlisting}
+
+\subsection{lcg-la}
+
+lcg-la - lists the aliases for a given LFN, GUID or SURL.
+
+\begin{lstlisting}[label={log:la1},caption={lcg-la --vo voce guid:2045789b-6209-446f-83bc-ae32603b4ac7}]
+07/17 09:46:04.940 20713,1 Cns_srv_getlinks: NS092 - getlinks request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 09:46:04.940 20713,1 Cns_srv_getlinks: NS098 - getlinks  2045789b-6209-446f-83bc-ae32603b4ac7
+07/17 09:46:04.943 20713,1 Cns_srv_getlinks: returns 0
+\end{lstlisting}
+
+\newpage
+
+\subsection{lcg-aa}
+
+lcg-aa - add an alias in RMC for a given GUID.
+
+\begin{lstlisting}[label={log:aa1},caption={lcg-aa --vo voce guid:2045789b-6209-446f-83bc-ae32603b4ac7 /grid/voce/ludacka/text\_file10.txt}]
+07/18 14:54:28.939 20713,0 Cns_srv_starttrans: NS092 - starttrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:28.939 20713,0 Cns_srv_starttrans: NS098 - starttrans (1.11.16-3)
+07/18 14:54:28.939 20713,0 Cns_srv_starttrans: returns 0
+07/18 14:54:28.939 20713,0 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:28.939 20713,0 Cns_srv_statg: NS098 - statg  2045789b-6209-446f-83bc-ae32603b4ac7
+07/18 14:54:28.940 20713,0 Cns_srv_statg: returns 0
+07/18 14:54:28.976 20713,0 Cns_srv_getpath: NS092 - getpath request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:28.978 20713,0 Cns_srv_getpath: returns 0
+07/18 14:54:29.016 20713,0 Cns_srv_symlink: NS092 - symlink request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:29.016 20713,0 Cns_srv_symlink: NS098 - symlink /grid/voce/ludacka/text_file.txt /grid/voce/ludacka/text_file10.txt
+07/18 14:54:29.048 20713,0 Cns_srv_symlink: returns 0
+07/18 14:54:29.049 20713,0 Cns_srv_endtrans: NS092 - endtrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 14:54:29.134 20713,0 Cns_srv_endtrans: returns 0
+\end{lstlisting}
+\newpage
+\subsection{lcg-cp}
+
+lcg-cp - copy files from/to/between Storage Element(s), without registering anything in the file catalog.
+
+\begin{lstlisting}[label={log:cp1},caption={lcg-cp --vo voce lfn:/grid/voce/ludacka/text\_file.txt file://\$PWD/text\_file1.txt}]
+07/09 11:19:18.692 20713,1 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:19:18.692 20713,1 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/09 11:19:18.692 20713,1 Cns_srv_startsess: returns 0
+07/09 11:19:18.693 20713,1 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:19:18.693 20713,1 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 
+07/09 11:19:18.695 20713,1 Cns_srv_statg: returns 0
+07/09 11:19:18.735 20713,1 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:19:18.735 20713,1 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/text_file.txt 4d56eecd-6b88-4262-8b64-957e1a62fb7d
+07/09 11:19:18.738 20713,1 Cns_srv_getreplica: returns 0
+07/09 11:19:18.774 20713,1 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:19:18.775 20713,1 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:cp2},caption={lcg-cp --vo voce lfn:/grid/voce/ludacka/neexist\_file file://\$PWD/text\_file5.txt - lcg-cp to download not exists directory}]
+07/17 15:03:01.852 20713,0 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 15:03:01.852 20713,0 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/17 15:03:01.852 20713,0 Cns_srv_startsess: returns 0
+07/17 15:03:01.852 20713,0 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 15:03:01.852 20713,0 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/neexist_file 
+07/17 15:03:01.853 20713,0 Cns_srv_statg: returns 2
+07/17 15:03:01.853 20713,0 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 15:03:01.853 20713,0 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+\subsection{lcg-rep}
+
+lcg-rep - copy a file from one Storage Element to another Storage.
+
+\begin{lstlisting}[label={log:rep1},caption={lcg-rep --vo voce -d hephyse.oeaw.ac.at lfn:/grid/voce/ludacka/text\_file.txt}]
+07/09 11:16:16.288 20713,2 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:16:16.288 20713,2 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/09 11:16:16.288 20713,2 Cns_srv_startsess: returns 0
+07/09 11:16:16.288 20713,2 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:16:16.288 20713,2 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 
+07/09 11:16:16.291 20713,2 Cns_srv_statg: returns 0
+07/09 11:16:16.329 20713,2 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:16:16.329 20713,2 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/text_file.txt 4d56eecd-6b88-4262-8b64-957e1a62fb7d
+07/09 11:16:16.332 20713,2 Cns_srv_getreplica: returns 0
+07/09 11:16:16.369 20713,2 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:16:16.369 20713,2 Cns_srv_endsess: returns 0
+07/09 11:16:30.400 20713,4 Cns_srv_starttrans: NS092 - starttrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:16:30.400 20713,4 Cns_srv_starttrans: NS098 - starttrans (1.11.16-3)
+07/09 11:16:30.400 20713,4 Cns_srv_starttrans: returns 0
+07/09 11:16:30.400 20713,4 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:16:30.400 20713,4 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 4d56eecd-6b88-4262-8b64-957e1a62fb7d
+07/09 11:16:30.403 20713,4 Cns_srv_statg: returns 0
+07/09 11:16:30.441 20713,4 Cns_srv_addreplica: NS092 - addreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:16:30.441 20713,4 Cns_srv_addreplica: NS098 - addreplica 4d56eecd-6b88-4262-8b64-957e1a62fb7d hephyse.oeaw.ac.at srm://hephyse.oeaw.ac.at/dpm/oeaw.ac.at/home/voce/generated/2013-07-09/filef16ea56a-efd1-40f1-a045-74fe6cf293f8
+07/09 11:16:30.460 20713,4 Cns_srv_addreplica: returns 0
+07/09 11:16:30.461 20713,4 Cns_srv_endtrans: NS092 - endtrans request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:rep2},caption={lcg-rep --vo voce -d darkmass.wcss.wroc.pl lfn:/grid/voce/ludacka/text\_file.txt - replicate file that does not exist}]
+07/10 18:49:37.299 20713,2 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 18:49:37.299 20713,2 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/10 18:49:37.299 20713,2 Cns_srv_startsess: returns 0
+07/10 18:49:37.300 20713,2 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 18:49:37.300 20713,2 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 
+07/10 18:49:37.302 20713,2 Cns_srv_statg: returns 2
+07/10 18:49:37.302 20713,2 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 18:49:37.302 20713,2 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:rep3},caption={lcg-rep --vo voce -d some.notexist.site lfn:/grid/voce/ludacka/text\_file.txt - replicate to site that does not exist}]
+07/17 08:30:48.815 20713,5 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 08:30:48.815 20713,5 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/17 08:30:48.815 20713,5 Cns_srv_startsess: returns 0
+07/17 08:30:48.816 20713,5 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 08:30:48.816 20713,5 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 
+07/17 08:30:48.817 20713,5 Cns_srv_statg: returns 0
+07/17 08:30:48.859 20713,5 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 08:30:48.859 20713,5 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/text_file.txt 2045789b-6209-446f-83bc-ae32603b4ac7
+07/17 08:30:48.866 20713,5 Cns_srv_getreplica: returns 0
+07/17 08:30:48.904 20713,5 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/17 08:30:48.904 20713,5 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+\subsection{lcg-del}
+
+lcg-del - delete files (SURLs or LFNs)
+
+\begin{lstlisting}[label={log:del1},caption={lcg-del --vo voce srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-16/filecdd9d191-054b-4779-8d0f-c0b91fc564fb - delete only one replica}]
+07/18 09:52:13.680 20713,15 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:13.680 20713,15 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/18 09:52:13.680 20713,15 Cns_srv_startsess: returns 0
+07/18 09:52:13.680 20713,15 Cns_srv_statr: NS092 - statr request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:13.680 20713,15 Cns_srv_statr: NS098 - statr srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-16/filecdd9d191-054b-4779-8d0f-c0b91fc564fb
+07/18 09:52:13.682 20713,15 Cns_srv_statr: returns 0
+07/18 09:52:13.720 20713,15 Cns_srv_getlinks: NS092 - getlinks request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:13.720 20713,15 Cns_srv_getlinks: NS098 - getlinks  2045789b-6209-446f-83bc-ae32603b4ac7
+07/18 09:52:13.743 20713,15 Cns_srv_getlinks: returns 0
+07/18 09:52:13.784 20713,15 Cns_srv_access: NS092 - access request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:13.784 20713,15 Cns_srv_access: NS098 - access 6 /grid/voce/ludacka/text_file.txt
+07/18 09:52:13.786 20713,15 Cns_srv_access: returns 0
+07/18 09:52:13.787 20713,15 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:13.787 20713,15 Cns_srv_endsess: returns 0
+07/18 09:52:16.312 20713,27 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:16.312 20713,27 Cns_srv_startsess: NS098 - startsess ()
+07/18 09:52:16.312 20713,27 Cns_srv_startsess: returns 0
+07/18 09:52:16.313 20713,27 Cns_srv_delreplica: NS092 - delreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:16.313 20713,27 Cns_srv_delreplica: NS098 - delreplica 2045789b-6209-446f-83bc-ae32603b4ac7 srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-16/filecdd9d191-054b-4779-8d0f-c0b91fc564fb
+07/18 09:52:16.316 20713,27 Cns_srv_delreplica: returns 0
+07/18 09:52:16.359 20713,27 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:16.359 20713,27 Cns_srv_getreplica: NS098 - getreplica  2045789b-6209-446f-83bc-ae32603b4ac7
+07/18 09:52:16.360 20713,27 Cns_srv_getreplica: returns 0
+07/18 09:52:16.400 20713,27 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 09:52:16.400 20713,27 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:del3},caption={lcg-del -a lfn:/grid/voce/ludacka/text\_file.txt - deletes all replicas and alisses. In this example: deletes 2 replicas}] 
+07/19 10:43:07.460 20713,0 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:07.460 20713,0 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/19 10:43:07.460 20713,0 Cns_srv_startsess: returns 0
+07/19 10:43:07.460 20713,0 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:07.460 20713,0 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 
+07/19 10:43:07.463 20713,0 Cns_srv_statg: returns 0
+07/19 10:43:07.501 20713,0 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:07.501 20713,0 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/text_file.txt 78eda959-9af0-4423-9b01-3eade1cffe31
+07/19 10:43:07.504 20713,0 Cns_srv_getreplica: returns 0
+07/19 10:43:07.541 20713,0 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:07.541 20713,0 Cns_srv_endsess: returns 0
+07/19 10:43:08.609 20713,1 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:08.609 20713,1 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/19 10:43:08.609 20713,1 Cns_srv_startsess: returns 0
+07/19 10:43:08.609 20713,1 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:08.609 20713,1 Cns_srv_statg: NS098 - statg /grid/voce/ludacka/text_file.txt 
+07/19 10:43:08.612 20713,1 Cns_srv_statg: returns 0
+07/19 10:43:08.645 20713,1 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:08.645 20713,1 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/text_file.txt 78eda959-9af0-4423-9b01-3eade1cffe31
+07/19 10:43:08.647 20713,1 Cns_srv_getreplica: returns 0
+07/19 10:43:08.685 20713,1 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:08.685 20713,1 Cns_srv_endsess: returns 0
+07/19 10:43:09.750 20713,3 Cns_srv_access: NS092 - access request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:09.750 20713,3 Cns_srv_access: NS098 - access 6 /grid/voce/ludacka/text_file.txt
+07/19 10:43:09.751 20713,3 Cns_srv_access: returns 0
+07/19 10:43:17.260 20713,3 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:17.260 20713,3 Cns_srv_startsess: NS098 - startsess ()
+07/19 10:43:17.260 20713,3 Cns_srv_startsess: returns 0
+07/19 10:43:17.261 20713,3 Cns_srv_delreplica: NS092 - delreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:17.261 20713,3 Cns_srv_delreplica: NS098 - delreplica 78eda959-9af0-4423-9b01-3eade1cffe31 srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-19/file290083f4-7c35-4f68-9ef0-9d6cab6eea3e
+07/19 10:43:17.265 20713,3 Cns_srv_delreplica: returns 0
+07/19 10:43:17.351 20713,3 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:17.351 20713,3 Cns_srv_getreplica: NS098 - getreplica  78eda959-9af0-4423-9b01-3eade1cffe31
+07/19 10:43:17.352 20713,3 Cns_srv_getreplica: returns 0
+07/19 10:43:17.389 20713,3 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:17.389 20713,3 Cns_srv_endsess: returns 0
+07/19 10:43:23.025 20713,1 Cns_srv_startsess: returns 0
+07/19 10:43:23.025 20713,1 Cns_srv_delreplica: NS092 - delreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:23.025 20713,1 Cns_srv_delreplica: NS098 - delreplica 78eda959-9af0-4423-9b01-3eade1cffe31 srm://darkmass.wcss.wroc.pl/dpm/wcss.wroc.pl/home/voce/generated/2013-07-19/file71c76adf-b0a3-4ade-b292-55ee050f4e54
+07/19 10:43:23.029 20713,1 Cns_srv_delreplica: returns 0
+07/19 10:43:23.102 20713,1 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:23.102 20713,1 Cns_srv_getreplica: NS098 - getreplica  78eda959-9af0-4423-9b01-3eade1cffe31
+07/19 10:43:23.103 20713,1 Cns_srv_getreplica: returns 0
+07/19 10:43:23.141 20713,1 Cns_srv_getlinks: NS092 - getlinks request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:23.141 20713,1 Cns_srv_getlinks: NS098 - getlinks  78eda959-9af0-4423-9b01-3eade1cffe31
+07/19 10:43:23.144 20713,1 Cns_srv_getlinks: returns 0
+07/19 10:43:23.181 20713,1 Cns_srv_unlink: NS092 - unlink request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:23.181 20713,1 Cns_srv_unlink: NS098 - unlink /grid/voce/ludacka/text_file.txt
+07/19 10:43:23.190 20713,1 Cns_srv_unlink: returns 0
+07/19 10:43:23.261 20713,1 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/19 10:43:23.261 20713,1 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:del4},caption={lcg-del --vo voce srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-18/fileda937a3c-4112-4d56-a34e-9866967cfe44 - deletes the last replica and all its links (2)}]
+07/18 15:46:24.732 20713,1 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.732 20713,1 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/18 15:46:24.732 20713,1 Cns_srv_startsess: returns 0
+07/18 15:46:24.733 20713,1 Cns_srv_statr: NS092 - statr request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.733 20713,1 Cns_srv_statr: NS098 - statr srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-18/fileda937a3c-4112-4d56-a34e-9866967cfe44
+07/18 15:46:24.734 20713,1 Cns_srv_statr: returns 0
+07/18 15:46:24.773 20713,1 Cns_srv_getlinks: NS092 - getlinks request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.773 20713,1 Cns_srv_getlinks: NS098 - getlinks  08043bf1-37e7-4f53-b642-cb474db58f90
+07/18 15:46:24.779 20713,1 Cns_srv_getlinks: returns 0
+07/18 15:46:24.815 20713,1 Cns_srv_access: NS092 - access request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.815 20713,1 Cns_srv_access: NS098 - access 6 /grid/voce/ludacka/text_file.txt
+07/18 15:46:24.817 20713,1 Cns_srv_access: returns 0
+07/18 15:46:24.818 20713,1 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:24.818 20713,1 Cns_srv_endsess: returns 0
+07/18 15:46:27.326 20713,2 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.326 20713,2 Cns_srv_startsess: NS098 - startsess ()
+07/18 15:46:27.326 20713,2 Cns_srv_startsess: returns 0
+07/18 15:46:27.326 20713,2 Cns_srv_delreplica: NS092 - delreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.326 20713,2 Cns_srv_delreplica: NS098 - delreplica 08043bf1-37e7-4f53-b642-cb474db58f90 srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-18/fileda937a3c-4112-4d56-a34e-9866967cfe44
+07/18 15:46:27.329 20713,2 Cns_srv_delreplica: returns 0
+07/18 15:46:27.366 20713,2 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.366 20713,2 Cns_srv_getreplica: NS098 - getreplica  08043bf1-37e7-4f53-b642-cb474db58f90
+07/18 15:46:27.367 20713,2 Cns_srv_getreplica: returns 0
+07/18 15:46:27.405 20713,2 Cns_srv_getlinks: NS092 - getlinks request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.406 20713,2 Cns_srv_getlinks: NS098 - getlinks  08043bf1-37e7-4f53-b642-cb474db58f90
+07/18 15:46:27.409 20713,2 Cns_srv_getlinks: returns 0
+07/18 15:46:27.446 20713,2 Cns_srv_unlink: NS092 - unlink request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.446 20713,2 Cns_srv_unlink: NS098 - unlink /grid/voce/ludacka/text_file.txt
+07/18 15:46:27.455 20713,2 Cns_srv_unlink: returns 0
+07/18 15:46:27.528 20713,2 Cns_srv_unlink: NS092 - unlink request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.528 20713,2 Cns_srv_unlink: NS098 - unlink /grid/voce/ludacka/text_file8.txt
+07/18 15:46:27.537 20713,2 Cns_srv_unlink: returns 0
+07/18 15:46:27.577 20713,2 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/18 15:46:27.577 20713,2 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:del5},caption={lcg-del -a lfn:/grid/voce/ludacrad/text\_file.txt - try to delete file that does not exist}]
+07/09 11:22:05.671 20713,4 Cns_srv_startsess: NS092 - startsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:22:05.671 20713,4 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+07/09 11:22:05.671 20713,4 Cns_srv_startsess: returns 0
+07/09 11:22:05.671 20713,4 Cns_srv_statg: NS092 - statg request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:22:05.671 20713,4 Cns_srv_statg: NS098 - statg /grid/voce/ludacrad/text_file.txt
+07/09 11:22:05.673 20713,4 Cns_srv_statg: returns 2
+07/09 11:22:05.673 20713,4 Cns_srv_endsess: NS092 - endsess request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/09 11:22:05.673 20713,4 Cns_srv_endsess: returns 0
+\end{lstlisting}
+
+Write several lines is necessary to describe lcg-del command because of its complexity. Result lines written down to log file are dependent how many replica and how many links has been created before lcg-del invocation. lcg-del command has two basic variants: the first that deletes only one replica (with --vo option and SURL path) and the second one (with -a option and LFN path) that delete all replicas from all storage elements and all links. The last lines defined all variant that could happen therefore only the last few line (sequences) will be described in this review.
+
+The first variant deletes only one replica if more exists (sequence: startsess, getreplica, delreplica, endsess). If command deletes the last one replica then remove all its links (sequence: startsess, getreplica, delreplica, getlinks, unlink, endsess) where number of unlink command is invoked according to number of exists links.
+
+The second variant deletes all replicas and links - sequence: startsess, getreplica, delreplica, endsess is written down to log file for each deleted replica after the same sequence: startsess, getreplica, delreplica, getlinks, unlink, endsess) as in the first variant is written down to log file.
+
+\subsection{lfc-rm}
+
+lfc-rm removes LFC files or directories in the name server.
+
+\begin{lstlisting}[label={log:rm},caption={lfc-rm -r /grid/voce/ludacka2}]
+07/10 19:28:38.919 20713,5 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:38.919 20713,5 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/ludacka2
+07/10 19:28:38.920 20713,5 Cns_srv_lstat: returns 0
+07/10 19:28:38.989 20713,1 Cns_srv_access: NS092 - access request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:38.989 20713,1 Cns_srv_access: NS098 - access 2 /grid/voce/ludacka2
+07/10 19:28:38.990 20713,1 Cns_srv_access: returns 0
+07/10 19:28:39.054 20713,1 Cns_srv_opendir: NS092 - opendir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:39.054 20713,1 Cns_srv_opendir: NS098 - opendir /grid/voce/ludacka2 
+07/10 19:28:39.056 20713,1 Cns_srv_opendir: returns 0
+07/10 19:28:40.160 20713,4 Cns_srv_chdir: NS092 - chdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:40.160 20713,4 Cns_srv_chdir: NS098 - chdir /grid/voce/ludacka2
+07/10 19:28:40.163 20713,4 Cns_srv_chdir: returns 0
+07/10 19:28:40.163 20713,1 Cns_srv_readdir: NS092 - readdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:40.165 20713,1 Cns_srv_readdir: returns 0
+07/10 19:28:40.232 20713,1 Cns_srv_readdir: NS092 - closedir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:40.233 20713,1 Cns_srv_readdir: returns 0
+07/10 19:28:41.351 20713,1 Cns_srv_chdir: NS092 - chdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:41.351 20713,1 Cns_srv_chdir: NS098 - chdir ..
+07/10 19:28:41.352 20713,1 Cns_srv_chdir: returns 0
+07/10 19:28:41.420 20713,1 Cns_srv_rmdir: NS092 - rmdir request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:28:41.420 20713,1 Cns_srv_rmdir: NS098 - rmdir /grid/voce/ludacka2
+07/10 19:28:41.426 20713,1 Cns_srv_rmdir: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:rm2},caption={lfc-rm /grid/voce/ludacka2 - error: Is a directory}]
+07/10 19:24:12.473 20713,0 Cns_srv_lstat: NS092 - lstat request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
+07/10 19:24:12.473 20713,0 Cns_srv_lstat: NS098 - lstat 0 /grid/voce/ludacka2
+07/10 19:24:12.475 20713,0 Cns_srv_lstat: returns 0
+\end{lstlisting}
+
+\newpage
+
+\subsection{Log lines written down by service or when an error happen}
+
+\begin{lstlisting}[label={log:utime},caption={Cns\_srv\_utime - invoked by nagios service}]
+11/30 07:45:39.237 16392,0 Cns_srv_utime: NS092 - utime request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of the Academy of Sciences of the CR/CN=Jan Svec (557,120,138,143) from nagios.egee.cesnet.cz
+11/30 07:45:39.237 16392,0 Cns_srv_utime: NS098 - utime /grid/ops/file-lfc-probe-lfc1.egee.cesnet.cz 0
+11/30 07:45:39.240 16392,0 Cns_srv_utime: returns 0
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:timeout},caption={Cns\_serv - timed out}]
+11/30 05:07:09.707 16392,1 Cns_serv: NS002 - netread error : Timed out
+11/30 05:07:09.707 16392,1 Cns_serv: [147.231.25.105] (nat105.farm.particle.cz): Failure getting the request: Timed out
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:proxyproblem},caption={Cns\_serv - proxy problem}]
+11/30 04:21:25.123 16392,1 Cns_serv: [132.195.125.93] (wn083.pleiades.uni-wuppertal.de): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
+\end{lstlisting}
+
+\begin{lstlisting}[label={log:pingdb},caption={Cns\_pingdb - MySql query error}]
+11/30 07:58:36.747 16392,20 Cns_pingdb: mysql_query error: MySQL server has gone away
+11/30 07:58:36.747 16392,20 Cns_pingdb: Trying to reconnect\
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[label={log:brokenpipe},caption={sendrep - Broken pipe}]
+lines of lfc-ls log ...
+07/18 12:55:30.006 20713,3 Cns_srv_readdir: returns 0
+07/18 12:57:32.210 20713,3 Cns_serv: NS002 - netread error : Connection reset by peer
+07/18 12:57:32.210 20713,3 Cns_srv_readdir: NS092 - closedir request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from wario.univ-lille1.fr
+07/18 12:57:32.212 20713,3 sendrep: NS002 - send error : Broken pipe
+07/18 12:57:32.212 20713,3 Cns_srv_readdir: returns 0
+07/18 12:57:32.297 20713,3 sendrep: NS002 - send error : Broken pipe
+\end{lstlisting}
+
+Broken pipe error can be written down in more variants - with less send errors lines or after arbitrary readdir line.
+
+\subsection{Discussion}
+
+The most important observation that has to be described is: when lcg-del, lcg-cp or lcg-rep commands are invoked from the same ui, the same user and on the same file then their is not possibility to resolve which command has been executed because all command are written down to log file by the same lines. The second most important observation is: many lfc command are written down very similarly and it is very difficult to recognize between them. 
+
+\section*{LFC analyzer manual}
+
+LFC analyzer is standard command line application written in C++ language. LFC analyzer allows to present information stored in LFC log file in human readable form. LFC analyzer determines LFC commands that have been invoked by LFC. LFC analyzer keeps several items that are important to analyze log file. These items are: user who invoked LFC command, user interface that have been used, file on which has been command invoked and command result.
+
+LFC analyzer allows to present analyzed result in many variants. These variants are selected by standard command line options. LFC analyzer contains two kind of options: with and without an argument. The only one options with an argument is required: option -i <input log file>. LFC analyzer counts number of LFC commands and splitted succeed and non succeed to simple table (see~\ref{out:commandtable}).
+
+\begin{lstlisting}[style=cli, label={out:commandtable}, caption={lfc\_analyzer -i logfile}]
+|command      |    failed |      good |
+|lfc-ls       |    252453 |     45370 |
+|lcg-cr       |         0 |     12580 |
+|lcg-rep      |     15943 |        58 |
+|lfc-mkdirs   |       313 |        48 |
+|lcg-cp       |         ? |      5522 |
+|ping db      |         0 |       108 |
+|lcg-del      |         ? |      5420 |
+|serv errors  |     19798 |         0 |
+|utimes       |         0 |        96 |
+|lcg-aa       |         ? |      1103 |
+|lcg-rm       |         ? |         0 |
+lcg-rep failed v sobe zahrnuje lcg-cp failed a lcg-del failed
+\end{lstlisting}
+
+Some command are assigned by character ?. This character can means one of two things: LFC analyzer is not able recognize and analyze the command yet or more than one command are written down the same to log file. The second case is for example: commands lcg-rep, lcg-cp, and lcg-del are written down in the same way to log file. Therefore LFC analyzer informs user about this fact by information line below table (see~\ref{out:commandtable}).
+
+\subsection{Command line options}
+
+LFC analyzer present analysis output in table form. Number and order of table columns are defined by user options. User can specify options: -f, -s, -u, -d, -r. 
+
+\begin{description}
+    \item[] -f: Destination file that have been accessed by LFC command.
+    \item[] -s: User interface where LFC command have been invoked. 
+    \item[] -u: User name that invoked LFC command.
+    \item[] -c: LFC command that have been invoked.
+    \item[] -r: Result (Success) of invoked LFC command.
+\end{description}
+
+User has not specify any options. Table will not be presented in this case. When user specifies any option then for each option is created column in that is presented value for particular item. Columns are ordered according to option order. Example~\ref{out:usercommandtable} shows table where lfc\_analyzer presents user and LFC commands that they invoked.
+
+\newpage
+
+\begin{center}
+\begin{lstlisting}[style=cli, label={out:usercommandtable}, caption={lfc\_analyzer -i logfile -u -c}]
+user1   : 6622 |LCG_CP          : 451 |
+               |LCG_CR         : 1005 |
+               |LCG_DEL          : 21 |
+               |LCG_LR          : 133 |
+               |LCG_REP        : 3211 |
+               |LFC_LS         : 1511 |
+               |LFC_MKDIR       : 290 |
+user2    : 120 |LCG_UTIME        : 96 |
+               |LFC_LS           : 24 |
+user3     : 29 |LCG_CP            : 4 |
+               |LCG_LR            : 6 |
+               |LFC_LS           : 19 |
+user3 : 126221 |LCG_AA          : 861 |
+               |LCG_CP         : 1033 |
+               |LCG_CR         : 8786 |
+               |LCG_DEL        : 4177 |
+               |LCG_LR         : 8194 |
+               |LCG_REP       : 10024 |
+               |LFC_LS        : 93083 |
+               |LFC_MKDIR        : 61 |
+               |SRV_ERR           : 2 |
+user5  : 60195 |LCG_AA          : 242 |
+               |LCG_CP         : 4030 |
+               |LCG_CR         : 2789 |
+               |LCG_DEL        : 1222 |
+               |LCG_LR        : 19743 |
+               |LCG_REP        : 2745 |
+               |LFC_LS        : 29400 |
+               |LFC_MKDIR        : 10 |
+               |SRV_ERR          : 14 |
+user6 : 173811 |LCG_CP            : 4 |
+               |LCG_REP          : 21 |
+               |LFC_LS       : 173786 |
+user7  : 19890 |LCG_PINGDB      : 108 |
+               |SRV_ERR       : 19782 |
+\end{lstlisting}
+\end{center}
+
+\newpage
+
+Example~\ref{out:usercommandresulttable} shows table where lfc\_analyzer presents user, LFC command and result of LFC command.
+
+\begin{center}
+\begin{lstlisting}[style=cli, label={out:usercommandresulttable}, caption={lfc\_analyzer -i logfile -u -c -r}]
+user1   : 6622 |LCG_CP       : 451 |succeed   : 451 |
+               |LCG_CR      : 1005 |succeed  : 1005 |
+               |LCG_DEL       : 21 |succeed    : 21 |
+               |LCG_LR       : 133 |succeed   : 133 |
+               |LCG_REP     :   30 |succeed    : 30 |
+               |LFC_LS      : 1511 |succeed   : 188 |
+               |                   |failed   : 1323 |
+               |LFC_MKDIR    : 290 |failed    : 290 |
+user2    : 120 |LCG_UTIME     : 96 |succeed    : 96 |
+               |LFC_LS        : 24 |failed     : 24 |
+user3     : 29 |LCG_CP         : 4 |succeed     : 4 |
+               |LCG_LR         : 6 |succeed     : 6 |
+               |LFC_LS        :  2 |succeed     : 2 |
+user4 : 126221 |LCG_AA       : 861 |succeed   : 861 |
+               |LCG_CP      : 1033 |succeed  : 1033 |
+               |LCG_CR      : 8786 |succeed  : 8786 |
+               |LCG_DEL     : 4177 |succeed  : 4177 |
+               |LCG_LR      : 8194 |succeed  : 8194 |
+               |LCG_REP    : 10024 |succeed    : 28 |
+               |                   |failed   : 9996 |
+               |LFC_LS     : 93083 |succeed : 35162 |
+               |                   |failed  : 57921 |
+               |LFC_MKDIR     : 61 |succeed    : 42 |
+               |                   |failed     : 19 |
+               |SRV_ERR        : 2 |failed      : 2 |
+user5  : 60195 |LCG_AA       : 242 |succeed   : 242 |
+               |LCG_CP      : 4030 |succeed  : 4030 |
+               |LCG_CR      : 2789 |succeed  : 2789 |
+               |LCG_DEL     : 1222 |succeed  : 1222 |
+               |LCG_LR     : 19743 |succeed : 19743 |
+               |LCG_REP     : 2745 |failed   : 2745 |
+               |LFC_LS     : 29400 |succeed : 10014 |
+               |                   |failed  : 19386 |
+               |LFC_MKDIR     :  6 |succeed     : 6 |
+               |SRV_ERR       : 14 |failed     : 14 |
+user6 : 173811 |LCG_CP         : 4 |succeed     : 4 |
+               |LCG_REP       : 21 |failed     : 21 |
+               |LFC_LS    : 173786 |succeed     : 4 |
+               |                   |failed : 173782 |
+user7  : 19890 |LCG_PINGDB   : 108 |failed    : 108 |
+               |SRV_ERR    : 19782 |failed  : 19782 |
+\end{lstlisting}
+%\end{tabular}
+\end{center}
+
+LFC analyzer also allows to present only selected rows from result table. User can select each value in result table by options. LFC analyzer provides several options for this purpose.
+
+\begin{description}
+    \item[] -d UI : filter by user interface
+    \item[] -g USER : filter by user
+    \item[] -l FILE : filter by file name
+    \item[] -p COMMAND : filter by command name (lfc-ls, lcg-cr, lcg-rep, etc.)
+    \item[] -o ( true | false ) : filter by command result
+\end{description}
+
+Example~\ref{out:filter1} shows table where user name contains Albert and his failed command was selected.
+
+\begin{center}
+\begin{lstlisting}[style=cli, label={out:filter1}, caption={lfc\_analyzer -i log-20121201 -ucr -g Albert -o false}]
+Mr. Albert : 173803 |LCG_REP    : 21 |failed     : 21 |
+                    |LFC_LS : 173782 |failed : 173782 |
+\end{lstlisting}
+\end{center}
+
+%----------------------------------------------
+
+\section*{Analysis result in graphs}
+
+Following graph were created based on LFC analyzer results. Two weeks was analyzed:
+
+\begin{itemize}
+	\item 22.10.2012 - 28.10.2012
+	\item 2.9.2013 - 8.9.2013
+\end{itemize} 
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/commands.png}
+\end{figure}
+
+%lfc-ls       
+%lcg-cr       
+%lcg-rep      
+%lfc-mkdir   
+%lcg-cp       
+%ping db      
+%lcg-del      
+%serv errors  
+%utimes       
+%lcg-aa       
+%lcg-rm       
+
+\subsection{Result of week 22.10.2012 - 28.10.2012}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lfc-ls-1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-cr-1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-rep-1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lfc-mkdir-1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-del-1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/serv-errors-1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/utimes-1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-aa-1.png}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/commands-1.png}
+\end{figure}
+
+\subsection{Result of week 2.9.2013 - 8.9.2013}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lfc-ls-2.jpg}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-cr-2.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-rep-2.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lfc-mkdir-2.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/ping-db-2.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-del-2.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/serv-errors-2.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/utimes-2.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-aa-2.png}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/commands-2.png}
+\end{figure}
+
+
+\subsection{Week comparison}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lfc-ls-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-cr-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-rep-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lfc-mkdir-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/ping-db-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-del-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/serv-errors-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/utimes-c.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lcg-aa-c.png}
+\end{figure}
+
+\subsection{LFC analyzer uncertainty}
+
+LFC analyzer is not able to analyze all items in LFC log file yet, but it is able to present how many items was recognized and how many was not.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/items-1.png}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/items-2.png}
+\end{figure}
+
+
+%-----------------------------------------------
+
+\section*{Application documentation}
+
+LFC analyzer is composed from several modules that provide different functionality. These modules process an input from previous module and provide output for consecutive module. Input for the first one module is a LFC log file. These chain is presented in Figure~\ref{fig:main-seq}. Functionality of each module will be described in below sections. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/lfc-main-seq.pdf}
+	\caption{The whole analyzing process}
+	\label{fig:main-seq}
+\end{figure}
+
+
+\subsection{Method main}
+
+Main method creates and invokes all main modules that are presented in Figure~\ref{fig:main-seq}. The first thing that the main method do is line command arguments parsing. Library getopt has been chosen to parse command line input. The result of parsing (which argument and argument order) is stored to file, site, user, command, resultType variable and to filteredFile, filteredSite, filteredUser, filteredCommand, filteredSuccess variables. These variables influence composition of result module's chain. The next step that method main provides is LFC log file parsing. A method parse from class Parser has been created for this purpose (see~\ref{c:parser}). This method parses the whole log file and returns LogTable object where all parsed items are stored (see~\ref{log:item}). The LogTable object is passed to method Analyze of Analyzer class. The Analyzer class has been created to recognize and extract all LFC commands that has been written to log files as rows (see~\ref{log:row}). The output of Analyze method is a vector (C++ structure) contains all recognized LFC commands from LFC log file. The LFC Analyzer also allow to filter recognized LFC commands. Class Filter has been created for this reason. Command line arguments that require a values (value that will be filtered) that sets the Filter class. The Filter class filters LFC commands by Filtrate method according to set values. The result that the Filtrate method returns is a vector contains LFC commands for that filtering conditions was successful. Next modules that process Filter's result is Sorter. Sorter sort filtered result according to passed command line arguments. For each LFC command property has been created one sorter's class that sorts LFC commands in a vector. The last module is called Presenter. The presenter module prints filtered and sorted LFC command to the standard output.
+
+\subsection{Class Parser}
+\label{c:parser}
+
+Class parser contains the parse method that parses the whole input LFC log file to list of Items. The first operation that has to be done is row parsing, therefore parse method parses rows first - extracts log time, log function and thread id. Remain string is also stored into other variable. If parse method knows thread id for each row then the method can merge rows with the same thread id. These rows are composed one item. A particular parser has been created to parse particular item type. Special inheritance system has been created for this reason. Each parser inherits from class named CommandParser. This class contains default parsing implementation and its descendants can override this parent implementation (see~\ref{fig:commandparser}). 
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.8\textwidth]{figures/Lfc-commandParser-class.pdf}
+    \caption{Item parser inheritance design}
+    \label{fig:commandparser}
+\end{figure}
+
+Each descendant of CommandParser overrides (or not if default implementation is sufficient) several parseStateX methods according to number of rows from which is particular Item composed - each parseStateX method parses information from its row (parseState0 parses the first row, parseState1 parses the second row). An instance Item class is the result of each parsing. Each Item contains time of the first and last Item's row, Item's command, thread id, file path on that was LFC command item invoked, user who invoked LFC Command, User Interface (site) from which has been command invoked and also Item's command type (see~\ref{fig:item}).
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/lfc-analyzer-item-class.pdf}
+    \caption{Item class}
+    \label{fig:item}
+\end{figure}
+
+\subsection{Class Analyzer}
+\label{c:analyzer}
+
+The Analyzer class was implemented to recognize LFC commands from parsed Item's. Special recognification design that is similar to parsing design has been implemented to recognize LFC commands. The parsing result is passed to the Analyze method. An abstract parent class State has been created to store information about current processed LFC Command (see~\ref{fig:states}). The Analyze method goes through the vector of Items and according to Item's type chooses particular state. The items iterator, start item, and several subitem from the Item's list are passed to the chosen State. State tries to find out the next Item that is part of particular LFC commands. Afterward, state creates new state and passes to it its new result (start item, item iterator and several items to process). Each state determines next state and creates it. If the state determines that the next item will not follows then returns the result as a LFC Command. The LFC command is returned to the top of the state stack then next item can start new analyzing process. The LFC analyzer state principle is depth first search principle in general, but with certain condition. The result of analyzing is vector of LFC Commands that is returned by the Analyze method.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/Lfc-analyzer-state.pdf}
+    \caption{State inheritance system}
+    \label{fig:states}
+\end{figure}
+
+\subsection{Class Filter}
+\label{c:filter}
+
+The Filter class is intended to filter values that the user sets by command line options. The user specifies values that has to each LFC command contains by several command line options. The specified values are set by SetSearchedCommand, SetSearchedFileString, SetSearchedSiteString, SetSearchedSuccessValue, SetSearchedUserString setters of Filter class. Method Filtrate starts filtering. If some of set values is not in a LFC Command then the LFC Command is discarded. The vector of filtered LFC Commands is returned by Filtrate method.
+
+\subsection{Class Sorter}
+\label{c:sorter}
+
+Set of sorter classes was implemented to create output for user in convenient form. Sorter uses chain of responsibility pattern (see~\ref{fig:sorters}). The abstract Sorter class was implemented as a parent for each Sorter's class. Descendants of parent Sorter are CommandSorter, FileSorter, UserSorter, SucessSorter, and SiteSorter. How these sortes sorts presents list~\ref{enum:sorters}.
+
+\begin{figure}[H]
+  \centering
+\begin{itemize}
+\item CommandSorter: sorts by LFC Command name.
+\item FileSorter: sorts by File name on that has been LFC Command invoked.
+\item UserSorter: sorts by User name that LFC Command invoked.
+\item SucessSorter: sorts onto two kinds of result: succeed and failed.
+\item SiteSorter: sorts according to User Interface name.
+\end{itemize}
+\caption{Sorter classes}
+\label{enum:sorters}
+\end{figure}
+
+Sorters could be composed together (e.g., CommandSorter can contain FileSorter and it can contain other sorter). This implementation allows to sort result gradually, it means when we want to sort LFC commands by success first and afterward to sort the result according to file name then we can compose Sorter's constructor according to example~\ref{sorters}. The SuccessSorter splits command onto two groups - failed and succeed command. Afterward, the FileSorter is called to sort each group of SuccessSorter's result). This principle is the same for each Sorter - the previous Sorter sorts values to several groups and the next Sorter is called to sort each of group separately.
+
+\begin{center}
+\begin{lstlisting}[style=cli, label={sorters}, caption={Composed sorters}]
+Sorter * sorter = new FileSorter(new SuccessSorter());
+\end{lstlisting}
+\end{center}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/Lfc-Sorter-class-1.pdf}\
+    \caption{Sorter class diagram}
+    \label{fig:sorters}
+\end{figure}
+
+\subsection{Class Presenter}
+\label{c:presenter}
+
+The Presenter class prints out result in table form. The main method that presents the result is \textit{Print(vector<LFCCommad *> commands, int file, int user, int site, int command, int resultType)}. The first argument is sorted vector of commands that will be presented and remain arguments are variables that contain order to order table columns. Table columns are presented and ordered according to command line parameters selected by the user. The main important thing about the result table is: the result table print only first value if the next values are the same in one column. Therefore, user can easily browse trough LFC commands and recognize their values.
+
+%-----------------------------------------------
+
+\section*{Installation}
+
+    \begin{verbatim}
+       git clone https://github.com/radekludacka/lfc-analyzer.git
+       cd lfc-analyzer
+       sh install.sh
+       ./bin/lfc_analyzer -i <logfile>
+       # or ./bin/lfc_analyzer -i <logfile> -ur -o false etc.
+    \end{verbatim}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+
+\bibliography{sample}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

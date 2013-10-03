@@ -5,6 +5,7 @@
                    displayName="documentation"
                    projectFiles="true">
       <itemPath>documentation/lfc_log_analyzer-documentation.pdf</itemPath>
+      <itemPath>documentation/lfc_log_analyzer-documentation.tex</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -509,6 +510,11 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="documentation/lfc_log_analyzer-documentation.tex"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -969,6 +975,11 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="documentation/lfc_log_analyzer-documentation.tex"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <commandLine>`cppunit-config --cflags`</commandLine>
@@ -1419,6 +1430,11 @@
             flavor2="0">
       </item>
       <item path="documentation/lfc_log_analyzer-documentation.pdf"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="documentation/lfc_log_analyzer-documentation.tex"
             ex="false"
             tool="3"
             flavor2="0">
