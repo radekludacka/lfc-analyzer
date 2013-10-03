@@ -28,6 +28,7 @@
 #include "filter/sorters/FileSorter.h"
 #include "filter/sorters/NullSorter.h"
 #include "Arguments.h"
+#include <ctime>
 
 using namespace std;
 
@@ -59,8 +60,14 @@ int main(int argc, char** argv) {
     cout << items->size() << endl;
 
     LfcCommandTable * commandTable = analyzer->Analyze(logTable);
+    
+    clock_t begin = clock();
     vector<LfcCommand *> * commandList = filter->Filtrate(
             commandTable->GetCommandList(), arguments);
+    clock_t end = clock();
+    
+    double elapsed_time = double(end - begin); // / CLOCKS_PER_SEC;
+    cout << "filter time is: " << elapsed_time << endl;
 
     Sorter * sorter = CreateSorterChain(arguments);
 

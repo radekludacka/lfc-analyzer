@@ -110,10 +110,7 @@ void Counter::FilterCommands(vector<LfcCommand *> * commands) {
     PrintRow("lcg-aa", -1, numberOfSymlinks);
     PrintRow("lcg-rm", -1, numberOfRmDir);
     PrintRow("lcg-lr", -1, numberOfLr);
-    cout << "lcg-rep failed v sobe zahrnuje lcg-cp failed a lcg-del failed" << endl;
-
-    // bad cp jsou schovany v bad replica - stejny vysledek v logu pro
-    // oboje operace
+    cout << "lcg-rep failed contains lcg-cp failed and lcg-del failed because they are written the same to log." << endl;
 }
 
 void Counter::PrintRow(string command, int numberOfFailedCommands, int numberOfSuccessCommands) {

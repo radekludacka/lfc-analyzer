@@ -20,32 +20,37 @@ vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands, Arguments
     vector<LfcCommand *>::const_iterator it1;
     for (it1 = commands->begin(); it1 != commands->end(); ++it1) {
         LfcCommand * command = *it1;
-
-        LFCCommandName commandName = arguments->GetCommmandValueToFilter();
-        if (commandName != LCG_UNKNOWN and command->GetName() != commandName) {
-            continue;
+        if (this->Contains(command, arguments)) {
+            filteredCommands->push_back(command);
         }
-        if (!isIn(arguments->GetSiteValueToFilter(), command->GetSite()->GetName())) {
-            continue;
-        }
-        if (!isIn(arguments->GetUserValueToFilter(), command->GetUser()->GetName())) {
-            continue;
-        }
-        if (!isIn(arguments->GetFileValueToFilter(), command->GetFile())) {
-            continue;
-        }
-        if (arguments->IsSetSuccess()) {
-            if (command->IsFailed() != arguments->GetSuccessValueToFilter()) {
-                continue;
-            }
-        }
-        filteredCommands->push_back(command);
     }
 
     return filteredCommands;
 }
 
-bool Filter::isIn(const char* a, std::string b) {
+bool Filter::Contains(LfcCommand * command, Arguments * arguments) {
+    LFCCommandName commandName = arguments->GetCommmandValueToFilter();
+    if (commandName != LCG_UNKNOWN and command->GetName() != commandName) {
+        return false;
+    }
+    if (!IsIn(arguments->GetSiteValueToFilter(), command->GetSite()->GetName())) {
+        return false;
+    }
+    if (!IsIn(arguments->GetUserValueToFilter(), command->GetUser()->GetName())) {
+        return false;
+    }
+    if (!IsIn(arguments->GetFileValueToFilter(), command->GetFile())) {
+        return false;
+    }
+    if (arguments->IsSetSuccess()) {
+        if (command->IsFailed() != arguments->GetSuccessValueToFilter()) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Filter::IsIn(const char* a, std::string b) {
     if (a != NULL) {
         if (std::string::npos == b.find(a)) {
             return false;

@@ -12,7 +12,6 @@ MockCommands::MockCommands() {
 }
 
 MockCommands::~MockCommands() {
-//    delete analyzer;
 }
 
 vector<LfcCommand *> * MockCommands::CreateMockLfcCommands() {

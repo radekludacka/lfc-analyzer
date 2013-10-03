@@ -23,7 +23,8 @@ public:
     virtual ~Filter();
     vector<LfcCommand*> * Filtrate(vector<LfcCommand*> * commands, Arguments * arguments);
 private:
-    bool isIn(const char* a, std::string b) ;
+    bool Contains(LfcCommand * command, Arguments * arguments);
+    bool IsIn(const char* a, std::string b) ;
 };
 
 #endif	/* FILTER_H */
