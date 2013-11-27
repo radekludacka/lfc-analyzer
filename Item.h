@@ -13,16 +13,16 @@ using namespace std;
 class Item {
 public:
 
-    Item(
-            LogTime * startTime,
-            LogTime * endTime,
-            Command * command,
-            User * user,
-            Site * site,
-            string filePath,
-            string information,
-            int tid) {
-
+    Item(LogTime* startTime, LogTime* endTime, Command* command, User * user, Site * site, string filePath, string information, int tid) {
+        if (user->GetName().length() != 0 && user->GetName().find('=') == std::string::npos) {
+            cout << "1" << endl;
+            cout << command->getName() << endl;
+            startTime->print();
+            cout << user->GetName() << endl;
+            cout << filePath << endl;
+            throw "user contains path";
+        }
+        
         this->startTime = startTime;
         this->endTime = endTime;
         this->command = command;
@@ -35,11 +35,11 @@ public:
     }
 
     virtual ~Item() {
-//        delete startTime;
-//        delete endTime;
-//        delete command;
-//        delete user;
-//        delete site;
+        //        delete startTime;
+        //        delete endTime;
+        delete command;
+        //        delete user;
+        //        delete site;
     }
 
     string GetFilePath() const {
@@ -80,7 +80,7 @@ public:
 
     int GetTid() const {
         return tid;
-    };
+    }
 
     bool compareUserSiteFile(Item * item) {
         if (*this->GetUser() == *item->GetUser() and
@@ -101,7 +101,6 @@ public:
     }
 
     bool compareUserSite(Item * item) {
-
         if (*this->GetUser() == *item->GetUser() and
                 *this->GetSite() == *item->GetSite()) {
             return true;
@@ -115,7 +114,6 @@ public:
     }
 
     void SetEndTime(LogTime * endTime) {
-
         this->endTime = endTime;
     }
 

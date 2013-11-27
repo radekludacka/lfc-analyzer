@@ -31,11 +31,12 @@ void Presenter::Print(vector<LfcCommand*> * commands, Arguments * arguments) {
             realNumberOfValues++;
         } else if (arguments->GetResultTypeOrder() == i) {
             realNumberOfValues++;
+        } else if (arguments->GetTimeOrder() == i) {
+            realNumberOfValues++;
         }
     }
 
     numberOfValues = realNumberOfValues;
-
     for (it1 = commands->begin(); it1 != commands->end(); ++it1) {
         LfcCommand * command = *it1;
         string * row = this->ExtractValuesFromCommand(command, arguments);
@@ -43,6 +44,11 @@ void Presenter::Print(vector<LfcCommand*> * commands, Arguments * arguments) {
     }
 
     this->PrintValues(rows);
+    for (vector<string*>::const_iterator it = rows->begin(); it != rows->end(); it++) {
+        delete[] (*it);
+    }
+    rows->clear();
+    delete rows;
 }
 
 string * Presenter::ExtractValuesFromCommand(LfcCommand* command, Arguments * arguments) {
@@ -63,6 +69,12 @@ string * Presenter::ExtractValuesFromCommand(LfcCommand* command, Arguments * ar
             next = command->GetSite()->GetName();
         } else if (arguments->GetCommandOrder() == i) {
             next = command->GetStringName();
+        } else if (arguments->GetTimeOrder() == i) {
+            string time = command->GetAverageTimeDuration()->asStringShort();
+            std::ostringstream oss;
+            oss << command->GetStandardTimeErrorDuration();
+            string stderror = oss.str();
+            row[i] = time + string(" std. dev.: ") + stderror + " ms";
         } else if (arguments->GetResultTypeOrder() == i) {
             if (command->IsFailed()) {
                 next = "failed";
@@ -123,7 +135,7 @@ void Presenter::PrintValues(vector<string*> * rows) {
                             numberOfSameValues++;
                         }
                     } else {
-                         numberOfSameValues++;
+                        numberOfSameValues++;
                     }
                     iterator2++;
                 }
@@ -139,6 +151,8 @@ void Presenter::PrintValues(vector<string*> * rows) {
         cout << endl;
         previousRow = row;
     }
+
+    delete[] itemWidths;
 }
 
 int * Presenter::FindOutMaxStringWidths(vector<string*> * rows) {
@@ -174,7 +188,7 @@ int * Presenter::FindOutMaxStringWidths(vector<string*> * rows) {
 
             previousRow = row;
         }
-        
+
         maxValuesNumbers.push_back(maxNumberOfSameValue);
 
         int maxValueNumber = 0;

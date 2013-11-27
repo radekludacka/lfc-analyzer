@@ -14,9 +14,16 @@ using namespace std;
 #include <string>
 #include <cstdlib>
 #include <iostream>
+#include <time.h> 
+#include <sstream>
+#include <limits.h>
+#include <stdio.h>
 
 class LogTime {
 public:
+
+    LogTime() {
+    }
 
     LogTime(string time) {
         int month = atoi(time.substr(0, 2).c_str());
@@ -25,25 +32,6 @@ public:
         int minutes = atoi(time.substr(9, 2).c_str());
         int seconds = atoi(time.substr(12, 2).c_str());
         int microsec = atoi(time.substr(15, 3).c_str()) * 1000;
-
-        //        cout << time.substr(0, 2) << endl;
-        //        cout << time.substr(3, 2) << endl;
-        //        cout << time.substr(6, 2) << endl;
-        //        cout << time.substr(9, 2) << endl;
-        //        cout << time.substr(12, 2) << endl;
-        //        cout << time.substr(15, 3) << endl;
-
-        //        if (time.substr(15, 1).compare("0") == 0) {
-        //            //            cout << time.substr(15, 3).c_str() << endl;
-        //            //            cout << time.substr(15, 1).c_str() << endl;
-        //            //            cout << "deleno" << endl;
-        //            microsec /= 10;
-        //            //            cout << microsec << endl;
-        //        }
-        //
-        //        if (time.substr(16, 1).compare("0") == 0) {
-        //            microsec /= 10;
-        //        }
 
         this->timeMillis.tv_usec = microsec;
         this->timeMillis.tv_sec = seconds;
@@ -61,6 +49,14 @@ public:
 
     timeval GetTimeMillis() const {
         return timeMillis;
+    }
+
+    void SetTime(tm time) {
+        this->time = time;
+    }
+
+    void SetTimeMillis(timeval timeMillis) {
+        this->timeMillis = timeMillis;
     }
 
     bool operator ==(const LogTime * logTime) const {
@@ -88,41 +84,136 @@ public:
         return true;
     }
 
-    void toString() {
-        cout << this->time.tm_mday << ".";
-        cout << this->time.tm_mon << " ";
-        if (time.tm_hour < 10) {
-            cout << "0" << time.tm_hour << ":";
-        } else {
-            cout << time.tm_hour << ":";
+    LogTime * plus(LogTime * logTime2) {
+        tm tm1 = this->time;
+        tm tm2 = logTime2->GetTime();
+        tm sumTime;
+        timeval sumTimeMillis;
+
+        sumTime.tm_hour = 0;
+        sumTime.tm_mday = 0;
+        sumTime.tm_isdst = 0;
+        sumTime.tm_year = 1;
+
+        sumTime.tm_min = tm1.tm_min + tm2.tm_min;
+        if (sumTime.tm_min > 59) {
+            sumTime.tm_min = tm1.tm_min + tm2.tm_min - 60;
+            sumTime.tm_hour += 1;
         }
-        if (time.tm_min < 10) {
-            cout << "0" << time.tm_min << ":";
-        } else {
-            cout << time.tm_min << ":";
+
+        sumTime.tm_sec = tm1.tm_sec + tm2.tm_sec;
+        if (sumTime.tm_sec > 59) {
+            sumTime.tm_sec = tm1.tm_sec + tm2.tm_sec - 60;
+            sumTime.tm_min += 1;
         }
-        if (time.tm_sec < 10) {
-            cout << "0" << time.tm_sec << ".";
-        } else {
-            cout << time.tm_sec << ".";
-        }
-        if (this->timeMillis.tv_usec / 1000 < 100) {
-            if (this->timeMillis.tv_usec / 1000 < 10) {
-                cout << "00" << this->timeMillis.tv_usec << endl;
-            } else {
-                cout << "0" << this->timeMillis.tv_usec << endl;
+
+        sumTimeMillis.tv_usec = this->GetTimeMillis().tv_usec + logTime2->GetTimeMillis().tv_usec;
+        if (sumTimeMillis.tv_usec > 1000000) {
+            sumTimeMillis.tv_usec = logTime2->GetTimeMillis().tv_usec + this->GetTimeMillis().tv_usec - 1000000;
+            sumTime.tm_sec += 1;
+            if (sumTime.tm_sec > 59) {
+                sumTime.tm_min += 1;
             }
-        } else {
-            cout << this->timeMillis.tv_usec << endl;
         }
+
+        LogTime * sum = new LogTime();
+        sum->SetTime(sumTime);
+        sum->SetTimeMillis(sumTimeMillis);
+        return sum;
     }
 
-//    string numberNormalizer(int number) {
-//        if (number < 10) {
-//            return "0" + string(number);
-//        }
-//        return string(number);
-//    }
+    LogTime * divTwo() {
+        tm resultTime;
+        timeval resultMillisTime;
+
+        resultTime.tm_mday = 0;
+        resultTime.tm_isdst = 0;
+        resultTime.tm_year = 1;
+
+        int seconds = this->time.tm_sec;
+        seconds += this->time.tm_hour * 60 * 60;
+        seconds += this->time.tm_min * 60;
+
+        int averageSeconds = seconds / 2;
+        resultMillisTime.tv_usec = this->timeMillis.tv_usec / 2;
+        if (averageSeconds * 2 != seconds) {
+            resultMillisTime.tv_usec += 500000;
+        }
+
+        resultTime.tm_hour = averageSeconds / 3600;
+        averageSeconds = averageSeconds % 3600;
+        resultTime.tm_min = averageSeconds / 60;
+        averageSeconds = averageSeconds % 60;
+        resultTime.tm_sec = averageSeconds;
+
+        LogTime * sum = new LogTime();
+        sum->SetTime(resultTime);
+        sum->SetTimeMillis(resultMillisTime);
+        return sum;
+    }
+
+    LogTime * minus(LogTime * logTime2) {
+        LogTime * difference = new LogTime();
+        tm tm1 = this->time;
+        tm tm2 = logTime2->GetTime();
+        tm diffTime;
+        timeval diffMillisTime;
+
+        diffTime.tm_hour = 0;
+        diffTime.tm_mday = 0;
+        diffTime.tm_isdst = 0;
+        diffTime.tm_year = 0;
+
+        diffTime.tm_min = tm1.tm_min - tm2.tm_min;
+        if (diffTime.tm_min < 0) {
+            diffTime.tm_min = 59 - tm1.tm_min + tm2.tm_min;
+        }
+
+        diffTime.tm_sec = tm1.tm_sec - tm2.tm_sec;
+        if (diffTime.tm_sec < 0) {
+            diffTime.tm_sec = 59 - tm1.tm_sec + tm2.tm_sec;
+            diffTime.tm_min -= 1;
+        }
+
+        diffMillisTime.tv_usec = this->GetTimeMillis().tv_usec - logTime2->GetTimeMillis().tv_usec;
+        if (diffMillisTime.tv_usec < 0) {
+            diffMillisTime.tv_usec = 1000000 - logTime2->GetTimeMillis().tv_usec + this->GetTimeMillis().tv_usec;
+            diffTime.tm_sec -= 1;
+            if (diffTime.tm_sec > 59) {
+                diffTime.tm_min -= 1;
+            }
+        }
+
+        difference->SetTime(diffTime);
+        difference->SetTimeMillis(diffMillisTime);
+        return difference;
+    }
+
+    string asStringShort() {
+        char buffer[50];
+        sprintf(buffer, "%02dm:%02ds.%06dus", time.tm_min, time.tm_sec, timeMillis.tv_usec);
+        std::string result1(buffer);
+        return result1;
+    }
+
+    string asString() {
+        char buffer[50];
+        sprintf(buffer, "%02dd.%02dmon %02dh:%02dm:%02ds.%06dus",
+                time.tm_mday, time.tm_mon, time.tm_hour, time.tm_min, time.tm_sec, timeMillis.tv_usec);
+        std::string result1(buffer);
+        return result1;
+    }
+
+    int miliseconds() {
+        int seconds = this->time.tm_sec;
+        seconds += this->time.tm_hour * 60 * 60;
+        seconds += this->time.tm_min * 60;
+        return this->timeMillis.tv_usec / 1000 + seconds * 1000;
+    }
+
+    void print() {
+        cout << this->asString() << endl;
+    }
 
 private:
     timeval timeMillis;

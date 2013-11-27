@@ -8,16 +8,19 @@
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>filter</sourceRootElem>
-                <sourceRootElem>LFCLSstates</sourceRootElem>
-                <sourceRootElem>lfcls</sourceRootElem>
-                <sourceRootElem>analyzer2</sourceRootElem>
-                <sourceRootElem>lfs_ls_states</sourceRootElem>
-                <sourceRootElem>lfc_cr_states</sourceRootElem>
-                <sourceRootElem>parser2</sourceRootElem>
-                <sourceRootElem>documentation</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/LFCLSstates</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/lfcls</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/lfs_ls_states</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/lfc_cr_states</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2</sourceRootElem>
+                <sourceRootElem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/documentation</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
@@ -33,9 +36,6 @@
                     <type>1</type>
                 </confElem>
             </confList>
-            <formatting>
-                <project-formatting-style>false</project-formatting-style>
-            </formatting>
         </data>
     </configuration>
 </project>

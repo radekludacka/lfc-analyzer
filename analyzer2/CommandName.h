@@ -16,6 +16,8 @@ enum LFCCommandName {
     LCG_CP,
     LCG_DEL,
     LCG_NONE,
+    LCG_ERR_TIMEOUT,
+    LCG_ERR_PROXY,
     LCG_UTIME,
     LCG_PINGDB,
     LCG_LR,

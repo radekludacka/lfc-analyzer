@@ -7,9 +7,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2/Parser.h</file>
             <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/main.cpp</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/Arguments.h</file>
-            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/Arguments.cpp</file>
+            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2/CommandParser.h</file>
+            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/Item.h</file>
+            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/Functions.h</file>
+            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2/ServParser.h</file>
+            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LFCCommand.cpp</file>
+            <file>file:/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/CommandName.h</file>
         </group>
     </open-files>
 </project-private>

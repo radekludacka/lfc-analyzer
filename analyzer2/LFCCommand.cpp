@@ -8,11 +8,11 @@
 #include "LfcCommand.h"
 
 LfcCommand::LfcCommand(
-        LogTime * startT, 
-        LogTime * endT, 
-        string fileName, 
-        User * userName, 
-        Site * siteName, 
+        LogTime * startT,
+        LogTime * endT,
+        string fileName,
+        User * userName,
+        Site * siteName,
         bool fail,
         Information * informationP=NULL) {
     startTime = startT;
@@ -22,14 +22,16 @@ LfcCommand::LfcCommand(
     site = siteName;
     isFail = fail;
     information = informationP;
+    standardTimeErrorDuration = 0;
+    averageTimeDuration = endTime->minus(startTime);
 }
 
 LfcCommand::LfcCommand(
-        LogTime * startT, 
-        LogTime * endT, 
-        string fileName, 
-        User * userName, 
-        Site * siteName, 
+        LogTime * startT,
+        LogTime * endT,
+        string fileName,
+        User * userName,
+        Site * siteName,
         bool fail) {
     if (userName->GetName().compare("") == 0) {
         userName->SetName("UNKNOWN");
@@ -41,9 +43,21 @@ LfcCommand::LfcCommand(
     site = siteName;
     isFail = fail;
     information = NULL;
+    standardTimeErrorDuration = 0;
+    averageTimeDuration = endTime->minus(startTime);
 }
 
 LfcCommand::~LfcCommand() {
+    //    delete startTime;
+//    if (endTime != NULL) {
+//        delete endTime;
+//    }
+    if (user != NULL) {
+        delete user;
+    }
+    if (site != NULL) {
+       delete site;
+    }
 }
 
 User* LfcCommand::GetUser() const {
@@ -80,4 +94,20 @@ Information* LfcCommand::GetInformation() const {
 
 string LfcCommand::GetStringName() const {
     return stringName;
+}
+
+void LfcCommand::SetStandardTimeErrorDuration(double standardTimeErrorDuration) {
+    this->standardTimeErrorDuration = standardTimeErrorDuration;
+}
+
+double LfcCommand::GetStandardTimeErrorDuration() const {
+    return standardTimeErrorDuration;
+}
+
+void LfcCommand::SetAverageTimeDuration(LogTime* averageTimeDuration) {
+    this->averageTimeDuration = averageTimeDuration;
+}
+
+LogTime* LfcCommand::GetAverageTimeDuration() const {
+    return averageTimeDuration;
 }

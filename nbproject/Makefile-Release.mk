@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/525599741/TimeSorter.o \
 	${OBJECTDIR}/Arguments.o \
 	${OBJECTDIR}/MockCommands.o \
 	${OBJECTDIR}/MockItems.o \
@@ -94,6 +95,7 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
 	${TESTDIR}/TestFiles/f3 \
+	${TESTDIR}/TestFiles/f5 \
 	${TESTDIR}/TestFiles/f1 \
 	${TESTDIR}/TestFiles/f4
 
@@ -120,6 +122,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/_ext/525599741/TimeSorter.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/TimeSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp
 
 ${OBJECTDIR}/Arguments.o: Arguments.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -389,6 +396,10 @@ ${TESTDIR}/TestFiles/f3: ${TESTDIR}/filter/tests/FilterRunner.o ${TESTDIR}/filte
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
+${TESTDIR}/TestFiles/f5: ${TESTDIR}/_ext/457698283/LogTimeRunner.o ${TESTDIR}/_ext/457698283/LogTimeTest.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/ParserRunner.o ${TESTDIR}/tests/ParserTests.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs` `cppunit-config --libs`   
@@ -422,6 +433,18 @@ ${TESTDIR}/filter/tests/FilterTest.o: filter/tests/FilterTest.cpp
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/filter/tests/FilterTest.o filter/tests/FilterTest.cpp
 
 
+${TESTDIR}/_ext/457698283/LogTimeRunner.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/_ext/457698283
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/_ext/457698283/LogTimeRunner.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp
+
+
+${TESTDIR}/_ext/457698283/LogTimeTest.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp 
+	${MKDIR} -p ${TESTDIR}/_ext/457698283
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/_ext/457698283/LogTimeTest.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp
+
+
 ${TESTDIR}/tests/ParserRunner.o: tests/ParserRunner.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
@@ -445,6 +468,19 @@ ${TESTDIR}/tests/PresenterTests.o: tests/PresenterTests.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/PresenterTests.o tests/PresenterTests.cpp
 
+
+${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/TimeSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/525599741/TimeSorter.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/_ext/525599741/TimeSorter.o ${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o;\
+	fi
 
 ${OBJECTDIR}/Arguments_nomain.o: ${OBJECTDIR}/Arguments.o Arguments.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -1115,6 +1151,7 @@ ${OBJECTDIR}/presenter/Presenter_nomain.o: ${OBJECTDIR}/presenter/Presenter.o pr
 	then  \
 	    ${TESTDIR}/TestFiles/f2 || true; \
 	    ${TESTDIR}/TestFiles/f3 || true; \
+	    ${TESTDIR}/TestFiles/f5 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \
 	else  \

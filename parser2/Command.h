@@ -10,6 +10,7 @@
 
 #include <string>
 #include "../Functions.h"
+#include <iostream>
 
 using namespace std;
 

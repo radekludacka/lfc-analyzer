@@ -191,6 +191,26 @@ void FilterTest::testSortByCommand() {
     CompareStringVectors(commands1, commands2);
 }
 
+void FilterTest::testSortByCommandAndTime() {
+    vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
+
+    vector<string> times1;
+    times1.push_back("0.0 00:00:00.002000");
+    times1.push_back("0.0 00:00:00.058000");
+    times1.push_back("0.0 00:00:00.091000");
+    times1.push_back("0.0 00:00:00.459000");
+    times1.push_back("0.0 00:02:03.529000");
+
+    Sorter * sorter = new TimeSorter();
+    commands = sorter->Sort(commands);
+
+    vector<string> times2 = ExtractDurarions(commands);
+
+    cout << times2.size() << endl;
+    CPPUNIT_ASSERT(times1.size() == times2.size());
+    CompareStringVectors(times1, times2);
+}
+
 void FilterTest::testSortByResultType() {
     vector<LfcCommand *> * commands = mockCommands->CreateMockLfcCommands();
 
@@ -265,6 +285,18 @@ vector<string> FilterTest::ExtractUserNames(vector<LfcCommand *> * commands) {
     for (iterator = commands->begin(); iterator != commands->end(); ++iterator) {
         LfcCommand * command = *iterator;
         names.push_back(command->GetUser()->GetName());
+    }
+
+    return names;
+}
+
+vector<string> FilterTest::ExtractDurarions(vector<LfcCommand *> * commands) {
+    vector<string> names;
+
+    std::vector<LfcCommand *>::const_iterator iterator;
+    for (iterator = commands->begin(); iterator != commands->end(); ++iterator) {
+        LfcCommand * command = *iterator;
+        names.push_back(command->GetEndTime()->minus(command->GetStartTime())->asString());
     }
 
     return names;

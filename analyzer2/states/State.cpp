@@ -10,6 +10,9 @@
 State::State() {
 }
 
+State::~State() {
+}
+
 void State::AssignAllItems(vector<Item*> items) {
     std::vector<Item *>::const_iterator iterator1 = items.begin();
 

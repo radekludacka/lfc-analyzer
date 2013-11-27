@@ -26,6 +26,7 @@ public:
             vector<Item*> items,
             Item* item
             ) = 0;
+    virtual ~State();
 protected:
     void AssignAllItems(vector<Item*> items);
     void PrintMessage(string, Item * item);

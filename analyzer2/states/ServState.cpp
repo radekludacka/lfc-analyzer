@@ -22,6 +22,18 @@ LfcCommand * ServState::NextState(
     PrintMessage("SERV", item);
 
     item->SetAssigned(true);
+    
+    Information * information = new Information();
+    information->addInformation(item->GetInformation());
+
+    if (item->GetUser()->GetName().length() != 0 && item->GetUser()->GetName().find('=') == std::string::npos) {
+        cout << "2" << endl;
+        item->GetStartTime()->print();
+        cout << item->GetUser()->GetName() << endl;
+        cout << item->GetFilePath() << endl;
+        return NULL;
+    }
+    
     return new LfcServCommand(
             item->GetStartTime(),
             item->GetEndTime(),

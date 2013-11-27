@@ -39,15 +39,12 @@ LfcCommandTable * Analyzer::Analyze(LogTable * logTable) {
         if (!item->IsAssigned()) {
             FunctionType functionName = item->GetCommand()->getName();
             if (objectMap.find(functionName) != objectMap.end()) {
-
                 item->SetAssigned(true);
                 this->currentState = objectMap.at(functionName);
-
                 int addition = index + 7000;
                 if (addition > items->size()) {
                     addition = items->size();
                 }
-
                 std::vector<Item *> subRows(items->begin() + index + 1, items->begin() + addition);
                 std::vector<Item *>::const_iterator iterator = subRows.begin();
                 LfcCommand * command = currentState->NextState(iterator, subRows, item);
@@ -56,8 +53,9 @@ LfcCommandTable * Analyzer::Analyze(LogTable * logTable) {
                 } else {
                     item->SetAssigned(false);
                 }
+//                delete currentState;
             }
-        } 
+        }
     }
 
     int notAssigned = 0;
@@ -69,6 +67,11 @@ LfcCommandTable * Analyzer::Analyze(LogTable * logTable) {
         }
     }
     cout << "not assigned items to command: " << notAssigned << endl;
+
+    //    map<FunctionType, State *>::const_iterator itr;
+    //    for (itr = objectMap.begin(); itr != objectMap.end(); ++itr) {
+    //        delete (*itr).second;
+    //    }
 
     return commandList;
 }

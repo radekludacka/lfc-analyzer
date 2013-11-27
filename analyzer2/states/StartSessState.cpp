@@ -19,10 +19,10 @@ LfcCommand * StartSessState::NextState(
         Item* item
         ) {
 
-    
+    int itemsSize = items.size();
     PrintMessage("START SESS", item);
 
-    for (; *iterator != NULL; iterator++) {
+    for (int i = 0; i < itemsSize; i++, iterator++) {
         Item * item2 = *iterator;
         if (!item2->IsAssigned()) {
 

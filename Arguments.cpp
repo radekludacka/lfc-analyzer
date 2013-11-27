@@ -13,6 +13,7 @@ Arguments::Arguments() {
     userOrder = -1;
     commandOrder = -1;
     resultTypeOrder = -1;
+    timeOrder = -1;
 
     filteredSiteValue = NULL;
     filteredUserValue = NULL;
@@ -31,11 +32,12 @@ Arguments::~Arguments() {
 LFCCommandName Arguments::CommandConverter(std::string commandName) {
     std::map<string, LFCCommandName> commandMap;
     
-    if(commandMap.find(commandName) == commandMap.end())
-    {
-        std::string exception = "command " + commandName + " is not allowed";
-        throw exception;
-    }
+//    if(commandMap.find(commandName) == commandMap.end())
+//    {
+//        std::string exception = "command " + commandName + " is not allowed";
+//        cout << exception << endl;
+////        throw exception;
+//    }
     
     commandMap["lfc-ls"] = LFC_LS;
     commandMap["lcg-cr"] = LCG_CR;
@@ -84,6 +86,10 @@ int Arguments::GetResultTypeOrder() {
     return resultTypeOrder;
 }
 
+int Arguments::GetTimeOrder(){
+    return timeOrder;
+}
+
 const char* Arguments::GetSiteValueToFilter() {
     return filteredSiteValue;
 }
@@ -112,9 +118,6 @@ const char* Arguments::GetFilePath() {
     return filePath;
 }
 
-
-
-
 void Arguments::SetFileOrder(int order) {
     fileOrder = order;
 }
@@ -133,6 +136,10 @@ void Arguments::SetCommandOrder(int order) {
 
 void Arguments::SetResultTypeOrder(int order) {
     resultTypeOrder = order;
+}
+
+void Arguments::SetTimeOrder(int order) {
+    timeOrder = order;
 }
 
 void Arguments::SetSiteValueToFilter(const char* value) {

@@ -23,10 +23,9 @@ LfcCommand * LstatState::NextState(
 
     int itemsSize = items.size();
 
-    if (itemsSize > 0) {
-        Item * item0 = *iterator;
-    }
-
+//    if (itemsSize > 0) {
+//        Item * item0 = *iterator;
+//    }
     Item * end = NULL;
 
     for (int i = 0; i < itemsSize; i++, iterator++) {
@@ -43,7 +42,9 @@ LfcCommand * LstatState::NextState(
                     item->SetTid(item2->GetTid());
                     this->AssignAllItems(itemsToAssigne);
                     State * state = new OpenDirState();
-                    return state->NextState(iterator, items, item);
+                    LfcCommand * command = state->NextState(iterator, items, item);
+                    delete state;
+                    return command;
                 }
             } else if (function == ACCESS) {
                 int accessType = atoi(item2->GetInformation().c_str());
@@ -83,7 +84,8 @@ LfcCommand * LstatState::NextState(
     if (item->GetCommand()->getReturnCode() == 2) {
         PrintMessage("LSTAT LFC-LS 2", item);
 
-        return new LfcLsCommand(item->GetStartTime(),
+        return new LfcLsCommand(
+                item->GetStartTime(),
                 item->GetEndTime(),
                 item->GetFilePath(),
                 item->GetUser(),
@@ -93,7 +95,8 @@ LfcCommand * LstatState::NextState(
 
     if (item->GetCommand()->getReturnCode() == 0) {
         PrintMessage("LSTAT LFC-LS 3", item);
-        return new LfcLsCommand(item->GetStartTime(),
+        return new LfcLsCommand(
+                item->GetStartTime(),
                 item->GetEndTime(),
                 item->GetFilePath(),
                 item->GetUser(),

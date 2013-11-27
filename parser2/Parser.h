@@ -57,7 +57,8 @@ public:
         infile.open(filePath.c_str());
         
         if (infile.is_open() == false) {
-            throw "Input file not exists";
+            cout << "Input file " << filePath.c_str() << " not exists" << endl;
+            exit(-1); 
         }
 
         int mod = 0;
@@ -66,7 +67,6 @@ public:
         while (std::getline(infile, sLine)) {
             Row * row = this->parseRow(sLine);
             rows->push_back(row);
-            //            3667763
 //            if (mod++ == 10000) {
 //                break;
 //            }
@@ -117,15 +117,12 @@ public:
                     try {
                         Item * item = commandParser->parse(subRows);
                         logTable->addItem(item);
-//                        cout << "abd" << endl;
-//                        item->GetStartTime()->toString();
                     } catch (std::out_of_range& e) {
                         std::cerr << "Row ";
-                        row->GetTime()->toString();
+                        row->GetTime()->print();
                         std::cerr << "Caused: range error: " << e.what() << '\n';
                     }
                 }
-                //                row->SetParsed(true);
             }
         }
 
@@ -135,14 +132,16 @@ public:
             Row * row = *iterator2;
 
             if (!row->GetParsed()) {
-                //                row->GetTime()->toString();
-                //                cout << row->GetFunction() << endl;
-                //                cout << row->GetRemain() << endl;
                 notParsed++;
             }
 
         }
 
+//        map<string, CommandParser *>::const_iterator itr;
+//        for(itr = objectMap.begin(); itr != objectMap.end(); ++itr){
+//               delete (*itr).second;
+//        }
+        
         cout << "not parsed rows: " << notParsed << endl;
 
         return logTable;

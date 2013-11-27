@@ -17,6 +17,7 @@
 #include "../sorters/FileSorter.h"
 #include "../sorters/CommandSorter.h"
 #include "../sorters/SuccessSorter.h"
+#include "../sorters/TimeSorter.h"
 #include "../../MockCommands.h"
 #include <vector>
 #include <cppunit/extensions/HelperMacros.h>
@@ -38,6 +39,7 @@ class FilterTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testSortByFile);
     CPPUNIT_TEST(testSortByCommand);
     CPPUNIT_TEST(testSortByResultType);
+    CPPUNIT_TEST(testSortByCommandAndTime);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -59,11 +61,13 @@ private:
     void testSortByFile();
     void testSortByCommand();
     void testSortByResultType();
+    void testSortByCommandAndTime();
     
     vector<string> ExtractUserNames(vector<LfcCommand *> * commands);
     vector<string> ExtractSiteNames(vector<LfcCommand *> * commands);
     vector<string> ExtractFileNames(vector<LfcCommand *> * commands);
     vector<string> ExtractCommandNames(vector<LfcCommand *> * commands);
+    vector<string> ExtractDurarions(vector<LfcCommand *> * commands);
     vector<bool> ExtractResultTypes(vector<LfcCommand *> * commands);
     void CompareStringVectors(vector<string> vector1, vector<string> vector2);
     void CompareBoolVectors(vector<bool> vector1, vector<bool> vector2);

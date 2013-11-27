@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="89">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="documentation"
                    displayName="documentation"
@@ -105,6 +105,8 @@
           <itemPath>filter/sorters/Sorter.h</itemPath>
           <itemPath>filter/sorters/SuccessSorter.cpp</itemPath>
           <itemPath>filter/sorters/SuccessSorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.h</itemPath>
           <itemPath>filter/sorters/UserSorter.cpp</itemPath>
           <itemPath>filter/sorters/UserSorter.h</itemPath>
         </logicalFolder>
@@ -203,6 +205,11 @@
         <itemPath>filter/tests/FilterTest.cpp</itemPath>
         <itemPath>filter/tests/FilterTest.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f5" displayName="LogTime" projectFiles="true" kind="TEST">
+        <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="Parser" projectFiles="true" kind="TEST">
         <itemPath>tests/ParserRunner.cpp</itemPath>
         <itemPath>tests/ParserTests.cpp</itemPath>
@@ -225,19 +232,20 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>filter</Elem>
-    <Elem>LFCLSstates</Elem>
-    <Elem>lfcls</Elem>
-    <Elem>analyzer2</Elem>
-    <Elem>lfs_ls_states</Elem>
-    <Elem>lfc_cr_states</Elem>
-    <Elem>parser2</Elem>
-    <Elem>documentation</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/LFCLSstates</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/lfcls</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/lfs_ls_states</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/lfc_cr_states</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/parser2</Elem>
+    <Elem>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/documentation</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -258,6 +266,31 @@
           <output>${TESTDIR}/TestFiles/f5</output>
         </linkerTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Arguments.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Arguments.h" ex="false" tool="3" flavor2="0">
@@ -570,6 +603,26 @@
           <output>${TESTDIR}/TestFiles/f4</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
@@ -705,6 +758,7 @@
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -723,6 +777,31 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Arguments.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Arguments.h" ex="false" tool="3" flavor2="0">
@@ -1035,6 +1114,26 @@
           <output>${TESTDIR}/TestFiles/f4</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
@@ -1170,6 +1269,7 @@
     </conf>
     <conf name="Profiling" type="1">
       <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -1182,6 +1282,31 @@
           <commandLine>-pg</commandLine>
         </linkerTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Arguments.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Arguments.h" ex="false" tool="3" flavor2="0">
@@ -1494,6 +1619,26 @@
           <output>${TESTDIR}/TestFiles/f4</output>
           <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <linkerLibItems>
             <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>

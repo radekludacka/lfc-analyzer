@@ -17,13 +17,16 @@ LfcCommandTable::LfcCommandTable(const LfcCommandTable& orig) {
 }
 
 LfcCommandTable::~LfcCommandTable() {
+    for (vector<LfcCommand*>::const_iterator it = commandList->begin(); it != commandList->end(); it++) {
+        delete *it;
+    }
 }
 
 vector<LfcCommand*>* LfcCommandTable::GetCommandList() const {
     return commandList;
 }
 
-void LfcCommandTable::add(LfcCommand * command){
+void LfcCommandTable::add(LfcCommand * command) {
     this->commandList->push_back(command);
 }
 

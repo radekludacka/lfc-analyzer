@@ -32,6 +32,9 @@ public:
         tid = 0;
         finishState = 4;
     }
+    
+//    virtual ~CommandParser(){
+//    }
 
     virtual Item * parse(std::vector<Row*> rows) {
         state = -1; // state in needed set to default value all the time

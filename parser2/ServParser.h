@@ -36,7 +36,11 @@ public:
 
         if (remain.substr(infoStart, 1).compare("T") == 0) {
             parsedRow->SetParsed(true);
-            state = -1;
+            site = new Site("");
+            user = new User("");
+            command = new Command(SERV, 0);
+            endTime = parsedRow->GetTime();
+            state = 0;
         }
 
         if (remain.substr(0, 1).compare("[") == 0) {
@@ -56,8 +60,7 @@ public:
             if (remain.find("Could not set service name") != -1) {
                 state = 3;
             }
-        }
-
+        } 
     }
 
     void parseState1(Row * parsedRow) {
@@ -106,7 +109,10 @@ public:
             endTime = parsedRow->GetTime();
             parsedRow->SetParsed(true);
             state = finishState;
-        }
+        } 
+//        else {
+//            state = finishState;
+//        }
     }
 };
 

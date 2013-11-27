@@ -15,6 +15,10 @@ Filter::~Filter() {
 
 vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands, Arguments * arguments) {
 
+//    if (! SomeToFilter(arguments)) {
+//        return commands;
+//    }
+//    
     vector<LfcCommand *> * filteredCommands = new vector<LfcCommand *>;
 
     vector<LfcCommand *>::const_iterator it1;
@@ -27,6 +31,25 @@ vector<LfcCommand*> * Filter::Filtrate(vector<LfcCommand*> * commands, Arguments
 
     return filteredCommands;
 }
+
+//bool Filter::SomeToFilter(Arguments * arguments) {
+//    if (arguments->GetCommmandValueToFilter() != LCG_UNKNOWN) {
+//        return true;
+//    }
+//    if (arguments->GetSiteValueToFilter() != NULL) {
+//        return true;
+//    }
+//    if (arguments->GetUserValueToFilter() != NULL) {
+//        return true;
+//    }
+//    if (arguments->GetFileValueToFilter() != NULL) {
+//        return true;
+//    }
+//    if (arguments->IsSetSuccess()) {
+//        return true;
+//    }
+//    return false;
+//}
 
 bool Filter::Contains(LfcCommand * command, Arguments * arguments) {
     LFCCommandName commandName = arguments->GetCommmandValueToFilter();

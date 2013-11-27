@@ -22,31 +22,19 @@
 using namespace std;
 
 class Arguments {
+   
 public:
     Arguments();
     Arguments(const Arguments& orig);
     virtual ~Arguments();
-    
-    int fileOrder;
-    int siteOrder;
-    int userOrder;
-    int commandOrder;
-    int resultTypeOrder;
 
-    const char* filteredSiteValue;
-    const char* filteredUserValue;
-    const char* filteredFileValue;
-    LFCCommandName filteredCommandValue;
-    bool filteredSuccessValue;
-    bool isSetSuccess;
-    const char* filePath;    
-    
     int GetFileOrder();
     int GetSiteOrder();
     int GetUserOrder();
     int GetCommandOrder();
     int GetResultTypeOrder();
-    
+    int GetTimeOrder();
+
     const char* GetSiteValueToFilter();
     const char* GetUserValueToFilter();
     const char* GetFileValueToFilter();
@@ -60,7 +48,8 @@ public:
     void SetUserOrder(int order);
     void SetCommandOrder(int order);
     void SetResultTypeOrder(int order);
-    
+    void SetTimeOrder(int order);
+
     void SetSiteValueToFilter(const char* value);
     void SetUserValueToFilter(const char* value);
     void SetFileValueToFilter(const char* value);
@@ -70,6 +59,21 @@ public:
 private:
     LFCCommandName CommandConverter(std::string commandName);
     bool FailedConverter(std::string failedValue);
+
+    int fileOrder;
+    int siteOrder;
+    int userOrder;
+    int commandOrder;
+    int resultTypeOrder;
+    int timeOrder;
+
+    const char* filteredSiteValue;
+    const char* filteredUserValue;
+    const char* filteredFileValue;
+    LFCCommandName filteredCommandValue;
+    bool filteredSuccessValue;
+    bool isSetSuccess;
+    const char* filePath;
 };
 
 #endif	/* ARGUMENTS_H */

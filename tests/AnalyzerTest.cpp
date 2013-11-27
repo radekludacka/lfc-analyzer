@@ -35,9 +35,9 @@ void AnalyzerTest::testAnalyzer() {
 
     vector<LfcCommand *> * commands = commandTable->GetCommandList();
     LfcCommand * lfcLsCommand = *commands->begin();
-
+    
     allItemsAssigned(logTable);
-
+    
     compareLfcCommands("07/09 09:58:28.883",
             "07/09 09:58:29.034",
             "/DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520",

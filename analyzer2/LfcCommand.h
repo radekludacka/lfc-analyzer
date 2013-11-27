@@ -33,6 +33,7 @@ public:
             Site *, 
             bool, 
             Information * information);
+    
     virtual ~LfcCommand();
     
     User* GetUser() const;
@@ -44,9 +45,15 @@ public:
     bool IsFailed() const;
     Information* GetInformation() const;
     string GetStringName() const;
+    void SetStandardTimeErrorDuration(double standardTimeErrorDuration);
+    double GetStandardTimeErrorDuration() const;
+    void SetAverageTimeDuration(LogTime* averageTimeDuration);
+    LogTime* GetAverageTimeDuration() const;
 protected:
     LogTime * startTime;
     LogTime * endTime;
+    LogTime * averageTimeDuration;
+    double standardTimeErrorDuration;
     string file;
     User * user;
     Site * site;

@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sstream>
+#include <string>
 #include "../analyzer2/LfcCommand.h"
 #include "../Arguments.h"
 

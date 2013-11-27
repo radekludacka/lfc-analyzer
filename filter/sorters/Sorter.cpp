@@ -16,6 +16,9 @@ Sorter::Sorter(Sorter * subSorter) {
 }
 
 Sorter::~Sorter() {
+    if (this->subSorter != NULL) {
+        delete subSorter;
+    }
 }
 
 vector<LfcCommand * > * Sorter::Sort(vector<LfcCommand*> * commands) {
