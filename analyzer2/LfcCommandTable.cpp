@@ -17,9 +17,9 @@ LfcCommandTable::LfcCommandTable(const LfcCommandTable& orig) {
 }
 
 LfcCommandTable::~LfcCommandTable() {
-    for (vector<LfcCommand*>::const_iterator it = commandList->begin(); it != commandList->end(); it++) {
-        delete *it;
-    }
+//    for (vector<LfcCommand*>::const_iterator it = commandList->begin(); it != commandList->end(); it++) {
+//        delete *it;
+//    }
 }
 
 vector<LfcCommand*>* LfcCommandTable::GetCommandList() const {

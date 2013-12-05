@@ -48,11 +48,6 @@ int main(int argc, char** argv) {
     Counter * counter = new Counter();
 
     Arguments * arguments = ExtractArguments(argc, argv);
-    cout << arguments->GetCommandOrder() << endl;
-    cout << arguments->GetFileOrder() << endl;
-    cout << arguments->GetUserOrder() << endl;
-    cout << arguments->GetTimeOrder() << endl;
-    cout << arguments->GetResultTypeOrder() << endl;
     if (arguments == NULL) {
         return -1;
     }
@@ -115,13 +110,11 @@ Sorter * CreateSorterChain(Arguments * arguments) {
         } else if (arguments->GetSiteOrder() == i) {
             sorter = new SiteSorter(previousSorter);
         } else if (arguments->GetCommandOrder() == i) {
-            if (arguments->GetTimeOrder() > -1) {
-                cout << "ou" << endl;
-                previousSorter = new TimeSorter(previousSorter);
-            }
             sorter = new CommandSorter(previousSorter);
         } else if (arguments->GetResultTypeOrder() == i) {
             sorter = new SuccessSorter(previousSorter);
+        } else if (arguments->GetTimeOrder() == i) {
+            sorter = new TimeSorter(previousSorter);
         }
     }
     return sorter;

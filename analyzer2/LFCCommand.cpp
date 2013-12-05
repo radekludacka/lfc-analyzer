@@ -14,7 +14,7 @@ LfcCommand::LfcCommand(
         User * userName,
         Site * siteName,
         bool fail,
-        Information * informationP=NULL) {
+        Information * informationP = NULL) {
     startTime = startT;
     endTime = endT;
     file = fileName;
@@ -24,6 +24,8 @@ LfcCommand::LfcCommand(
     information = informationP;
     standardTimeErrorDuration = 0;
     averageTimeDuration = endTime->minus(startTime);
+    minTimeDuration = new LogTime(averageTimeDuration->miliseconds());
+    maxTimeDuration = new LogTime(averageTimeDuration->miliseconds());
 }
 
 LfcCommand::LfcCommand(
@@ -45,18 +47,20 @@ LfcCommand::LfcCommand(
     information = NULL;
     standardTimeErrorDuration = 0;
     averageTimeDuration = endTime->minus(startTime);
+    minTimeDuration = new LogTime(averageTimeDuration->miliseconds());
+    maxTimeDuration = new LogTime(averageTimeDuration->miliseconds());
 }
 
 LfcCommand::~LfcCommand() {
     //    delete startTime;
-//    if (endTime != NULL) {
-//        delete endTime;
-//    }
+    //    if (endTime != NULL) {
+    //        delete endTime;
+    //    }
     if (user != NULL) {
         delete user;
     }
     if (site != NULL) {
-       delete site;
+        delete site;
     }
 }
 
@@ -110,4 +114,20 @@ void LfcCommand::SetAverageTimeDuration(LogTime* averageTimeDuration) {
 
 LogTime* LfcCommand::GetAverageTimeDuration() const {
     return averageTimeDuration;
+}
+
+void LfcCommand::SetMinTimeDuration(LogTime* minTimeDuration) {
+    this->minTimeDuration = minTimeDuration;
+}
+
+LogTime* LfcCommand::GetMinTimeDuration() const {
+    return minTimeDuration;
+}
+
+void LfcCommand::SetMaxTimeDuration(LogTime* maxTimeDuration) {
+    this->maxTimeDuration = maxTimeDuration;
+}
+
+LogTime* LfcCommand::GetMaxTimeDuration() const {
+    return maxTimeDuration;
 }

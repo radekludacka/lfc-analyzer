@@ -23,8 +23,9 @@ using namespace std;
 class LogTimeTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(LogTimeTest);
 
-    CPPUNIT_TEST(testPlus);
-    CPPUNIT_TEST(testDivTwo);
+//    CPPUNIT_TEST(testPlus);
+//    CPPUNIT_TEST(testDivTwo);
+    CPPUNIT_TEST(testMillisecondsConstructor);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -35,8 +36,9 @@ public:
     void tearDown();
 
 private:
-    void testPlus();
-    void testDivTwo();
+//    void testPlus();
+//    void testDivTwo();
+    void testMillisecondsConstructor();
     
     Parser * parser;
     MockRows * mockRows;

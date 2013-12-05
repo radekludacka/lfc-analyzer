@@ -11,6 +11,7 @@
 #include "Sorter.h"
 #include <math.h>
 #include <assert.h>
+#include <limits.h>
 
 using namespace std;
 

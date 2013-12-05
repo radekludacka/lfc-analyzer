@@ -59,6 +59,8 @@
         </gdb_interceptlist>
         <gdb_options>
           <DebugOptions>
+            <option name="debug_command"
+                    value="&quot;${OUTPUT_PATH}&quot; -i ./results/log-20130517 -ucrt"/>
           </DebugOptions>
         </gdb_options>
         <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>

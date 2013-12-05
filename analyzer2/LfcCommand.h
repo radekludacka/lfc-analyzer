@@ -49,11 +49,17 @@ public:
     double GetStandardTimeErrorDuration() const;
     void SetAverageTimeDuration(LogTime* averageTimeDuration);
     LogTime* GetAverageTimeDuration() const;
+    void SetMinTimeDuration(LogTime* minTimeDuration);
+    LogTime* GetMinTimeDuration() const;
+    void SetMaxTimeDuration(LogTime* maxTimeDuration);
+    LogTime* GetMaxTimeDuration() const;
 protected:
     LogTime * startTime;
     LogTime * endTime;
     LogTime * averageTimeDuration;
     double standardTimeErrorDuration;
+    LogTime * maxTimeDuration;
+    LogTime * minTimeDuration;
     string file;
     User * user;
     Site * site;

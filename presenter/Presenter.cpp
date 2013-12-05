@@ -74,7 +74,13 @@ string * Presenter::ExtractValuesFromCommand(LfcCommand* command, Arguments * ar
             std::ostringstream oss;
             oss << command->GetStandardTimeErrorDuration();
             string stderror = oss.str();
-            row[i] = time + string(" std. dev.: ") + stderror + " ms";
+            std::ostringstream sMin;
+            std::ostringstream sMax;
+            sMin << command->GetMinTimeDuration()->miliseconds();
+            sMax << command->GetMaxTimeDuration()->miliseconds();
+            string min = sMin.str();
+            string max = sMax.str();
+            row[i] = time + string(" +- ") + stderror + string(" ms <") + min + string(",") + max + ">";
         } else if (arguments->GetResultTypeOrder() == i) {
             if (command->IsFailed()) {
                 next = "failed";

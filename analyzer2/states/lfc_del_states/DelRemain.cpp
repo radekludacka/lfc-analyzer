@@ -21,7 +21,7 @@ LfcCommand * DelRemain::NextState(
 
     vector<Item *> itemsToAssigne;
 
-    for (; iterator != items.end() and *iterator != NULL; ++iterator) {
+    for (int i = 0; *iterator != NULL; i++, iterator++) {
         Item * item2 = *iterator;
 
         if (!item2->IsAssigned()) {

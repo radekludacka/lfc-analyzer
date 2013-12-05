@@ -1,5 +1,9 @@
 #! /bin/bash
 
+if [[ -e ./dist ]]; then
+    rm -r ./dist
+fi
+
 make -f nbproject/Makefile-Release.mk dist/Release/GNU-Linux-x86/lfc-analyzer 
 if [[ ! -d ./bin ]]; then
     mkdir bin || { echo "Cannot create directory bin"; return -1; }
