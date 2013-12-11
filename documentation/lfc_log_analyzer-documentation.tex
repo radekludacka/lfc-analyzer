@@ -97,7 +97,7 @@
 \title{\textbf{LFC log analyzer}\\ % Title
 LCG.CESNET.cz site} % Subtitle
 
-\author{\textsc{Radek Ludacka} % Author
+\author{\textsc{Radek Ludacka, Martin Adam (English corection)} % Author
 \\{\textit{Academy of Sciences of the Czech Republic - Institute of Physics}}} % Institution
 
 \date{\today} % Date
@@ -638,6 +638,8 @@ LFC analyzer presents analysis output in table form. Number and order of table c
     \item[] -u: User name that invoked LFC command.
     \item[] -c: LFC command that has been invoked.
     \item[] -r: Result (Success) of invoked LFC command.
+    \item[] -t: Time duration and std. deviation for each command.
+    \item[] -m: Present command information.
 \end{description}
 
 User does not have to specify any options, table will not be presented in this case. For each specified option there is created a column in which the value of the particular item is presented. Columns are ordered according to option order. Example~\ref{out:usercommandtable} shows a table where lfc\_analyzer presents user and LFC commands that they invoked.
@@ -990,6 +992,8 @@ Set of sorter classes were implemented to create output for user in convenient f
 \item UserSorter: sorts by User name that LFC Command invoked.
 \item SucessSorter: sorts onto two kinds of result: succeed and failed.
 \item SiteSorter: sorts according to User Interface name.
+\item TimeSorter: sorts according to command time duration.
+\item InformationSorter: sorts according to note stored in command.
 \end{itemize}
 \caption{Sorter classes}
 \label{enum:sorters}

@@ -40,7 +40,6 @@ void PrintHelp();
 Sorter * CreateSorterChain(Arguments * arguments);
 
 int main(int argc, char** argv) {
-    const clock_t begin_time_all = clock();
     printf("Welcome in LFC analyzer.\n");
 
     Parser * parser = new Parser();
@@ -208,7 +207,7 @@ void PrintHelp() {
     cout << " -u: User name that invoked LFC command." << endl;
     cout << " -c: LFC command that have been invoked." << endl;
     cout << " -r: Result (Success) of invoked LFC command." << endl;
-    cout << " -t: Present average time per command." << endl;
+    cout << " -t: Present average and std. deviation of time per command." << endl;
     cout << " -m: Present command information." << endl;
 
     cout << " -d UI : filter by user interface" << endl;
