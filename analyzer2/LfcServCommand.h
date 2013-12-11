@@ -12,7 +12,7 @@
 
 class LfcServCommand : public LfcCommand {
 public:
-    LfcServCommand(LogTime * startT, LogTime * endT, string fileName, User * userName, Site * site, bool fail);
+    LfcServCommand(LogTime * startT, LogTime * endT, string fileName, User * userName, Site * site, bool fail, Information * info);
     virtual ~LfcServCommand();
 private:
 

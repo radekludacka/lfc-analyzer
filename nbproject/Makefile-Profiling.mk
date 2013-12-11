@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/525599741/InformationSorter.o \
 	${OBJECTDIR}/_ext/525599741/TimeSorter.o \
 	${OBJECTDIR}/Arguments.o \
 	${OBJECTDIR}/MockCommands.o \
@@ -122,6 +123,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer ${OBJECTFILES} ${LDLIBSOPTIONS} -pg
+
+${OBJECTDIR}/_ext/525599741/InformationSorter.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -O2 -pg -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/InformationSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp
 
 ${OBJECTDIR}/_ext/525599741/TimeSorter.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
@@ -468,6 +474,19 @@ ${TESTDIR}/tests/PresenterTests.o: tests/PresenterTests.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -O2 -pg `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/PresenterTests.o tests/PresenterTests.cpp
 
+
+${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/InformationSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/525599741/InformationSorter.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Wall -O2 -pg -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/_ext/525599741/InformationSorter.o ${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o;\
+	fi
 
 ${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/TimeSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/525599741

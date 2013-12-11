@@ -34,6 +34,7 @@ public:
     int GetCommandOrder();
     int GetResultTypeOrder();
     int GetTimeOrder();
+    int GetInformationOrder();
 
     const char* GetSiteValueToFilter();
     const char* GetUserValueToFilter();
@@ -49,6 +50,7 @@ public:
     void SetCommandOrder(int order);
     void SetResultTypeOrder(int order);
     void SetTimeOrder(int order);
+    void SetInformationOrder(int informationOrder);
 
     void SetSiteValueToFilter(const char* value);
     void SetUserValueToFilter(const char* value);
@@ -56,6 +58,7 @@ public:
     void SetCommmandValueToFilter(const char* value);
     void SetSuccessValueToFilter(const char* value);
     void SetFilePath(const char* value);
+    
 private:
     LFCCommandName CommandConverter(std::string commandName);
     bool FailedConverter(std::string failedValue);
@@ -66,6 +69,7 @@ private:
     int commandOrder;
     int resultTypeOrder;
     int timeOrder;
+    int informationOrder;
 
     const char* filteredSiteValue;
     const char* filteredUserValue;

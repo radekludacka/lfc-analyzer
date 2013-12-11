@@ -8,7 +8,7 @@
 #include "Information.h"
 
 Information::Information() {
-    this->informations = new vector<string>;
+    this->info = ""; 
 }
 
 Information::Information(const Information& orig) {
@@ -17,6 +17,10 @@ Information::Information(const Information& orig) {
 Information::~Information() {
 }
 
-void Information::addInformation(string information){
-    this->informations->push_back(information);
+void Information::SetInformation(string information){
+    this->info = information;
+}
+
+string Information::GetInformation() const {
+    return info;
 }

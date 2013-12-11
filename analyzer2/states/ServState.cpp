@@ -23,9 +23,12 @@ LfcCommand * ServState::NextState(
 
     item->SetAssigned(true);
     
+    int errorStart = item->GetInformation().find(':');
+    string info = item->GetInformation().substr(errorStart + 1);
+    
     Information * information = new Information();
-    information->addInformation(item->GetInformation());
-
+    information->SetInformation(info);
+    
     if (item->GetUser()->GetName().length() != 0 && item->GetUser()->GetName().find('=') == std::string::npos) {
         cout << "2" << endl;
         item->GetStartTime()->print();
@@ -40,5 +43,6 @@ LfcCommand * ServState::NextState(
             item->GetFilePath(),
             item->GetUser(),
             item->GetSite(),
-            true);
+            true,
+            information);
 }

@@ -33,6 +33,8 @@ void Presenter::Print(vector<LfcCommand*> * commands, Arguments * arguments) {
             realNumberOfValues++;
         } else if (arguments->GetTimeOrder() == i) {
             realNumberOfValues++;
+        } else if (arguments->GetInformationOrder() == i) {
+            realNumberOfValues++;
         }
     }
 
@@ -54,7 +56,7 @@ void Presenter::Print(vector<LfcCommand*> * commands, Arguments * arguments) {
 string * Presenter::ExtractValuesFromCommand(LfcCommand* command, Arguments * arguments) {
 
     string * row = new string[numberOfValues];
-
+    
     for (int i = 0; i < numberOfValues; i++) {
         row[i] = "";
     }
@@ -86,6 +88,11 @@ string * Presenter::ExtractValuesFromCommand(LfcCommand* command, Arguments * ar
                 next = "failed";
             } else {
                 next = "succeed";
+            }
+        } else if (arguments->GetInformationOrder() == i) {
+            next = "";
+            if (command->GetInformation() != NULL) {
+                next = command->GetInformation()->GetInformation();
             }
         }
 

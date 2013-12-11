@@ -60,7 +60,7 @@
         <gdb_options>
           <DebugOptions>
             <option name="debug_command"
-                    value="&quot;${OUTPUT_PATH}&quot; -i ./results/log-20130517 -ucrt"/>
+                    value="&quot;${OUTPUT_PATH}&quot; -i results/log-20130518 -cm"/>
           </DebugOptions>
         </gdb_options>
         <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
@@ -72,8 +72,13 @@
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -h</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -h -i results/</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -h -i results/log-20130518</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -i results/log-20130518</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -i results/log-20130518 -m</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -i results/log-20130518 -cm</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" -h</runcommand>
+        <runcommand>"${OUTPUT_PATH}" -i results/log-20130518 -cm</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

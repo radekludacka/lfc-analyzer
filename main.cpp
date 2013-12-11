@@ -29,6 +29,7 @@
 #include "filter/sorters/NullSorter.h"
 #include "filter/sorters/TimeSorter.h"
 #include "Arguments.h"
+#include "filter/sorters/InformationSorter.h"
 #include <time.h>
 
 using namespace std;
@@ -54,9 +55,7 @@ int main(int argc, char** argv) {
 
     cout << "Analyzed log file is: " << arguments->GetFilePath() << endl;
     cout << "Analyzing could take several minutes, wait please." << endl;
-    //const clock_t begin_time = clock();
     LogTable * logTable = parser->parse(arguments->GetFilePath());
-    //        std::cout << float( clock () - begin_time );
     vector<Item*> * items = logTable->getMyList();
 
     cout << "number of items: ";
@@ -83,7 +82,7 @@ int main(int argc, char** argv) {
         counter->FilterCommands(commandList);
     }
 
-    //    commandList->clear();
+    commandList->clear();
     //    delete commandList;
     delete arguments;
     delete parser;
@@ -92,8 +91,6 @@ int main(int argc, char** argv) {
     delete analyzer;
     delete commandTable;
     delete sorter;
-    std::cout << float( clock() - begin_time_all) << endl;
-
     return 0;
 }
 
@@ -115,6 +112,8 @@ Sorter * CreateSorterChain(Arguments * arguments) {
             sorter = new SuccessSorter(previousSorter);
         } else if (arguments->GetTimeOrder() == i) {
             sorter = new TimeSorter(previousSorter);
+        } else if (arguments->GetInformationOrder() == i) {
+            sorter = new InformationSorter(previousSorter);
         }
     }
     return sorter;
@@ -132,7 +131,7 @@ Arguments * ExtractArguments(int argc, char** argv) {
         return NULL;
     }
 
-    const char* const short_options = "hftsucrd:g:i:p:o:l:";
+    const char* const short_options = "hftsucrmd:g:i:p:o:l:";
     static struct option long_options[] = {
         {"site", 1, 0, 'd'},
         {"user", 1, 0, 'g'},
@@ -164,6 +163,9 @@ Arguments * ExtractArguments(int argc, char** argv) {
                 break;
             case 't':
                 arguments->SetTimeOrder(++index);
+                break;
+            case 'm':
+                arguments->SetInformationOrder(++index);
                 break;
             case 'h':
                 PrintHelp();
@@ -207,6 +209,7 @@ void PrintHelp() {
     cout << " -c: LFC command that have been invoked." << endl;
     cout << " -r: Result (Success) of invoked LFC command." << endl;
     cout << " -t: Present average time per command." << endl;
+    cout << " -m: Present command information." << endl;
 
     cout << " -d UI : filter by user interface" << endl;
     cout << " -g USER : filter by user" << endl;

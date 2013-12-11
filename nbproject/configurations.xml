@@ -97,6 +97,8 @@
           <itemPath>filter/sorters/CommandSorter.h</itemPath>
           <itemPath>filter/sorters/FileSorter.cpp</itemPath>
           <itemPath>filter/sorters/FileSorter.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.h</itemPath>
           <itemPath>filter/sorters/NullSorter.cpp</itemPath>
           <itemPath>filter/sorters/NullSorter.h</itemPath>
           <itemPath>filter/sorters/SiteSorter.cpp</itemPath>
@@ -266,6 +268,16 @@
           <output>${TESTDIR}/TestFiles/f5</output>
         </linkerTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp"
             ex="false"
             tool="1"
@@ -777,6 +789,16 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp"
             ex="false"
             tool="1"
@@ -1282,6 +1304,16 @@
           <commandLine>-pg</commandLine>
         </linkerTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp"
             ex="false"
             tool="1"

@@ -14,6 +14,7 @@ class Item {
 public:
 
     Item(LogTime* startTime, LogTime* endTime, Command* command, User * user, Site * site, string filePath, string information, int tid) {
+        
         if (user->GetName().length() != 0 && user->GetName().find('=') == std::string::npos) {
             cout << "1" << endl;
             cout << command->getName() << endl;

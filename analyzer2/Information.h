@@ -18,9 +18,10 @@ public:
     Information();
     Information(const Information& orig);
     virtual ~Information();
-    void addInformation(string information);
+    void SetInformation(string information);
+    string GetInformation() const;
 private:
-    vector<string> * informations;
+    string info;
 };
 
 #endif	/* INFORMATION_H */

@@ -14,6 +14,7 @@ Arguments::Arguments() {
     commandOrder = -1;
     resultTypeOrder = -1;
     timeOrder = -1;
+    informationOrder = -1;
 
     filteredSiteValue = NULL;
     filteredUserValue = NULL;
@@ -165,4 +166,12 @@ void Arguments::SetSuccessValueToFilter(const char* value) {
 
 void Arguments::SetFilePath(const char* value) {
     filePath = value;
+}
+
+void Arguments::SetInformationOrder(int informationOrder) {
+    this->informationOrder = informationOrder;
+}
+
+int Arguments::GetInformationOrder() {
+    return informationOrder;
 }
