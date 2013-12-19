@@ -417,3 +417,15 @@ vector<Row *> * MockRows::createMockRmDir() {
     rows->push_back(parser->parseRow(inputLine3));
     return rows;
 }
+
+vector<Row *> * MockRows::createMockServAbortTransaction() {
+    
+    string inputLine1 = "11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: NS092 - aborttrans request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz";
+    string inputLine2 = "11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: returns 0";
+
+    vector<Row*> * rows = new vector<Row*>;
+
+    rows->push_back(parser->parseRow(inputLine1));
+    rows->push_back(parser->parseRow(inputLine2));
+    return rows;
+}

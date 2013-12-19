@@ -48,6 +48,7 @@ public:
     vector<Row *> * createMockGetPath();
     vector<Row *> * createMockChangeDir();
     vector<Row *> * createMockRmDir();
+    vector<Row *> * createMockServAbortTransaction();
 private:
     Parser * parser;
 };

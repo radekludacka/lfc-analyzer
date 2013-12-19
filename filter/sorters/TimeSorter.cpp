@@ -40,29 +40,22 @@ vector<LfcCommand * > * TimeSorter::Sort(vector<LfcCommand*> * commands) {
 
         int max = 0;
         int min = INT_MAX;
-//        string failed = "Good";
-//        string user = commands->at(0)->GetUser()->GetName();
-//        bool fail = commands->at(0)->IsFailed();
-//        if (commands->at(0)->IsFailed()) {
-//            failed = "Failed";
-//        }
         
-//        cout << string("*") + commandName + string("-") + failed << endl;
+        string failed = "Good";
+        if (commands->at(0)->IsFailed()) {
+            failed = "Failed";
+        }
+        cout << string("*") + commandName + string("-") + failed << endl;
+        
         for (iterator = commands->begin(); iterator != commands->end(); ++iterator) {
             LfcCommand * command = *iterator;
-            
-//            if (!CompareCommandValue(command, commandName)){
-//                cout << "BLE" << endl;
-//            }
-//
-//            if (command->IsFailed() != fail){
-//                cout << "BLE2" << endl;
-//            }
             
             if (CompareCommandValue(command, commandName)) {
                 LogTime * timeDuration = command->GetEndTime()->minus(command->GetStartTime());
                 int timeMillis = timeDuration->miliseconds();
-//                cout << command->GetStartTime()->asStringShortHours() << " | " << timeMillis << endl;
+                
+                cout << command->GetStartTime()->asStringShortHours() << " | " << timeMillis << endl;
+                
                 unsigned long long sumBackup = sum;
                 sum += timeMillis;
 

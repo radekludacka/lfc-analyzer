@@ -30,6 +30,7 @@ enum FunctionType {
         GETPATH,   // 23
         CHDIR,     // 24
         RMDIR,     // 25
+        SERV_ABORTTRANS // 26
         };
 
 #endif	/* FUNCTIONS_H */

@@ -87,7 +87,8 @@ for command in commands:
 	figure = plot_command(command, lines)
 	if figure:
 		figure.savefig(command)
-	# pp.savefig(figure)
+		print os.path.abspath(command)
+	#pp.savefig(figure)
 os.chdir('..')
 
 # pp.close()

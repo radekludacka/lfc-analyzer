@@ -333,6 +333,22 @@ void ParserTests::testParseItemsServ() {
             item);
 }
 
+void ParserTests::testParseItemsServAbortTransaction() {
+    vector<Row*>* rows = mockRows->createMockServAbortTransaction();
+
+    LogTable * result = parser->parseItems(rows);
+    Item * item = *result->getMyList()->begin();
+    
+    this->compareItems(
+            "11/09 21:28:31.698",
+            "11/09 21:28:31.698",
+            "/DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana",
+            "skurut15.grid.cesnet.cz",
+            "",
+            SERV_ABORTTRANS, 0, "", 0,
+            item);
+}
+
 void ParserTests::testParseItemsReadDirConnectionClosed() {
     vector<Row*>* rows = mockRows->createMockReadDirClosed();
 

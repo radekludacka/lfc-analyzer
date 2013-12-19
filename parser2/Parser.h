@@ -35,6 +35,7 @@
 #include "GetPathParser.h"
 #include "ChDirParser.h"
 #include "RmDirParser.h"
+#include "ServAbortTransactionParser.h"
 #include <map>
 #include <stdexcept>
 
@@ -176,6 +177,7 @@ private:
         objectMap["Cns_srv_getpath"] = new GetPathParser();
         objectMap["Cns_srv_chdir"] = new ChDirParser();
         objectMap["Cns_srv_rmdir"] = new RmDirParser();
+        objectMap["Cns_srv_aborttrans"] = new ServAbortTransactionParser();
         return objectMap;
     }
 };

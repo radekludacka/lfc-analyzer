@@ -141,6 +141,7 @@
         <itemPath>parser2/ReadDirParser.h</itemPath>
         <itemPath>parser2/RmDirParser.h</itemPath>
         <itemPath>parser2/Row.h</itemPath>
+        <itemPath>parser2/ServAbortTransactionParser.h</itemPath>
         <itemPath>parser2/ServParser.h</itemPath>
         <itemPath>parser2/SetfSizegParser.h</itemPath>
         <itemPath>parser2/StartSessionParser.h</itemPath>
@@ -727,6 +728,11 @@
       </item>
       <item path="parser2/Row.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/ServAbortTransactionParser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="parser2/ServParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/SetfSizegParser.h" ex="false" tool="3" flavor2="0">
@@ -1248,6 +1254,11 @@
       </item>
       <item path="parser2/Row.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="parser2/ServAbortTransactionParser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="parser2/ServParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/SetfSizegParser.h" ex="false" tool="3" flavor2="0">
@@ -1762,6 +1773,11 @@
       <item path="parser2/RmDirParser.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="parser2/Row.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parser2/ServAbortTransactionParser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="parser2/ServParser.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -141,7 +141,7 @@ public:
 
     string asStringShortHours() {
         char buffer[50];
-        sprintf(buffer, "%02d:%02d:%02d.%03d", time.tm_hour, time.tm_min, time.tm_sec, timeMillis.tv_usec);
+        sprintf(buffer, "%02d:%02d:%02d.%03d", time.tm_hour, time.tm_min, time.tm_sec, timeMillis.tv_usec / 1000);
         std::string result1(buffer);
         return result1;
     }

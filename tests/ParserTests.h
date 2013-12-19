@@ -51,6 +51,7 @@ class ParserTests : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testParseItemsChangeDir);
     CPPUNIT_TEST(testParseItemsRmDir);
     CPPUNIT_TEST(testParseRow);
+    CPPUNIT_TEST(testParseItemsServAbortTransaction);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -91,6 +92,7 @@ private:
     void testParseItemsChangeDir();
     void testParseItemsRmDir();
     void testParseRow();
+    void testParseItemsServAbortTransaction();
 
     void compareItems(string, string, string, string, string, FunctionType, int, string, int, Item *);
 
