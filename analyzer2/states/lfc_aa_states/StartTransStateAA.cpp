@@ -43,10 +43,6 @@ LfcCommand * StartTransStateAA::NextState(
 //11/09 21:28:31.663 20713,1 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
 //11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: NS092 - aborttrans request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
 //11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: returns 0
-//11/09 21:28:31.789 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
-//11/09 21:28:31.911 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
-//11/09 21:28:33.675 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
-//11/09 21:28:33.810 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
         
         if (!item2->IsAssigned()) {
             PrintMessage("START TRANSAA", item2);
@@ -75,6 +71,18 @@ LfcCommand * StartTransStateAA::NextState(
                     symLink = true;
                     // pokud je symplink 17 - neco je spatne
                     item->SetFilePath(item2->GetFilePath());
+                } else if (function == SERV_ABORTTRANS) {
+                    PrintMessage("START TRANS AA ABORT", item2);
+                    item->SetEndTime(item2->GetEndTime());
+                    itemsToAssigne.push_back(item2);
+                    this->AssignAllItems(itemsToAssigne);
+                    return new LfcAACommand(
+                            item->GetStartTime(),
+                            item->GetEndTime(),
+                            item->GetFilePath(),
+                            item->GetUser(),
+                            item->GetSite(),
+                            true);
                 } else if (function == ENDTRANS) {
                     PrintMessage("START TRANS AA ENDTRANS", item2);
                     item->SetEndTime(item2->GetEndTime());

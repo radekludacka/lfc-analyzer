@@ -11,7 +11,3 @@
 11/09 21:28:31.606 20713,0 Cns_srv_symlink: returns 17
 11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: NS092 - aborttrans request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
 11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: returns 0
-11/09 21:28:31.789 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
-11/09 21:28:31.911 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
-11/09 21:28:33.675 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
-11/09 21:28:33.810 20713,0 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
