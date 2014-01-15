@@ -25,6 +25,7 @@
           <itemPath>analyzer2/LfcRepCommand.h</itemPath>
           <itemPath>analyzer2/LfcRmDirCommand.h</itemPath>
           <itemPath>analyzer2/LfcServCommand.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.h</itemPath>
           <itemPath>analyzer2/LfcUtimeCommand.h</itemPath>
         </logicalFolder>
         <logicalFolder name="states" displayName="states" projectFiles="true">
@@ -64,6 +65,8 @@
             <itemPath>analyzer2/states/lfs_ls_states/OpenDirState.cpp</itemPath>
             <itemPath>analyzer2/states/lfs_ls_states/OpenDirState.h</itemPath>
           </logicalFolder>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.h</itemPath>
           <itemPath>analyzer2/states/LstatState.cpp</itemPath>
           <itemPath>analyzer2/states/LstatState.h</itemPath>
           <itemPath>analyzer2/states/MkDirState.cpp</itemPath>
@@ -186,6 +189,7 @@
         <itemPath>analyzer2/LfcRepCommand.cpp</itemPath>
         <itemPath>analyzer2/LfcRmDirCommand.cpp</itemPath>
         <itemPath>analyzer2/LfcServCommand.cpp</itemPath>
+        <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp</itemPath>
         <itemPath>analyzer2/LfcUtimeCommand.cpp</itemPath>
       </logicalFolder>
       <itemPath>Arguments.cpp</itemPath>
@@ -269,6 +273,26 @@
           <output>${TESTDIR}/TestFiles/f5</output>
         </linkerTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
             ex="false"
             tool="1"
@@ -795,6 +819,26 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
             ex="false"
             tool="1"
@@ -1315,6 +1359,26 @@
           <commandLine>-pg</commandLine>
         </linkerTool>
       </compileType>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
             ex="false"
             tool="1"

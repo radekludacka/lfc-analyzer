@@ -44,6 +44,7 @@ class AnalyzerTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testAnalyzerLfcAA);
     CPPUNIT_TEST(testAnalyzerLfcRmDir);
     CPPUNIT_TEST(testAnalyzerLfcAAFailed);
+    CPPUNIT_TEST(testAnalyzeUnkownCommand1);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -81,6 +82,7 @@ private:
     void testAnalyzerLfcAA();
     void testAnalyzerLfcRmDir();
     void testAnalyzerLfcAAFailed();
+    void testAnalyzeUnkownCommand1();
     
     void compareLfcCommands(
             string start, string end, string userP, string siteP,

@@ -585,20 +585,6 @@ void AnalyzerTest::testAnalyzerLfcRmDir() {
             );
 }
 
-//11/09 21:28:31.596 20713,0 Cns_srv_starttrans: NS092 - starttrans request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.596 20713,0 Cns_srv_starttrans: NS098 - starttrans (1.16.0-1.el6)
-//11/09 21:28:31.596 20713,0 Cns_srv_starttrans: returns 0
-//11/09 21:28:31.597 20713,0 Cns_srv_statg: NS092 - statg request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.597 20713,0 Cns_srv_statg: NS098 - statg  9bd768ff-bd79-495b-aeb2-c410da1107ab
-//11/09 21:28:31.598 20713,0 Cns_srv_statg: returns 0
-//11/09 21:28:31.598 20713,0 Cns_srv_getpath: NS092 - getpath request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.600 20713,0 Cns_srv_getpath: returns 0
-//11/09 21:28:31.602 20713,0 Cns_srv_symlink: NS092 - symlink request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.602 20713,0 Cns_srv_symlink: NS098 - symlink /grid/voce/generated/2013-11-09/file-190eba40-2372-4258-89f5-4503b44f179c /grid/voce/manik/Pd/HCP/plane0001/a5.254670.tar.gz
-//11/09 21:28:31.606 20713,0 Cns_srv_symlink: returns 17
-//11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: NS092 - aborttrans request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: returns 0
-
 void AnalyzerTest::testAnalyzerLfcAAFailed() {
     Parser * parser = new Parser();
     LogTable * logTable = parser->parse("tests/resources/lfc-aa-fail");
@@ -621,6 +607,37 @@ void AnalyzerTest::testAnalyzerLfcAAFailed() {
             );
 }
 
+//11/09 04:14:47.908 20713,0 Cns_srv_startsess: NS092 - startsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ce.irb.egi.cro-ngi.hr
+//11/09 04:14:47.908 20713,0 Cns_srv_startsess: NS098 - startsess (1.15.0-0.el6)
+//11/09 04:14:47.908 20713,0 Cns_srv_startsess: returns 0
+//11/09 04:14:47.922 20713,0 Cns_srv_getreplica: NS092 - getreplica request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ce.irb.egi.cro-ngi.hr
+//11/09 04:14:47.922 20713,0 Cns_srv_getreplica: NS098 - getreplica  9da03d2e-f7d1-4992-b391-824ba9986135
+//11/09 04:14:47.923 20713,0 Cns_srv_getreplica: returns 0
+//11/09 04:14:47.953 20713,0 Cns_srv_endsess: NS092 - endsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ce.irb.egi.cro-ngi.hr
+//11/09 04:14:47.953 20713,0 Cns_srv_endsess: returns 0
+
+void AnalyzerTest::testAnalyzeUnkownCommand1() {
+    Parser * parser = new Parser();
+    LogTable * logTable = parser->parse("tests/resources/unknown1");
+    LfcCommandTable * commandTable = analyzer->Analyze(logTable);
+
+    vector<LfcCommand *> * commands = commandTable->GetCommandList();
+    LfcCommand * lfcCommand = *commands->begin();
+
+    allItemsAssigned(logTable);
+    
+    compareLfcCommands(
+            "11/09 04:14:47.908",
+            "11/09 04:14:47.953",
+            "/DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana",
+            "ce.irb.egi.cro-ngi.hr",
+            "9da03d2e-f7d1-4992-b391-824ba9986135",
+            LCG_UNKNOWN,
+            false,
+            lfcCommand
+            );
+}
+
 void AnalyzerTest::compareLfcCommands(
         string start, string end, string userP, string siteP,
         string fileP, LFCCommandName name, bool failed, LfcCommand * lfcCommand) {
@@ -634,7 +651,6 @@ void AnalyzerTest::compareLfcCommands(
     CPPUNIT_ASSERT(*endTime == (lfcCommand->GetEndTime()));
     CPPUNIT_ASSERT(*user == *lfcCommand->GetUser());
     CPPUNIT_ASSERT(*site == *lfcCommand->GetSite());
-    cout << lfcCommand->GetFile() << endl;
     CPPUNIT_ASSERT(fileP.compare(lfcCommand->GetFile()) == 0);
     CPPUNIT_ASSERT(name == lfcCommand->GetName());
     CPPUNIT_ASSERT(failed == lfcCommand->IsFailed());
@@ -646,6 +662,10 @@ void AnalyzerTest::allItemsAssigned(LogTable* logTable) {
     vector<Item *>::iterator iterator = items->begin();
     for (iterator = items->begin(); iterator != items->end(); ++iterator) {
         Item * item = *iterator;
+        
+        if (! item->IsAssigned()) {
+            cout << "not assigned item: " << item->GetStartTime()->asStringShortHours();
+        }
         
         CPPUNIT_ASSERT(true == item->IsAssigned());
     }

@@ -43,7 +43,7 @@ LfcCommand * StartSessState::NextState(
                         item2->SetAssigned(true);
                         State * state = new ReplicaCpState();
                         item->SetFilePath(item2->GetFilePath());
-                        
+
                         PrintMessage("START SESS STATG 0", item2);
                         return state->NextState(iterator, items, item);
                     }
@@ -52,6 +52,18 @@ LfcCommand * StartSessState::NextState(
                     item2->SetAssigned(true);
                     State * state = new DelReplica();
                     return state->NextState(iterator, items, item);
+                } else if (command == GETREPLICA) {
+                    PrintMessage("START SESS GETREPLICA", item2);
+                    item2->SetAssigned(true);
+                    State * state = new GetReplica();
+                    item->SetFilePath(item2->GetFilePath());
+                    return state->NextState(iterator, items, item);
+                } else {
+                    // ukladat to zpet do prvni item je asi prasarna
+                    // zkusit to ulozit do jine item - nove vytvorene
+                    // chyba ?? - nasel se jiny prikaz - doimplementovat
+                    // toto rozpoznavat i u jinych prikazu
+                    // return null
                 }
             }
         } else {

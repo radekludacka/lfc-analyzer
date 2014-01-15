@@ -15,6 +15,7 @@ using namespace std;
 #include "ReplicaCpDelRepState.h"
 #include "lfc_rep_states/BadReplicaState.h"
 #include "lfc_del_states/DelReplica.h"
+#include "GetReplica.h"
 
 class StartSessState : public State {
 public:
