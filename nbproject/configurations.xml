@@ -73,8 +73,10 @@
           <itemPath>analyzer2/states/MkDirState.h</itemPath>
           <itemPath>analyzer2/states/PingDBState.cpp</itemPath>
           <itemPath>analyzer2/states/PingDBState.h</itemPath>
-          <itemPath>analyzer2/states/ReplicaCpDelRepState.cpp</itemPath>
-          <itemPath>analyzer2/states/ReplicaCpDelRepState.h</itemPath>
+          <itemPath>analyzer2/states/ReplicaCpDelRepStateSess1.cpp</itemPath>
+          <itemPath>analyzer2/states/ReplicaCpDelRepStateSess1.h</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp</itemPath>
+          <itemPath>/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.h</itemPath>
           <itemPath>analyzer2/states/ReplicaState.cpp</itemPath>
           <itemPath>analyzer2/states/ReplicaState.h</itemPath>
           <itemPath>analyzer2/states/ServState.cpp</itemPath>
@@ -293,6 +295,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
             ex="false"
             tool="1"
@@ -432,12 +444,12 @@
       </item>
       <item path="analyzer2/states/PingDBState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
+      <item path="analyzer2/states/ReplicaCpDelRepStateSess1.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.h"
+      <item path="analyzer2/states/ReplicaCpDelRepStateSess1.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -839,6 +851,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
             ex="false"
             tool="1"
@@ -978,12 +1000,12 @@
       </item>
       <item path="analyzer2/states/PingDBState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
+      <item path="analyzer2/states/ReplicaCpDelRepStateSess1.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.h"
+      <item path="analyzer2/states/ReplicaCpDelRepStateSess1.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1379,6 +1401,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp"
             ex="false"
             tool="1"
@@ -1518,12 +1550,12 @@
       </item>
       <item path="analyzer2/states/PingDBState.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.cpp"
+      <item path="analyzer2/states/ReplicaCpDelRepStateSess1.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="analyzer2/states/ReplicaCpDelRepState.h"
+      <item path="analyzer2/states/ReplicaCpDelRepStateSess1.h"
             ex="false"
             tool="3"
             flavor2="0">

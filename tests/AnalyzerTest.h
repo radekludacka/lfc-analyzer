@@ -31,6 +31,7 @@ class AnalyzerTest : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testAnalyzerLfcCp);
     CPPUNIT_TEST(testAnalyzerLfcDelReplica);
     CPPUNIT_TEST(testAnalyzerLfcDelRemain);
+    CPPUNIT_TEST(testAnalyzerLfcDelRemain2);
     CPPUNIT_TEST(testAnalyzerLfcDelAll);
     CPPUNIT_TEST(testAnalyzerLfcDelAll2);
     CPPUNIT_TEST(testAnalyzerLfcServ);
@@ -69,6 +70,7 @@ private:
     void testAnalyzerLfcCp();
     void testAnalyzerLfcDelReplica();
     void testAnalyzerLfcDelRemain();
+    void testAnalyzerLfcDelRemain2();
     void testAnalyzerLfcDelAll();
     void testAnalyzerLfcDelAll2();
     void testAnalyzerLfcServ();

@@ -41,17 +41,29 @@ LfcCommandTable * Analyzer::Analyze(LogTable * logTable) {
             if (objectMap.find(functionName) != objectMap.end()) {
                 item->SetAssigned(true);
                 this->currentState = objectMap.at(functionName);
-                int addition = index + 7000;
+                int addition = index + 3500;
                 if (addition > items->size()) {
                     addition = items->size();
                 }
                 std::vector<Item *> subRows(items->begin() + index + 1, items->begin() + addition);
                 std::vector<Item *>::const_iterator iterator = subRows.begin();
+                
+                LogTime * backUpEndTime = new LogTime(item->GetEndTime()->miliseconds());
+                string backUpFilePath = item->GetFilePath();
+                string backUpInformation = item->GetInformation();
+                int backUpTid = item->GetTid(); 
+                
                 LfcCommand * command = currentState->NextState(iterator, subRows, item);
                 if (command != NULL) {
                     commandList->add(command);
+                    currentState->PrintMessage("ANALYZER: ADDED COMMAND " + command->GetStringName(), item);
                 } else {
+                    item->SetEndTime(backUpEndTime);
+                    item->SetFilePath(backUpFilePath);
+                    item->SetInformation(backUpInformation);
+                    item->SetTid(backUpTid);
                     item->SetAssigned(false);
+                    currentState->PrintMessage("ANALYZER: RETURNED NULL", item);
                 }
 //                delete currentState;
             }

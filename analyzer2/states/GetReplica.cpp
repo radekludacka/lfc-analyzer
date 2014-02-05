@@ -26,14 +26,15 @@ LfcCommand * GetReplica::NextState(
         Item * item2 = *iterator;
         if (!item2->IsAssigned()) {
             
-            PrintMessage("GETREPLICA STATE not assigned", item);
+            PrintMessage("GETREPLICA STATE not assigned", item2);
             
             if (item->compareUserSiteTid(item2)) {
                 FunctionType command = item2->GetCommand()->getName();
                 if (command == ENDSESS) {
-                    PrintMessage("GETREPLICA STATE ENDSESS", item);
+                    PrintMessage("GETREPLICA STATE ENDSESS", item2);
                     item2->SetAssigned(true);
-                    return new LfcUnknownCommand(item->GetStartTime(),
+                    return new LfcUnknownCommand(
+                            item->GetStartTime(),
                             item2->GetEndTime(),
                             item->GetFilePath(),
                             item->GetUser(),
@@ -50,7 +51,7 @@ LfcCommand * GetReplica::NextState(
                 }
             }
         } else {
-            PrintMessage("GETREPLICA STATE NOT ASSIGNED", item2);
+            PrintMessage("GETREPLICA STATE ASSIGNED", item2);
         }
 
         if (*iterator == items.back()) {

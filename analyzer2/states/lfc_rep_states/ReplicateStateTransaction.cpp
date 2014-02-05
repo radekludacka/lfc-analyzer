@@ -20,8 +20,6 @@ LfcCommand * ReplicateStateTransaction::NextState(
         ) {
 
     vector<Item *> itemsToAssigne;
-    bool statg = false;
-    bool addReplica = false;
 
     for (; *iterator != NULL; iterator++) {
         Item * item2 = *iterator;
@@ -29,17 +27,12 @@ LfcCommand * ReplicateStateTransaction::NextState(
         if (!item2->IsAssigned()) {
             if (item->compareUserSiteTid(item2)) {
                 FunctionType command = item2->GetCommand()->getName();
-                if (command == STATG and !statg) {
-                    PrintMessage("CP1 STATG", item2);
+
+                if (command == ADDREPLICA) {
+                    PrintMessage("CP1TR ADDREPLICA", item2);
                     itemsToAssigne.push_back(item2);
-                    statg = true;
-                } else if (command == ADDREPLICA and !addReplica) {
-                    PrintMessage("CP1 ADDREPLICA", item2);
-                    itemsToAssigne.push_back(item2);
-                    item->SetFilePath(item2->GetFilePath());
-                    addReplica = true;
                 } else if (command == ENDTRANS) {
-                    PrintMessage("CP1 ENDTRANS", item2);
+                    PrintMessage("CP1TR ENDTRANS", item2);
                     itemsToAssigne.push_back(item2);
                     this->AssignAllItems(itemsToAssigne);
                     item->SetEndTime(item2->GetEndTime());
@@ -58,6 +51,6 @@ LfcCommand * ReplicateStateTransaction::NextState(
         }
     }
 
-    PrintMessage("NULL REPLICATE TRANSACTION", item);
+    PrintMessage("CP1TR NULL", item);
     return NULL;
 }

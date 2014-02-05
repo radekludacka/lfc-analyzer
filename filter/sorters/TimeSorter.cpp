@@ -51,10 +51,13 @@ vector<LfcCommand * > * TimeSorter::Sort(vector<LfcCommand*> * commands) {
             LfcCommand * command = *iterator;
             
             if (CompareCommandValue(command, commandName)) {
-                LogTime * timeDuration = command->GetEndTime()->minus(command->GetStartTime());
+//                LogTime * timeDuration = command->GetEndTime()->minus(command->GetStartTime());
+                LogTime * timeDuration = command->GetEndTime()->minusMillis(command->GetStartTime());
                 int timeMillis = timeDuration->miliseconds();
                 
-                cout << command->GetStartTime()->asStringShortHours() << " | " << timeMillis << endl;
+//                cout << command->GetEndTime()->minusMillis(command->GetStartTime())->miliseconds() << endl;
+//                cout << command->GetStartTime()->asStringShortHours() << " | " << timeMillis << endl;
+//                cout << command->GetEndTime()->asStringShortHours() << " | " << timeMillis << endl;
                 
                 unsigned long long sumBackup = sum;
                 sum += timeMillis;

@@ -21,12 +21,14 @@ LfcCommand * StartSessState::NextState(
 
     int itemsSize = items.size();
     PrintMessage("START SESS", item);
+    string statgFilePath = "";
+    string fileBackUp = item->GetFilePath();
 
     for (int i = 0; i < itemsSize; i++, iterator++) {
         Item * item2 = *iterator;
         if (!item2->IsAssigned()) {
 
-            PrintMessage("START SESS not assigned", item);
+            PrintMessage("START SESS NOT ASSIGNED", item2);
 
             if (item->compareUserSiteTid(item2)) {
                 FunctionType command = item2->GetCommand()->getName();
@@ -43,13 +45,30 @@ LfcCommand * StartSessState::NextState(
                         item2->SetAssigned(true);
                         State * state = new ReplicaCpState();
                         item->SetFilePath(item2->GetFilePath());
+                        statgFilePath = item2->GetFilePath();
 
                         PrintMessage("START SESS STATG 0", item2);
-                        return state->NextState(iterator, items, item);
+                        LfcCommand * command = state->NextState(iterator, items, item);
+                        if (command != NULL && command->GetName() == LCG_CP) {
+                            cout << "setting file path:" << item2->GetFilePath() << endl;
+                            command->SetFile(statgFilePath);
+                        }
+                        
+                        if (command == NULL) {
+                            item->SetFilePath(fileBackUp);
+                        }
+                        return command;
                     }
                 } else if (command == STATR) {
-                    PrintMessage("START SESS STATG", item2);
+                    PrintMessage("START SESS STATR", item2);
                     item2->SetAssigned(true);
+//                    item->SetFilePath(item2->GetFilePath());
+                    State * state = new DelReplica();
+                    return state->NextState(iterator, items, item);
+                } else if (command == GETLINKS) {
+                    PrintMessage("START SESS GETLINKS", item2);
+                    item2->SetAssigned(true);
+                    item->SetFilePath(item2->GetFilePath());
                     State * state = new DelReplica();
                     return state->NextState(iterator, items, item);
                 } else if (command == GETREPLICA) {
@@ -64,10 +83,13 @@ LfcCommand * StartSessState::NextState(
                     // chyba ?? - nasel se jiny prikaz - doimplementovat
                     // toto rozpoznavat i u jinych prikazu
                     // return null
+
+                    // asString v LogTime se spatne vypisuje - misto
+                    // napr: 15.015000 se vypise 15.15000
                 }
             }
         } else {
-            PrintMessage("START SESS NOT ASSIGNED", item2);
+            PrintMessage("START SESS ASSIGNED COMMAND", item2);
         }
 
         if (*iterator == items.back()) {

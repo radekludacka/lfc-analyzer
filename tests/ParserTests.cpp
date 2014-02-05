@@ -551,6 +551,72 @@ void ParserTests::testParseItemsRmDir() {
             item);
 }
 
+void ParserTests::testStringExtractionSecondPart() {
+    string wholeString = "/grid/voce/ludacka/text_file.txt 78eda959-9af0-4423-9b01-3eade1cffe31";
+    string secondPart = "78eda959-9af0-4423-9b01-3eade1cffe31";
+    
+    LogTime * time = new LogTime(10);
+    Command * command = new Command(RMDIR, 0);
+    Site * site = new Site("site");
+    User * user = new User("user=dn");
+    Item * item1 = new Item(time, time, command, user, site, "tempFilePath", "", 0);
+    item1->SetFilePath(wholeString);
+
+    string result = item1->GetSecondPart(wholeString);
+    
+    CPPUNIT_ASSERT(result.compare(secondPart) == 0);
+}
+
+void ParserTests::testStringExtractionFirstPart() {
+    string wholeString = "/grid/voce/ludacka/text_file.txt 78eda959-9af0-4423-9b01-3eade1cffe31";
+    string firstPart = "/grid/voce/ludacka/text_file.txt";
+    
+    LogTime * time = new LogTime(10);
+    Command * command = new Command(RMDIR, 0);
+    Site * site = new Site("site");
+    User * user = new User("user=dn");
+    Item * item1 = new Item(time, time, command, user, site, "tempFilePath", "", 0);
+    item1->SetFilePath(wholeString);
+
+    string result = item1->GetFirstPart(wholeString);
+    
+    CPPUNIT_ASSERT(result.compare(firstPart) == 0);
+}
+
+void ParserTests::testFirstPartFileComparisson() {
+    string wholeString = "/grid/voce/ludacka/text_file.txt 78eda959-9af0-4423-9b01-3eade1cffe31";
+    string firstPart = "/grid/voce/ludacka/text_file.txt";
+    
+    LogTime * time = new LogTime(10);
+    Command * command = new Command(RMDIR, 0);
+    Site * site = new Site("site");
+    User * user = new User("user=dn");
+    Item * item1 = new Item(time, time, command, user, site, "tempFilePath", "", 0);
+    item1->SetFilePath(wholeString);
+    
+    Item * item2 = new Item(time, time, command, user, site, "tempFilePath", "", 0);
+    item2->SetFilePath(firstPart);
+    
+    CPPUNIT_ASSERT(true == item1->compareUserSiteFirstPartOfFile(item2));
+}
+
+void ParserTests::testFirstSecondPartFileComparisson() {
+    string item1Path = "uzdoskakal 78eda959-9af0-4423-9b01-3eade1cffe31";
+    string item2Path = "78eda959-9af0-4423-9b01-3eade1cffe31 skakal pes pres oves";
+    
+    LogTime * time = new LogTime(10);
+    Command * command = new Command(RMDIR, 0);
+    Site * site = new Site("site");
+    User * user = new User("user=dn");
+    Item * item1 = new Item(time, time, command, user, site, "tempFilePath", "", 0);
+    item1->SetFilePath(item1Path);
+    
+    Item * item2 = new Item(time, time, command, user, site, "tempFilePath", "", 0);
+    item2->SetFilePath(item2Path);
+    
+    CPPUNIT_ASSERT(true == item1->compareUserSiteSecondAndFirstPartOfFile(item2));
+}
+
 void ParserTests::compareItems(
         string start, string end, string userP, string siteP, string fileP,
         FunctionType func, int retCode, string information, int tid, Item * item) {

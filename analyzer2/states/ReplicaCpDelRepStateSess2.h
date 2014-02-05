@@ -1,12 +1,12 @@
 /* 
- * File:   GoodReplicaState.h
+ * File:   ReplicaCpDelRepStateSess2.h
  * Author: radek
  *
- * Created on 17 July 2013, 13:15
+ * Created on January 16, 2014, 2:12 PM
  */
 
-#ifndef GOODREPLICASTATE_H
-#define	GOODREPLICASTATE_H
+#ifndef REPLICACPDELREPSTATESESS2_H
+#define	REPLICACPDELREPSTATESESS2_H
 
 #include "State.h"
 #include "../LfcCpCommand.h"
@@ -15,18 +15,18 @@
 #include "lfc_del_states/DelAll.h"
 #include "lfc_rep_states/ReplicateStateTransaction.h"
 
-class ReplicaCpState : public State {
+class ReplicaCpDelRepStateSess2 : public State {
 public:
-    ReplicaCpState();
-    virtual ~ReplicaCpState();
+    ReplicaCpDelRepStateSess2();
+    virtual ~ReplicaCpDelRepStateSess2();
     virtual LfcCommand * NextState(
             std::vector<Item *>::const_iterator & iterator,
             vector<Item*> items,
             Item* item
-    );
+            );
 private:
 
 };
 
-#endif	/* GOODREPLICASTATE_H */
+#endif	/* REPLICACPDELREPSTATESESS2_H */
 

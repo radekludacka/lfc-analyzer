@@ -9,21 +9,21 @@
 #define	COMMANDNAME_H
 
 enum LFCCommandName {
-    LFC_LS,
-    LCG_CR,
-    LCG_REP,
-    LFC_MKDIR,
-    LCG_CP,
-    LCG_DEL,
-    LCG_NONE,
-    LCG_ERR_TIMEOUT,
-    LCG_ERR_PROXY,
-    LCG_UTIME,
-    LCG_PINGDB,
-    LCG_LR,
-    LCG_AA,
-    LCG_RM,
-    LCG_UNKNOWN,
+    LFC_LS,     // 0
+    LCG_CR,     // 1
+    LCG_REP,    // 2
+    LFC_MKDIR,  // 3
+    LCG_CP,     // 4
+    LCG_DEL,    // 5
+    LCG_SERV,   // 6
+    LCG_ERR_TIMEOUT,    // 7
+    LCG_ERR_PROXY,      // 8
+    LCG_UTIME,  // 9
+    LCG_PINGDB, // 10
+    LCG_LR,     // 11
+    LCG_AA,     // 12
+    LCG_RM,     // 13
+    LCG_UNKNOWN,// 14
 };
 
 

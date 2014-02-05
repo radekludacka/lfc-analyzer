@@ -12,7 +12,7 @@ using namespace std;
 
 #include "State.h"
 #include "../../Functions.h"
-#include "ReplicaCpDelRepState.h"
+#include "ReplicaCpDelRepStateSess1.h"
 #include "lfc_rep_states/BadReplicaState.h"
 #include "lfc_del_states/DelReplica.h"
 #include "GetReplica.h"

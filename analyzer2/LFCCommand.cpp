@@ -131,3 +131,7 @@ void LfcCommand::SetMaxTimeDuration(LogTime* maxTimeDuration) {
 LogTime* LfcCommand::GetMaxTimeDuration() const {
     return maxTimeDuration;
 }
+
+void LfcCommand::SetFile(string file) {
+    this->file = file;
+}

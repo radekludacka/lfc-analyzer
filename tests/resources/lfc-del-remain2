@@ -1,0 +1,28 @@
+11/09 15:23:02.278 20713,0 Cns_srv_startsess: NS092 - startsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.278 20713,0 Cns_srv_startsess: NS098 - startsess (1.11.16-3)
+11/09 15:23:02.278 20713,0 Cns_srv_startsess: returns 0
+11/09 15:23:02.279 20713,0 Cns_srv_getlinks: NS092 - getlinks request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.279 20713,0 Cns_srv_getlinks: NS098 - getlinks  0d590c18-c3fc-4d64-8ac9-4236656840c0
+11/09 15:23:02.281 20713,0 Cns_srv_getlinks: returns 0
+11/09 15:23:02.313 20713,0 Cns_srv_access: NS092 - access request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.313 20713,0 Cns_srv_access: NS098 - access 6 /grid/voce/generated/2013-11-08/file-2b279d14-88ef-4d1a-bca2-e53f1cdfb08a
+11/09 15:23:02.316 20713,0 Cns_srv_access: returns 0
+11/09 15:23:02.316 20713,0 Cns_srv_endsess: NS092 - endsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.316 20713,0 Cns_srv_endsess: returns 0
+11/09 15:23:02.640 20713,0 Cns_srv_startsess: NS092 - startsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.640 20713,0 Cns_srv_startsess: NS098 - startsess ()
+11/09 15:23:02.640 20713,0 Cns_srv_startsess: returns 0
+11/09 15:23:02.640 20713,0 Cns_srv_delreplica: NS092 - delreplica request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.640 20713,0 Cns_srv_delreplica: NS098 - delreplica 0d590c18-c3fc-4d64-8ac9-4236656840c0 srm://se.srce.egi.cro-ngi.hr/voce/generated/2013-11-08/file17ffb15e-42cf-4e0c-919b-3fc8241ce87a
+11/09 15:23:02.644 20713,0 Cns_srv_delreplica: returns 0
+11/09 15:23:02.758 20713,0 Cns_srv_getreplica: NS092 - getreplica request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.758 20713,0 Cns_srv_getreplica: NS098 - getreplica  0d590c18-c3fc-4d64-8ac9-4236656840c0
+11/09 15:23:02.758 20713,0 Cns_srv_getreplica: returns 0
+11/09 15:23:02.797 20713,0 Cns_srv_getlinks: NS092 - getlinks request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.797 20713,0 Cns_srv_getlinks: NS098 - getlinks  0d590c18-c3fc-4d64-8ac9-4236656840c0
+11/09 15:23:02.799 20713,0 Cns_srv_getlinks: returns 0
+11/09 15:23:02.837 20713,0 Cns_srv_unlink: NS092 - unlink request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.837 20713,0 Cns_srv_unlink: NS098 - unlink /grid/voce/generated/2013-11-08/file-2b279d14-88ef-4d1a-bca2-e53f1cdfb08a
+11/09 15:23:02.845 20713,0 Cns_srv_unlink: returns 0
+11/09 15:23:02.890 20713,0 Cns_srv_endsess: NS092 - endsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ui1.egee.cesnet.cz
+11/09 15:23:02.890 20713,0 Cns_srv_endsess: returns 0

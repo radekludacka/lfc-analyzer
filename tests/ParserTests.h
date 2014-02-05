@@ -52,6 +52,10 @@ class ParserTests : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(testParseItemsRmDir);
     CPPUNIT_TEST(testParseRow);
     CPPUNIT_TEST(testParseItemsServAbortTransaction);
+    CPPUNIT_TEST(testFirstPartFileComparisson);
+    CPPUNIT_TEST(testStringExtractionFirstPart);
+    CPPUNIT_TEST(testStringExtractionSecondPart);
+    CPPUNIT_TEST(testFirstSecondPartFileComparisson);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -93,6 +97,10 @@ private:
     void testParseItemsRmDir();
     void testParseRow();
     void testParseItemsServAbortTransaction();
+    void testFirstPartFileComparisson();
+    void testStringExtractionFirstPart();
+    void testStringExtractionSecondPart();
+    void testFirstSecondPartFileComparisson();
 
     void compareItems(string, string, string, string, string, FunctionType, int, string, int, Item *);
 

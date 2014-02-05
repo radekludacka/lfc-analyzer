@@ -19,7 +19,7 @@ class GetReplicaParser : virtual public CommandParser {
 public:
 
     GetReplicaParser() {
-        parseState1Start = 20;
+        parseState1Start = 19;
         parseState2Start = 8;
         function = GETREPLICA;
     }

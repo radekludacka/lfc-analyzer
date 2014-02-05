@@ -41,7 +41,7 @@ LfcCommand * ServState::NextState(
             item->GetStartTime(),
             item->GetEndTime(),
             item->GetFilePath(),
-            item->GetUser(),
+            new User("UNKNOWN"),
             item->GetSite(),
             true,
             information);

@@ -195,7 +195,7 @@ void AnalyzerTest::testAnalyzerLfcRep() {
             "07/16 16:01:45.873",
             "/DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520",
             "ui1.egee.cesnet.cz",
-            "2045789b-6209-446f-83bc-ae32603b4ac7 se.polgrid.pl srm://se.polgrid.pl/dpm/polgrid.pl/home/voce/generated/2013-07-16/fileea0f5c07-9b32-45a8-8213-4f8c92b896b6",
+            "/grid/voce/ludacka/text_file.txt 2045789b-6209-446f-83bc-ae32603b4ac7",
             LCG_REP,
             false,
             lfcRepCommand
@@ -282,7 +282,7 @@ void AnalyzerTest::testAnalyzerLfcDelReplica() {
             "07/19 10:12:11.280",
             "/DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520",
             "ui1.egee.cesnet.cz",
-            "a70321fd-1ebc-49e0-86b4-fe6a8f68b199 srm://dpm1.egee.cesnet.cz/dpm/cesnet.cz/home/voce/generated/2013-07-19/filebfec4476-acfd-4413-a7c9-6607cd6d535f",
+            "/grid/voce/ludacka/text_file.txt",
             LCG_DEL,
             false,
             lfcDelCommand
@@ -304,7 +304,29 @@ void AnalyzerTest::testAnalyzerLfcDelRemain() {
             "07/18 15:46:27.577",
             "/DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520",
             "ui1.egee.cesnet.cz",
-            "/grid/voce/ludacka/text_file8.txt",
+            "/grid/voce/ludacka/text_file.txt",
+            LCG_DEL,
+            false,
+            lfcDelCommand
+            );
+}
+
+void AnalyzerTest::testAnalyzerLfcDelRemain2() {
+    Parser * parser = new Parser();
+    LogTable * logTable = parser->parse("tests/resources/lfc-del-remain2");
+    LfcCommandTable * commandTable = analyzer->Analyze(logTable);
+
+    vector<LfcCommand *> * commands = commandTable->GetCommandList();
+    LfcCommand * lfcDelCommand = *commands->begin();
+
+    allItemsAssigned(logTable);
+
+    compareLfcCommands(
+            "11/09 15:23:02.278",
+            "11/09 15:23:02.890",
+            "/DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana",
+            "ui1.egee.cesnet.cz",
+            "/grid/voce/generated/2013-11-08/file-2b279d14-88ef-4d1a-bca2-e53f1cdfb08a",
             LCG_DEL,
             false,
             lfcDelCommand
@@ -371,7 +393,7 @@ void AnalyzerTest::testAnalyzerLfcServ() {
             "UNKNOWN",
             "wn083.pleiades.uni-wuppertal.de",
             "",
-            LCG_NONE,
+            LCG_SERV,
             true,
             lfcCommand
             );
@@ -393,7 +415,7 @@ void AnalyzerTest::testAnalyzerLfcServTimedOut() {
             "UNKNOWN",
             "nat105.farm.particle.cz",
             "",
-            LCG_NONE,
+            LCG_SERV,
             true,
             lfcCommand
             );

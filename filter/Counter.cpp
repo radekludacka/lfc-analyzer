@@ -81,7 +81,7 @@ void Counter::FilterCommands(vector<LfcCommand *> * commands) {
                 } else {
                     numberOfGoodDelReplica++;
                 }
-            } else if (function == LCG_NONE) {
+            } else if (function == LCG_SERV) {
                 numberOfServErrors++;
             } else if (function == LCG_PINGDB) {
                 numberPingDB++;

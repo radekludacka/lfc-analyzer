@@ -24,6 +24,5 @@ void State::AssignAllItems(vector<Item*> items) {
 }
 
 void State::PrintMessage(string msg, Item* item) {
-//    cout << msg << endl;
-//    item->GetStartTime()->toString();
+//    cout << item->GetStartTime()->asString() << " - " << msg << " " << item->GetCommand()->getName() << endl;
 }

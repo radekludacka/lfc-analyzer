@@ -27,9 +27,9 @@ public:
             Item* item
             ) = 0;
     virtual ~State();
+    void PrintMessage(string, Item * item);
 protected:
     void AssignAllItems(vector<Item*> items);
-    void PrintMessage(string, Item * item);
 };
 
 #endif	/* LFCANALYZERSTATE_H */

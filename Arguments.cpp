@@ -46,7 +46,7 @@ LFCCommandName Arguments::CommandConverter(std::string commandName) {
     commandMap["lfc-mkdir"] = LFC_MKDIR;
     commandMap["lcg-cp"] = LCG_CP;
     commandMap["lcg-del"] = LCG_DEL;
-    commandMap["srv-err"] = LCG_NONE;
+    commandMap["srv-err"] = LCG_SERV;
     commandMap["lcg-utime"] = LCG_UTIME;
     commandMap["lcg-pingdb"] = LCG_PINGDB;
     commandMap["lcg-lr"] = LCG_LR;

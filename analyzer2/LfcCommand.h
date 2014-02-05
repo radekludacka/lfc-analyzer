@@ -53,6 +53,7 @@ public:
     LogTime* GetMinTimeDuration() const;
     void SetMaxTimeDuration(LogTime* maxTimeDuration);
     LogTime* GetMaxTimeDuration() const;
+    void SetFile(string file);
 protected:
     LogTime * startTime;
     LogTime * endTime;

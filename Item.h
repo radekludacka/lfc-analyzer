@@ -14,7 +14,7 @@ class Item {
 public:
 
     Item(LogTime* startTime, LogTime* endTime, Command* command, User * user, Site * site, string filePath, string information, int tid) {
-        
+
         if (user->GetName().length() != 0 && user->GetName().find('=') == std::string::npos) {
             cout << "1" << endl;
             cout << command->getName() << endl;
@@ -23,7 +23,7 @@ public:
             cout << filePath << endl;
             throw "user contains path";
         }
-        
+
         this->startTime = startTime;
         this->endTime = endTime;
         this->command = command;
@@ -92,6 +92,44 @@ public:
         return false;
     }
 
+    bool compareUserSiteFirstPartOfFile(Item * item) {
+        if (*this->GetUser() == *item->GetUser() and *this->GetSite() == *item->GetSite()) {
+
+            string firstPart = this->GetFirstPart(this->GetFilePath());
+            cout << "this:" << firstPart << endl;
+            cout << "item:" << item->GetFilePath().c_str() << endl;
+            if (strcmp(item->GetFilePath().c_str(), firstPart.c_str()) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool compareUserSiteSecondPartOfFile(Item * item) {
+        if (*this->GetUser() == *item->GetUser() and *this->GetSite() == *item->GetSite()) {
+
+            string secondPart = this->GetSecondPart(this->GetFilePath());
+            cout << "second part:" << secondPart << endl;
+            cout << "first  part:" << item->GetFilePath().c_str() << endl;
+            if (strcmp(item->GetFilePath().c_str(), secondPart.c_str()) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool compareUserSiteSecondAndFirstPartOfFile(Item * item) {
+        if (*this->GetUser() == *item->GetUser() and *this->GetSite() == *item->GetSite()) {
+
+            string firstPart = this->GetSecondPart(this->GetFilePath());
+            string secondPart = item->GetFirstPart(item->GetFilePath());
+            if (strcmp(firstPart.c_str(), secondPart.c_str()) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     bool compareUserSiteTid(Item * item) {
         if (this->GetTid() == item->GetTid() and
                 *this->GetUser() == *item->GetUser() and
@@ -126,6 +164,14 @@ public:
         this->filePath = filePath;
     }
 
+    string GetFirstPart(string inputString) {
+        cout << inputString << endl;
+        return this->ExtractStringPart(inputString, 0);
+    }
+
+    string GetSecondPart(string inputString) {
+        return this->ExtractStringPart(inputString, 1);
+    }
 
 private:
     LogTime * startTime;
@@ -137,6 +183,17 @@ private:
     string information;
     bool assigned;
     int tid;
+
+    string ExtractStringPart(string stringToExtract, int position) {
+        string buf;
+        stringstream ss(stringToExtract);
+        vector<string> tokens;
+
+        while (ss >> buf) {
+            tokens.push_back(buf);
+        }
+        return tokens.at(position);
+    }
 };
 
 #endif /* ITEM_H_ */

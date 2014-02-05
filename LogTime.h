@@ -96,6 +96,10 @@ public:
     }
 
     LogTime * minus(LogTime * logTime2) {
+        // pokud je cas logTime2 > this - presehl se dan - nejdriv odecit ode dne a pak to k tomu pricist
+
+        //        cout << this->miliseconds() << "-" << logTime2->miliseconds() << endl;
+        //        return new LogTime(this->miliseconds() - logTime2->miliseconds());
         LogTime * difference = new LogTime();
         tm tm1 = this->time;
         tm tm2 = logTime2->GetTime();
@@ -130,6 +134,20 @@ public:
         difference->SetTime(diffTime);
         difference->SetTimeMillis(diffMillisTime);
         return difference;
+    }
+
+    LogTime * minusMillis(LogTime * logTime2) {
+        int endMillis = this->miliseconds();
+        int startMillis = logTime2->miliseconds();
+        if (endMillis < startMillis) {
+            LogTime * noon = new LogTime("01/01 23:59:59.999");
+            return new LogTime(noon->miliseconds() - startMillis + endMillis);
+        }
+        return new LogTime(endMillis - startMillis);
+        // pokud je cas logTime2 > this - presehl se dan - nejdriv odecit ode dne a pak to k tomu pricist
+
+        //        cout << this->miliseconds() << "-" << logTime2->miliseconds() << endl;
+        //        return new LogTime(this->miliseconds() - logTime2->miliseconds());
     }
 
     string asStringShort() {
