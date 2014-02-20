@@ -18,7 +18,7 @@ void State::AssignAllItems(vector<Item*> items) {
 
     for (iterator1 = items.begin(); iterator1 != items.end(); ++iterator1) {
         Item * item = *iterator1;
-        PrintMessage("ASSIGN", item);
+//        PrintMessage("ASSIGN", item);
         item->SetAssigned(true);
     }
 }

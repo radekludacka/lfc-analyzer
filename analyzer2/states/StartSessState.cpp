@@ -50,7 +50,6 @@ LfcCommand * StartSessState::NextState(
                         PrintMessage("START SESS STATG 0", item2);
                         LfcCommand * command = state->NextState(iterator, items, item);
                         if (command != NULL && command->GetName() == LCG_CP) {
-                            cout << "setting file path:" << item2->GetFilePath() << endl;
                             command->SetFile(statgFilePath);
                         }
                         
@@ -62,7 +61,6 @@ LfcCommand * StartSessState::NextState(
                 } else if (command == STATR) {
                     PrintMessage("START SESS STATR", item2);
                     item2->SetAssigned(true);
-//                    item->SetFilePath(item2->GetFilePath());
                     State * state = new DelReplica();
                     return state->NextState(iterator, items, item);
                 } else if (command == GETLINKS) {
@@ -77,15 +75,6 @@ LfcCommand * StartSessState::NextState(
                     State * state = new GetReplica();
                     item->SetFilePath(item2->GetFilePath());
                     return state->NextState(iterator, items, item);
-                } else {
-                    // ukladat to zpet do prvni item je asi prasarna
-                    // zkusit to ulozit do jine item - nove vytvorene
-                    // chyba ?? - nasel se jiny prikaz - doimplementovat
-                    // toto rozpoznavat i u jinych prikazu
-                    // return null
-
-                    // asString v LogTime se spatne vypisuje - misto
-                    // napr: 15.015000 se vypise 15.15000
                 }
             }
         } else {

@@ -101,7 +101,7 @@
         <gdb_options>
           <DebugOptions>
             <option name="debug_command"
-                    value="&quot;${OUTPUT_PATH}&quot;  -i ./dist/Profiling/GNU-Linux-x86/log-20131017 -c"/>
+                    value="&quot;${OUTPUT_PATH}&quot;  -cet -i ./logs/log-20131110"/>
           </DebugOptions>
         </gdb_options>
         <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
@@ -114,8 +114,11 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -i log-20131017 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -i ./dist/Profiling/GNU-Linux-x86/log-20131017 -c</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -i logs/log-20131110 -c</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -i logs/log-20131110 -c -t</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -i logs/log-20131110 -c -te</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}"  -i ./dist/Profiling/GNU-Linux-x86/log-20131017 -c</runcommand>
+        <runcommand>"${OUTPUT_PATH}"  -i logs/log-20131110 -c -te</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

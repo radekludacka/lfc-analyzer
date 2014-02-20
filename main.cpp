@@ -61,7 +61,6 @@ int main(int argc, char** argv) {
     cout << items->size() << endl;
 
     LfcCommandTable * commandTable = analyzer->Analyze(logTable);
-    //    delete logTable;
 
     vector<LfcCommand *> * commandList = filter->Filtrate(commandTable->GetCommandList(), arguments);
 
@@ -111,6 +110,10 @@ Sorter * CreateSorterChain(Arguments * arguments) {
             sorter = new SuccessSorter(previousSorter);
         } else if (arguments->GetTimeOrder() == i) {
             sorter = new TimeSorter(previousSorter);
+            if (arguments->GetPrintTimes()) {
+                TimeSorter* ts = dynamic_cast<TimeSorter*>(sorter);
+                ts->SetPrintCommandsOutput(true);
+            }
         } else if (arguments->GetInformationOrder() == i) {
             sorter = new InformationSorter(previousSorter);
         }
@@ -130,7 +133,7 @@ Arguments * ExtractArguments(int argc, char** argv) {
         return NULL;
     }
 
-    const char* const short_options = "hftsucrmd:g:i:p:o:l:";
+    const char* const short_options = "hftseucrmd:g:i:p:o:l:";
     static struct option long_options[] = {
         {"site", 1, 0, 'd'},
         {"user", 1, 0, 'g'},
@@ -145,6 +148,9 @@ Arguments * ExtractArguments(int argc, char** argv) {
         next_option = getopt_long(argc, argv, short_options, long_options, NULL);
 
         switch (next_option) {
+            case 'e':
+                arguments->SetPrintTimes(true);
+                break;
             case 'f':
                 arguments->SetFileOrder(++index);
                 break;
@@ -209,6 +215,7 @@ void PrintHelp() {
     cout << " -r: Result (Success) of invoked LFC command." << endl;
     cout << " -t: Present average and std. deviation of time per command." << endl;
     cout << " -m: Present command information." << endl;
+    cout << " -e: Show time duration for each command. Commands are grouped by name and success." << endl;
 
     cout << " -d UI : filter by user interface" << endl;
     cout << " -g USER : filter by user" << endl;

@@ -68,9 +68,6 @@ public:
         while (std::getline(infile, sLine)) {
             Row * row = this->parseRow(sLine);
             rows->push_back(row);
-//            if (mod++ == 10000) {
-//                break;
-//            }
         }
         infile.close();
 
@@ -137,11 +134,6 @@ public:
             }
 
         }
-
-//        map<string, CommandParser *>::const_iterator itr;
-//        for(itr = objectMap.begin(); itr != objectMap.end(); ++itr){
-//               delete (*itr).second;
-//        }
         
         cout << "not parsed rows: " << notParsed << endl;
 

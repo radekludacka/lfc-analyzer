@@ -29,12 +29,6 @@ public:
     }
 
     virtual ~LogTable() {
-        cout << "SADASFAGFASGFASGAS \n\n\n" << endl;
-//        for (vector<Item*>::const_iterator it = myList->begin(); it != myList->end(); it++) {
-//            delete *it;
-//        }
-//        myList->clear();
-//        delete myList;
     }
 
 private:

@@ -14,9 +14,6 @@ using namespace std;
 #include "CommandParser.h"
 #include "Command.h"
 
-//11/30 07:58:36.747 16392,20 Cns_pingdb: mysql_query error: MySQL server has gone away
-//11/30 07:58:36.747 16392,20 Cns_pingdb: Trying to reconnect
-
 class PingDBParser : public CommandParser {
 protected:
 

@@ -30,10 +30,7 @@ LfcCommand * ServState::NextState(
     information->SetInformation(info);
     
     if (item->GetUser()->GetName().length() != 0 && item->GetUser()->GetName().find('=') == std::string::npos) {
-        cout << "2" << endl;
         item->GetStartTime()->print();
-        cout << item->GetUser()->GetName() << endl;
-        cout << item->GetFilePath() << endl;
         return NULL;
     }
     

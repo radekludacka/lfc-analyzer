@@ -22,6 +22,7 @@ Arguments::Arguments() {
     filteredCommandValue = LCG_UNKNOWN;
     filteredSuccessValue = false;
     isSetSuccess = false;
+    printTimes = false;
 }
 
 Arguments::Arguments(const Arguments& orig) {
@@ -32,14 +33,6 @@ Arguments::~Arguments() {
 
 LFCCommandName Arguments::CommandConverter(std::string commandName) {
     std::map<string, LFCCommandName> commandMap;
-    
-//    if(commandMap.find(commandName) == commandMap.end())
-//    {
-//        std::string exception = "command " + commandName + " is not allowed";
-//        cout << exception << endl;
-////        throw exception;
-//    }
-    
     commandMap["lfc-ls"] = LFC_LS;
     commandMap["lcg-cr"] = LCG_CR;
     commandMap["lcg-rep"] = LCG_REP;
@@ -166,6 +159,14 @@ void Arguments::SetSuccessValueToFilter(const char* value) {
 
 void Arguments::SetFilePath(const char* value) {
     filePath = value;
+}
+
+void Arguments::SetPrintTimes(bool printTimes) {
+    this->printTimes = printTimes;
+}
+
+bool Arguments::GetPrintTimes() const {
+    return printTimes;
 }
 
 void Arguments::SetInformationOrder(int informationOrder) {

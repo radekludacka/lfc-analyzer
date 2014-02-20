@@ -509,10 +509,6 @@ void AnalyzerTest::testAnalyzerLfcPingDB() {
             );
 }
 
-//07/18 09:50:16.492 20713,1 Cns_srv_getreplica: NS092 - getreplica request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
-//07/18 09:50:16.492 20713,1 Cns_srv_getreplica: NS098 - getreplica /grid/voce/ludacka/text_file.txt 
-//07/18 09:50:16.495 20713,1 Cns_srv_getreplica: returns 0
-
 void AnalyzerTest::testAnalyzerLfcLr() {
     Parser * parser = new Parser();
     LogTable * logTable = parser->parse("tests/resources/lfc-lr");
@@ -628,15 +624,6 @@ void AnalyzerTest::testAnalyzerLfcAAFailed() {
             lfcCommand
             );
 }
-
-//11/09 04:14:47.908 20713,0 Cns_srv_startsess: NS092 - startsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ce.irb.egi.cro-ngi.hr
-//11/09 04:14:47.908 20713,0 Cns_srv_startsess: NS098 - startsess (1.15.0-0.el6)
-//11/09 04:14:47.908 20713,0 Cns_srv_startsess: returns 0
-//11/09 04:14:47.922 20713,0 Cns_srv_getreplica: NS092 - getreplica request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ce.irb.egi.cro-ngi.hr
-//11/09 04:14:47.922 20713,0 Cns_srv_getreplica: NS098 - getreplica  9da03d2e-f7d1-4992-b391-824ba9986135
-//11/09 04:14:47.923 20713,0 Cns_srv_getreplica: returns 0
-//11/09 04:14:47.953 20713,0 Cns_srv_endsess: NS092 - endsess request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from ce.irb.egi.cro-ngi.hr
-//11/09 04:14:47.953 20713,0 Cns_srv_endsess: returns 0
 
 void AnalyzerTest::testAnalyzeUnkownCommand1() {
     Parser * parser = new Parser();

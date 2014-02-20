@@ -19,7 +19,6 @@ LfcCommand * StartTransState2::NextState(
         Item* item
         ) {
 
-//    bool firstStatg = false;
     bool secondStatg = false;
     bool mkdir = false;
     bool creat = false;

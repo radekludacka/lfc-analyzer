@@ -491,9 +491,6 @@ void ParserTests::testParseItemsSymlink() {
             item);
 }
 
-//07/18 14:54:28.976 20713,0 Cns_srv_getpath: NS092 - getpath request by /DC=org/DC=terena/DC=tcs/C=CZ/O=Czech Technical University in Prague/CN=Radek Ludacka 364520 (613,101) from ui1.egee.cesnet.cz
-//07/18 14:54:28.978 20713,0 Cns_srv_getpath: returns 0
-
 void ParserTests::testParseItemsGetPath() {
     vector<Row*>* rows = mockRows->createMockGetPath();
 

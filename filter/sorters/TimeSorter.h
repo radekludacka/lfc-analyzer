@@ -20,10 +20,14 @@ public:
     TimeSorter();
     TimeSorter(Sorter * subSorter);
     virtual ~TimeSorter();
+    void SetPrintCommandsOutput(bool printCommandsOutput);
+    bool IsPrintCommandsOutput() const;
 protected:
     virtual string GetItemToSort(LfcCommand * command);
     vector<LfcCommand * > * Sort(vector<LfcCommand*> * commands);
     double CalculateStandardDeviation(vector<LfcCommand*> * commands, double mean);
+private:
+    bool printCommandsOutput;
 };
 
 #endif	/* TIMESORTER_H */

@@ -15,10 +15,6 @@
 
 using namespace std;
 
-//11/30 07:30:30.424 16392,2 Cns_srv_utime: NS092 - utime request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of the Academy of Sciences of the CR/CN=Jan Svec (557,120,138,143) from nagios.egee.cesnet.cz
-//11/30 07:30:30.424 16392,2 Cns_srv_utime: NS098 - utime /grid/ops/file-lfc-probe-lfc1.egee.cesnet.cz 0
-//11/30 07:30:30.427 16392,2 Cns_srv_utime: returns 0
-
 class UTimeParser : virtual public CommandParser {
 public:
 

@@ -58,6 +58,8 @@ public:
     void SetCommmandValueToFilter(const char* value);
     void SetSuccessValueToFilter(const char* value);
     void SetFilePath(const char* value);
+    void SetPrintTimes(bool printTimes);
+    bool GetPrintTimes() const;
     
 private:
     LFCCommandName CommandConverter(std::string commandName);
@@ -70,6 +72,7 @@ private:
     int resultTypeOrder;
     int timeOrder;
     int informationOrder;
+    bool printTimes;
 
     const char* filteredSiteValue;
     const char* filteredUserValue;

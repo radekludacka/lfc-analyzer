@@ -23,15 +23,6 @@ LfcCommand * DellAll::NextState(
     bool startsess1 = false;
     bool getlinks = false;
 
-    //      s st 1 gr 1+2 e - A
-    //      s st 1 gr 1+2 e - B - zde udelat nejaky check ze se jedna o stejny soubor - pokud je tam i access na dany soubor pak je to lcg-del jinak je to 2x lcg-cp 
-    //      a 1
-
-    //      tedy zacina analyza tohoto stavu - ulozit 
-    //      s d 2+3 gr 2 e - C - prvni je vzdycky stejna, druha kdyz bude obsahovat gl tak skocit do jineho ifu
-    //      s d 2+4 gr 2 e - C
-    //      s d 2+5 gr 2 gl 2 u 1 u 5 e  - stejne ale vicekrat u pokud je vice linku
-
     for (int i = 0; *iterator != NULL; i++, iterator++) {
         Item * item2 = *iterator;
 
@@ -65,9 +56,6 @@ LfcCommand * DellAll::NextState(
                     itemsToAssigne.push_back(item2);
                     if (!item->compareUserSiteSecondAndFirstPartOfFile(item2)) {
                         itemsToAssigne.clear();
-                        cout << "clear" << endl;
-                        cout << "f1" << item->GetFilePath() << endl;
-                        cout << "f2" << item2->GetFilePath() << endl;
                         startsess1 = false;
                         item->SetTid(-1);
                     }

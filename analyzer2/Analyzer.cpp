@@ -65,7 +65,6 @@ LfcCommandTable * Analyzer::Analyze(LogTable * logTable) {
                     item->SetAssigned(false);
                     currentState->PrintMessage("ANALYZER: RETURNED NULL", item);
                 }
-//                delete currentState;
             }
         }
     }
@@ -79,11 +78,6 @@ LfcCommandTable * Analyzer::Analyze(LogTable * logTable) {
         }
     }
     cout << "not assigned items to command: " << notAssigned << endl;
-
-    //    map<FunctionType, State *>::const_iterator itr;
-    //    for (itr = objectMap.begin(); itr != objectMap.end(); ++itr) {
-    //        delete (*itr).second;
-    //    }
 
     return commandList;
 }

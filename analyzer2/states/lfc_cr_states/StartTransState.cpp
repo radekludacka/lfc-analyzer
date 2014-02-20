@@ -36,9 +36,7 @@ LfcCommand * StartTransState::NextState(
 
                 if (function == STATG) {
                     PrintMessage("START TRANS STATG 0", item2);
-//                    cout << "STARTTRANS STATG X" << endl;
-//                    item2->GetStartTime()->toString();
-
+                    
                     int retCommand = item2->GetCommand()->getReturnCode();
                     if (retCommand == 2 and !firstStatg) {
                         firstStatg = true;
@@ -56,12 +54,10 @@ LfcCommand * StartTransState::NextState(
                 } else if (function == CREAT and !creat) {
                     creat = true;
                     itemsToAssigne.push_back(item2);
-
                     string::size_type pos;
                     pos = item2->GetFilePath().find(' ', 0);
-                    string second = item2->GetFilePath().substr(pos + 1);
+                    
                     string first = item2->GetFilePath().substr(0, pos);
-
                     item->SetFilePath(first);
                 } else if (function == SETFSIZEG and !setfsizeg) {
                     setfsizeg = true;

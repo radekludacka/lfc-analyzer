@@ -40,14 +40,6 @@ LfcCommand * GetReplica::NextState(
                             item->GetUser(),
                             item->GetSite(),
                             false);
-                } else {
-                    // ukladat to zpet do prvni item je asi prasarna
-                    // zkusit to ulozit do jine item - nove vytvorene
-                    // chyba ?? - nasel se jiny prikaz - doimplementovat
-                    // toto rozpoznavat i u jinych prikazu
-                    // return null
-                    // udelat null command a ten ukladat pokud se nepovede
-                    // analyza
                 }
             }
         } else {

@@ -14,7 +14,6 @@ using namespace std;
 #include "../GeneralTerminalState.h"
 #include <vector>
 
-//class Analyzer;
 class OpenDirState : public State {
 public:
     OpenDirState();
@@ -24,7 +23,6 @@ public:
             vector<Item*> items,
             Item* item
     );
-//    virtual LfcCommand * GetResult(Item * item);
 private:
 
 };

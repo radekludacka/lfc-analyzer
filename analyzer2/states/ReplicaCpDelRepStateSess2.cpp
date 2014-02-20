@@ -45,22 +45,6 @@ LfcCommand * ReplicaCpDelRepStateSess2::NextState(
                     itemsToAssigne.push_back(item2);
                     item->SetTid(item2->GetTid());
                     sess = true;
-                    // dobehnout celou session
-
-                    // tady se nesmi skoncit ale pokracovat ve for cyklu dokud
-                    // se nenarazi na access, ktery obsahuje nazev souboru
-
-                    // tady se skoci do nove session ale je to skutecne ta spravna ?
-                    // musi se v dalsim for cyklu zkontrolovat jestli se 
-                    // jedna skutecny soubor - skocit - udelat dalsi stav kde se
-                    // najde replika a kdyz nebude souhlasit smaze se s oznacovani a bude
-                    // se pokracovat - co kdyz se bude ale jednat o 
-                    // dalsi lcg-cp na stejny soubor - to potom nebude fungovat
-                    // nutno udelat dalsi stav a z tohoto dalsiho lcg-cp 
-                    // udelat lcg-cp a ne lcg-del 
-                    // udelat testy na takoveto veci !!!!!!
-                    //                    State * state = new DellAll();
-                    //                    return state->NextState(iterator, items, item);
                 }
             }
 
@@ -78,8 +62,6 @@ LfcCommand * ReplicaCpDelRepStateSess2::NextState(
                     itemsToAssigne.push_back(item2);
                     statg = true;
                     if (!item->compareUserSiteFirstPartOfFile(item2)) {
-                        // interupt searching, when file name is not the same
-                        // start in searching new correct session
                         PrintMessage("CP2 FAIL", item2);
                         itemsToAssigne.clear();
                         item->SetTid(backUpTid); 
@@ -115,7 +97,6 @@ LfcCommand * ReplicaCpDelRepStateSess2::NextState(
                         break;
                     }
                     numberOfFailsFileComparation++;
-                    // nekdy se ale musi tid obnovit kdyz se vrati lcg-cp - protoze se nastavuje session i u dalsich itemu
                 } else {
                     itemsToAssigne.push_back(item2);
                     this->AssignAllItems(itemsToAssigne);
@@ -123,7 +104,7 @@ LfcCommand * ReplicaCpDelRepStateSess2::NextState(
                     return state->NextState(iterator, items, item);
                 }
             }
-
+           
         }
 
         if (*iterator == items.back()) {

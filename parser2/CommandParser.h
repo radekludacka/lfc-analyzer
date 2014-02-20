@@ -88,10 +88,6 @@ protected:
         site = new Site(remain.substr(startSite + 7));
 
         tid = parsedRow->GetTid();
-
-        //        int startInfo = remain.find('-') + 2;
-        //        int endInfo = remain.find(' ', startInfo);
-        //        information = remain.substr(startInfo, endInfo - startInfo);
         parsedRow->SetParsed(true);
         state = 0;
     }

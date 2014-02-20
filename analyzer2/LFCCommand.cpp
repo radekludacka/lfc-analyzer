@@ -52,10 +52,6 @@ LfcCommand::LfcCommand(
 }
 
 LfcCommand::~LfcCommand() {
-    //    delete startTime;
-    //    if (endTime != NULL) {
-    //        delete endTime;
-    //    }
     if (user != NULL) {
         delete user;
     }

@@ -22,57 +22,25 @@ LfcCommand * LstatState::NextState(
     vector<Item *> itemsToAssigne;
 
     int itemsSize = items.size();
-
-//    if (itemsSize > 0) {
-//        Item * item0 = *iterator;
-//    }
     Item * end = NULL;
 
     for (int i = 0; i < itemsSize; i++, iterator++) {
         Item * item2 = *iterator;
         end = *iterator;
-
+        
         if (!item2->IsAssigned()) {
-            FunctionType function = item2->GetCommand()->getName();
-            if (function == OPENDIR) {
-                if (item->compareUserSiteFile(item2)) {
-                    
-                    PrintMessage("LSTAT OPENDIR", item2);
-                    itemsToAssigne.push_back(item2);
-                    item->SetTid(item2->GetTid());
-                    this->AssignAllItems(itemsToAssigne);
-                    State * state = new OpenDirState();
-                    LfcCommand * command = state->NextState(iterator, items, item);
-                    delete state;
-                    return command;
-                }
-            } else if (function == ACCESS) {
+            FunctionType function = item2->GetCommand()->getName();                
+             if (function == ACCESS) {
                 int accessType = atoi(item2->GetInformation().c_str());
                 if (item->compareUserSiteFile(item2) and accessType == 2) {
                     PrintMessage("LSTAT ACCESS", item2);
                     itemsToAssigne.push_back(item2);
                     item->SetTid(item2->GetTid());
                     this->AssignAllItems(itemsToAssigne);
-                    // tady se musi nejak ve for cyklu
-                    // zjistit jestli je pokracovani opravdu RmDir
-
                     State * state = new RmDirState();
                     return state->NextState(iterator, items, item);
                 }
-            } else if (function == STARTTRANS) {
-                PrintMessage("LSTAT STARTTRANS", item2);
-                if (item->GetCommand()->getReturnCode() == 2) {
-                    if (item->compareUserSite(item2)) {
-                        itemsToAssigne.push_back(item2);
-                        item->SetTid(item2->GetTid());
-                        item->GetCommand()->setReturnCode(item2->GetCommand()->getReturnCode());
-                        this->AssignAllItems(itemsToAssigne);
-                        PrintMessage("LSTAT START TRANS YES", item2);
-                        State * state = new StartTransState();
-                        return state->NextState(iterator, items, item);
-                    }
-                }
-            }
+            } 
         }
 
         if (*iterator == items.back()) {

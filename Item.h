@@ -96,8 +96,6 @@ public:
         if (*this->GetUser() == *item->GetUser() and *this->GetSite() == *item->GetSite()) {
 
             string firstPart = this->GetFirstPart(this->GetFilePath());
-            cout << "this:" << firstPart << endl;
-            cout << "item:" << item->GetFilePath().c_str() << endl;
             if (strcmp(item->GetFilePath().c_str(), firstPart.c_str()) == 0) {
                 return true;
             }
@@ -109,8 +107,6 @@ public:
         if (*this->GetUser() == *item->GetUser() and *this->GetSite() == *item->GetSite()) {
 
             string secondPart = this->GetSecondPart(this->GetFilePath());
-            cout << "second part:" << secondPart << endl;
-            cout << "first  part:" << item->GetFilePath().c_str() << endl;
             if (strcmp(item->GetFilePath().c_str(), secondPart.c_str()) == 0) {
                 return true;
             }
@@ -165,7 +161,6 @@ public:
     }
 
     string GetFirstPart(string inputString) {
-        cout << inputString << endl;
         return this->ExtractStringPart(inputString, 0);
     }
 

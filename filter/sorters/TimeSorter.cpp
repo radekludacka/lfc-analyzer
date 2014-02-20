@@ -8,12 +8,22 @@
 #include "TimeSorter.h"
 
 TimeSorter::TimeSorter() {
+    printCommandsOutput = false;
 }
 
 TimeSorter::~TimeSorter() {
 }
 
+void TimeSorter::SetPrintCommandsOutput(bool printCommandsOutput) {
+    this->printCommandsOutput = printCommandsOutput;
+}
+
+bool TimeSorter::IsPrintCommandsOutput() const {
+    return printCommandsOutput;
+}
+
 TimeSorter::TimeSorter(Sorter* subSorter) : Sorter(subSorter) {
+    printCommandsOutput = false;
 }
 
 string TimeSorter::GetItemToSort(LfcCommand * command) {
@@ -40,25 +50,26 @@ vector<LfcCommand * > * TimeSorter::Sort(vector<LfcCommand*> * commands) {
 
         int max = 0;
         int min = INT_MAX;
-        
-        string failed = "Good";
-        if (commands->at(0)->IsFailed()) {
-            failed = "Failed";
+
+        if (printCommandsOutput) {
+            string failed = "Good";
+            if (commands->at(0)->IsFailed()) {
+                failed = "Failed";
+            }
+            cout << string("*") + commandName + string("-") + failed << endl;
         }
-        cout << string("*") + commandName + string("-") + failed << endl;
-        
+
         for (iterator = commands->begin(); iterator != commands->end(); ++iterator) {
             LfcCommand * command = *iterator;
-            
+
             if (CompareCommandValue(command, commandName)) {
-//                LogTime * timeDuration = command->GetEndTime()->minus(command->GetStartTime());
                 LogTime * timeDuration = command->GetEndTime()->minusMillis(command->GetStartTime());
                 int timeMillis = timeDuration->miliseconds();
-                
-//                cout << command->GetEndTime()->minusMillis(command->GetStartTime())->miliseconds() << endl;
-//                cout << command->GetStartTime()->asStringShortHours() << " | " << timeMillis << endl;
-//                cout << command->GetEndTime()->asStringShortHours() << " | " << timeMillis << endl;
-                
+
+                if (printCommandsOutput) {
+                    cout << command->GetStartTime()->asStringShortHours() << " | " << timeMillis << endl;
+                }
+
                 unsigned long long sumBackup = sum;
                 sum += timeMillis;
 

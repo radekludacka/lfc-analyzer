@@ -8,10 +8,6 @@
 #ifndef STARTTRANSACTION_H
 #define	STARTTRANSACTION_H
 
-//11/30 04:03:02.405 16392,2 Cns_srv_starttrans: NS092 - starttrans request by /DC=es/DC=irisgrid/O=ugr/CN=gines.rubio (491,117,104) from milky21.ncg.ingrid.pt
-//11/30 04:03:02.405 16392,2 Cns_srv_starttrans: NS098 - starttrans (1.11.16-3)
-//11/30 04:03:02.405 16392,2 Cns_srv_starttrans: returns 0
-
 #include "CommandParser.h"
 #include "../Functions.h"
 #include "../LogTime.h"

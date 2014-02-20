@@ -25,10 +25,6 @@ public:
 		this->parsed = parsed;
 	}
         
-//        virtual ~Row(){
-//            delete time;
-//        }
-
         void SetParsed(bool parsed) {
             this->parsed = parsed;
         }

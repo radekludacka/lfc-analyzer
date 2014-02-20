@@ -28,21 +28,6 @@ LfcCommand * StartTransStateAA::NextState(
 
     for (int i = 0; i < itemsSize; i++, iterator++) {
         Item * item2 = *iterator;
-
-//11/09 21:28:31.596 20713,0 Cns_srv_starttrans: NS092 - starttrans request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.596 20713,0 Cns_srv_starttrans: NS098 - starttrans (1.16.0-1.el6)
-//11/09 21:28:31.596 20713,0 Cns_srv_starttrans: returns 0
-//11/09 21:28:31.597 20713,0 Cns_srv_statg: NS092 - statg request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.597 20713,0 Cns_srv_statg: NS098 - statg  9bd768ff-bd79-495b-aeb2-c410da1107ab
-//11/09 21:28:31.598 20713,0 Cns_srv_statg: returns 0
-//11/09 21:28:31.598 20713,0 Cns_srv_getpath: NS092 - getpath request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.600 20713,0 Cns_srv_getpath: returns 0
-//11/09 21:28:31.602 20713,0 Cns_srv_symlink: NS092 - symlink request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.602 20713,0 Cns_srv_symlink: NS098 - symlink /grid/voce/generated/2013-11-09/file-190eba40-2372-4258-89f5-4503b44f179c /grid/voce/manik/Pd/HCP/plane0001/a5.254670.tar.gz
-//11/09 21:28:31.606 20713,0 Cns_srv_symlink: returns 17
-//11/09 21:28:31.663 20713,1 Cns_serv: [150.214.37.125] (cream-cafpegrid.ugr.es): Could not establish an authenticated connection: server_establish_context_ext: The client itself detected a problem with the user proxy, it was probably missing or expired !
-//11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: NS092 - aborttrans request by /DC=cz/DC=cesnet-ca/O=Institute of Physics of Materials of the Academy of Sciences of the CR/CN=Tomas Kana (608,101) from skurut15.grid.cesnet.cz
-//11/09 21:28:31.698 20713,0 Cns_srv_aborttrans: returns 0
         
         if (!item2->IsAssigned()) {
             PrintMessage("START TRANSAA", item2);

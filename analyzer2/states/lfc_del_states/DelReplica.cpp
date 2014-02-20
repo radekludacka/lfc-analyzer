@@ -60,9 +60,6 @@ LfcCommand * DelReplica::NextState(
                 } else if (command == GETLINKS and finish) {
                     PrintMessage("DEL REP GETLINKS", item2);
                     itemsToAssigne.push_back(item2);
-                    //                    this->AssignAllItems(itemsToAssigne);
-                    //                    State * state = new DelRemain(); ?
-                    //                    return state->NextState(iterator, items, item);
                 } else if (command == UNLINK and finish) {
                     PrintMessage("DEL REMAIN UNLINK", item2);
                     itemsToAssigne.push_back(item2);

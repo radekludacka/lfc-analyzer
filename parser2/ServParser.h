@@ -110,9 +110,6 @@ public:
             parsedRow->SetParsed(true);
             state = finishState;
         } 
-//        else {
-//            state = finishState;
-//        }
     }
 };
 
