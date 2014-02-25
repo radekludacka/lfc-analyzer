@@ -127,30 +127,30 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp 
+${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o: analyzer2/LfcUnknownCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1002245056
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o analyzer2/LfcUnknownCommand.cpp
 
-${OBJECTDIR}/_ext/1705013937/GetReplica.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp 
+${OBJECTDIR}/_ext/1705013937/GetReplica.o: analyzer2/states/GetReplica.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1705013937
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/GetReplica.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/GetReplica.o analyzer2/states/GetReplica.cpp
 
-${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp 
+${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o: analyzer2/states/ReplicaCpDelRepStateSess2.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1705013937
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o analyzer2/states/ReplicaCpDelRepStateSess2.cpp
 
-${OBJECTDIR}/_ext/525599741/InformationSorter.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp 
+${OBJECTDIR}/_ext/525599741/InformationSorter.o: filter/sorters/InformationSorter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/InformationSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/InformationSorter.o filter/sorters/InformationSorter.cpp
 
-${OBJECTDIR}/_ext/525599741/TimeSorter.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp 
+${OBJECTDIR}/_ext/525599741/TimeSorter.o: filter/sorters/TimeSorter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/TimeSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/TimeSorter.o filter/sorters/TimeSorter.cpp
 
 ${OBJECTDIR}/Arguments.o: Arguments.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -457,16 +457,16 @@ ${TESTDIR}/filter/tests/FilterTest.o: filter/tests/FilterTest.cpp
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/filter/tests/FilterTest.o filter/tests/FilterTest.cpp
 
 
-${TESTDIR}/_ext/457698283/LogTimeRunner.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp 
+${TESTDIR}/_ext/457698283/LogTimeRunner.o: gtests/LogTimeRunner.cpp 
 	${MKDIR} -p ${TESTDIR}/_ext/457698283
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/_ext/457698283/LogTimeRunner.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeRunner.cpp
+	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/_ext/457698283/LogTimeRunner.o gtests/LogTimeRunner.cpp
 
 
-${TESTDIR}/_ext/457698283/LogTimeTest.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp 
+${TESTDIR}/_ext/457698283/LogTimeTest.o: gtests/LogTimeTest.cpp 
 	${MKDIR} -p ${TESTDIR}/_ext/457698283
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/_ext/457698283/LogTimeTest.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/tests/LogTimeTest.cpp
+	$(COMPILE.cc) -O2 -I. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/_ext/457698283/LogTimeTest.o gtests/LogTimeTest.cpp
 
 
 ${TESTDIR}/tests/ParserRunner.o: tests/ParserRunner.cpp 
@@ -493,7 +493,7 @@ ${TESTDIR}/tests/PresenterTests.o: tests/PresenterTests.cpp
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/PresenterTests.o tests/PresenterTests.cpp
 
 
-${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand_nomain.o: ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp 
+${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand_nomain.o: ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o analyzer2/LfcUnknownCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1002245056
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
@@ -501,12 +501,12 @@ ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand_nomain.o: ${OBJECTDIR}/_ext/10022
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand_nomain.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand_nomain.o analyzer2/LfcUnknownCommand.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand_nomain.o;\
 	fi
 
-${OBJECTDIR}/_ext/1705013937/GetReplica_nomain.o: ${OBJECTDIR}/_ext/1705013937/GetReplica.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp 
+${OBJECTDIR}/_ext/1705013937/GetReplica_nomain.o: ${OBJECTDIR}/_ext/1705013937/GetReplica.o analyzer2/states/GetReplica.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1705013937
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/1705013937/GetReplica.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
@@ -514,12 +514,12 @@ ${OBJECTDIR}/_ext/1705013937/GetReplica_nomain.o: ${OBJECTDIR}/_ext/1705013937/G
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/GetReplica_nomain.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/GetReplica.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/GetReplica_nomain.o analyzer2/states/GetReplica.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/1705013937/GetReplica.o ${OBJECTDIR}/_ext/1705013937/GetReplica_nomain.o;\
 	fi
 
-${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2_nomain.o: ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp 
+${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2_nomain.o: ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o analyzer2/states/ReplicaCpDelRepStateSess2.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1705013937
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
@@ -527,12 +527,12 @@ ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2_nomain.o: ${OBJECTDIR}/_e
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2_nomain.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/states/ReplicaCpDelRepStateSess2.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2_nomain.o analyzer2/states/ReplicaCpDelRepStateSess2.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2.o ${OBJECTDIR}/_ext/1705013937/ReplicaCpDelRepStateSess2_nomain.o;\
 	fi
 
-${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/InformationSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp 
+${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/InformationSorter.o filter/sorters/InformationSorter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/525599741/InformationSorter.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
@@ -540,12 +540,12 @@ ${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o: ${OBJECTDIR}/_ext/525599
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/InformationSorter.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o filter/sorters/InformationSorter.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/525599741/InformationSorter.o ${OBJECTDIR}/_ext/525599741/InformationSorter_nomain.o;\
 	fi
 
-${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/TimeSorter.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp 
+${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/TimeSorter.o filter/sorters/TimeSorter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/525599741
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/525599741/TimeSorter.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
@@ -553,7 +553,7 @@ ${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o: ${OBJECTDIR}/_ext/525599741/Tim
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/filter/sorters/TimeSorter.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o filter/sorters/TimeSorter.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/525599741/TimeSorter.o ${OBJECTDIR}/_ext/525599741/TimeSorter_nomain.o;\
 	fi
