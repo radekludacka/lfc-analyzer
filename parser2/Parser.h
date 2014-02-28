@@ -39,6 +39,12 @@
 #include <map>
 #include <stdexcept>
 
+#include <iostream>
+#include <boost/iostreams/filtering_stream.hpp>
+#include <boost/iostreams/filter/gzip.hpp>
+
+using namespace std;
+
 class Parser {
 public:
 
@@ -56,20 +62,26 @@ public:
     vector<Row *> * parseRows(string filePath) {
         ifstream infile;
         infile.open(filePath.c_str());
-        
+
         if (infile.is_open() == false) {
             cout << "Input file " << filePath.c_str() << " not exists" << endl;
-            exit(-1); 
-        }
-
-        int mod = 0;
-        string sLine = "";
-        vector<Row*> * rows = new vector<Row*>;
-        while (std::getline(infile, sLine)) {
-            Row * row = this->parseRow(sLine);
-            rows->push_back(row);
+               exit(-1);
         }
         infile.close();
+
+        vector<Row*> * rows = new vector<Row*>;
+        std::ifstream file(filePath.c_str(), std::ios_base::in | std::ios_base::binary);
+        try {
+            boost::iostreams::filtering_istream in;
+            in.push(boost::iostreams::gzip_decompressor());
+            in.push(file);
+            for (std::string str; std::getline(in, str);) {
+                Row * row = this->parseRow(str);
+                rows->push_back(row);
+            }
+        } catch (const boost::iostreams::gzip_error& e) {
+            std::cout << e.what() << '\n';
+        }
 
         return rows;
     }
@@ -109,7 +121,7 @@ public:
             if (!row->GetParsed()) {
                 if (objectMap.find(row->GetFunction()) != objectMap.end()) {
                     commandParser = objectMap.at(row->GetFunction());
-                    
+
                     // important is to keep the same additional variable otherwise reallocation take much time
                     std::vector<Row *> subRows(rows->begin() + index, rows->begin() + addition);
                     try {
@@ -134,7 +146,7 @@ public:
             }
 
         }
-        
+
         cout << "not parsed rows: " << notParsed << endl;
 
         return logTable;

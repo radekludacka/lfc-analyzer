@@ -125,7 +125,7 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer ${OBJECTFILES} ${LDLIBSOPTIONS} -pg
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lfc-analyzer ${OBJECTFILES} ${LDLIBSOPTIONS} -pg -lboost_iostreams
 
 ${OBJECTDIR}/_ext/1002245056/LfcUnknownCommand.o: /home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1002245056

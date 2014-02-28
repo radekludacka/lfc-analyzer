@@ -117,8 +117,11 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -i logs/log-20131110 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -i logs/log-20131110 -c -t</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -i logs/log-20131110 -c -te</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -i logs/test_logs/log-20131111-c -te</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -cte -i logs/test_logs/log-20131110</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -cte -i logs/test_logs/log-20131110.gz</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}"  -i logs/log-20131110 -c -te</runcommand>
+        <runcommand>"${OUTPUT_PATH}"  -cte -i logs/test_logs/log-20131110.gz</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

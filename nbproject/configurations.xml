@@ -1378,7 +1378,7 @@
           <commandLine>-Wall -O2 -pg</commandLine>
         </ccTool>
         <linkerTool>
-          <commandLine>-pg</commandLine>
+          <commandLine>-pg -lboost_iostreams</commandLine>
         </linkerTool>
       </compileType>
       <item path="/home/radek/NetBeansProjects/lfc_analyzer/lfc-analyzer/analyzer2/LfcUnknownCommand.cpp"
