@@ -46,6 +46,8 @@ def plot_command(command, lines):
     fig = plt.figure()
     dates = matplotlib.dates.date2num(x_values)
     plt.plot_date(dates, y_values)
+    plt.ylabel('duration [ms]')
+    plt.xlabel('start time [HH:MM:SS]')
     fig.autofmt_xdate()
     fig.suptitle(command, fontsize=20)
     return fig

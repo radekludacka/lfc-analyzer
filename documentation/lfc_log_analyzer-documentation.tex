@@ -630,7 +630,8 @@ Some commands are assigned by character ?. This character can mean one of two th
 
 \subsection{Command line options}
 
-LFC analyzer presents analysis output in table form. Number and order of table columns are defined by user options. User can specify options: -f, -s, -u, -d, -r. 
+LFC analyzer presents analysis output in table form. Number and order of table columns are defined by user options. User can specify options:
+
 
 \begin{description}
     \item[] -f: Destination file that has been accessed by LFC command.
@@ -640,6 +641,8 @@ LFC analyzer presents analysis output in table form. Number and order of table c
     \item[] -r: Result (Success) of invoked LFC command.
     \item[] -t: Time duration and std. deviation for each command.
     \item[] -m: Present command information.
+    \item[] -e: Prints time duration of each command, commands are collected to command type and result groups.
+Time is presented in "start time | duration" format.
 \end{description}
 
 User does not have to specify any options, table will not be presented in this case. For each specified option there is created a column in which the value of the particular item is presented. Columns are ordered according to option order. Example~\ref{out:usercommandtable} shows a table where lfc\_analyzer presents user and LFC commands that they invoked.
@@ -1023,13 +1026,34 @@ The Presenter class prints out the result in table form. The main method that pr
 
 \section*{Installation}
 
-    \begin{verbatim}
-       git clone https://github.com/radekludacka/lfc-analyzer.git
-       cd lfc-analyzer
-       sh install.sh
-       ./bin/lfc-analyzer -i <logfile>
-       # or ./bin/lfc-analyzer -i <logfile> -ur -o false etc.
-    \end{verbatim}
+\begin{verbatim}
+    git clone https://github.com/radekludacka/lfc-analyzer.git
+    cd lfc-analyzer
+    sh install.sh
+    ./bin/lfc-analyzer -i <logfile>
+    # or ./bin/lfc-analyzer -i <logfile> -ur -o false etc.
+\end{verbatim}
+
+\section*{Post analysis}
+
+LFC analyzer allows to create plots for each lfc command and its result (Successful, Failed) combination where x-axis contains 
+start times of each command and y-axis contains their durations. We have to launch lfc-analyzer with -cet options and redirect
+to an output file. The output file is input for plot-creator.py script. The plot-creator.py creates plot for each
+command-result combination to current directory. The invocation sequence can be following:
+
+\begin{verbatim}
+    ./bin/lfc-analyzer -i <logfile> -cet > result.txt
+    python plot-creator.py result.txt
+\end{verbatim}
+
+Plots similarly Figure~\ref{img:plot-example} will be created.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{figures/plot-example.png}
+    \caption{Plot presents durations of successful lcg-aa command - output of plot-creator.py script}
+    \label{img:plot-example}
+\end{figure}
 
 
 %----------------------------------------------------------------------------------------
