@@ -1036,7 +1036,7 @@ The Presenter class prints out the result in table form. The main method that pr
 
 \section*{Post analysis}
 
-LFC analyzer allows to create plots for each lfc command and its result (Successful, Failed) combination where x-axis contains 
+The LFC analyzer allows to create plots for each lfc command and its result (Successful, Failed) combination where x-axis contains 
 start times of each command and y-axis contains their durations. We have to launch lfc-analyzer with -cet options and redirect
 to an output file. The output file is input for plot-creator.py script. The plot-creator.py creates plot for each
 command-result combination to current directory. The invocation sequence can be following:
@@ -1055,6 +1055,32 @@ Plots similarly Figure~\ref{img:plot-example} will be created.
     \label{img:plot-example}
 \end{figure}
 
+The LFC analyzer also allows to show some part of analysis output in table form in spreadsheet application like 
+LibreOffice Base of MS Excel. The result spreadsheet output will contain table where commands (in columns) are grouped
+by users and result file names (in rows) presents how many commands have been invoked in each result file (day).
+We have to launch the LFC analyzer with options -uc and redirect output to an output text file for every file for that
+we want to create spreadsheet table. All result text files should be located in one directory. We should copy the 
+pyparser.py python script and launch this script inside this directory. Following example shows the whole commands sequence:
+
+\begin{verbatim}
+    # create new directory with results
+    mkdir new_result_dir
+    # launch lfc-analyzer with -uc options to each log input file that 
+    # should be processed and redirect to new directory
+    # the result file prefix should be "result-201"
+    ./bin/lfc-analyzer -i <logfile> -uc > ./new_result_dir/result-201<orig_suffix>
+    # copy pyparser.py script to new_result_dir directory
+    cp pyparser.py new_result_dir 
+    # change working directory to new_result_dir
+    cd new_result_dir
+    # launch extracting on all commands in directory and redirect 
+    # output to some result file
+    python pyparser.py > result_file.txt
+\end{verbatim}
+
+Afterwards, you can copy the content in result\_file.txt to arbitrary spreadsheet application and select | as 
+special row separator. The pyparser.py script allows to parse only lfc-ls, lcg-cr, lcg-rep, lcg-lr commands and server 
+error SERV\_ERR now.
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
